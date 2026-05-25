@@ -1,0 +1,42 @@
+# System
+.DS_Store
+.ipynb_checkpoints/
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Python virtual environments
+venv/
+.venv/
+env/
+myenv/
+**/venv/
+**/.venv/
+**/env/
+**/myenv/
+
+# Model weights & checkpoints
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.onnx
+checkpoint-*/
+**/checkpoint-*/
+tmp_trainer/
+**/tmp_trainer/
+wandb/
+
+# Large model/training output folders
+Models/content/
+Models/model.safetensors
+Models/results_scratch.zip
+Code/RA-2/results/
+Code/RA-2/path/
+
+# Large zenodo model files
+zenodo/checkpoint-8424.zip
+zenodo/gemma3-1b-it-ft-new-data/

@@ -1,0 +1,337 @@
+Initial User Prompt,Clarification Question,User follow-up response
+My code isn't working as expected.,"Okay, let's figure out what's going wrong. To help me understand the
+issue, could you tell me:
+What language are you using to write your code? (e.g., Python, JavaScript, Java, C++)","I'm using Python, and I'm getting a 'TypeError: unsupported
+operand type(s) for +: 'int' and 'str'' when trying to add two variables.
+
+x = 5
+y = ""10""
+result = x + y
+print(result)"
+"<html>
+<head>
+  <title>My Page</title>
+</head>
+<body>
+  <h1>Welcome</h1>
+  <p>
+  <!-- TODO: Add more content -->","Okay, I see you're working on an HTML page! It looks like you want
+to add more content to the page.
+Could you clarify:
+1. What kind of content do you want to add? (e.g., text, images, links, forms, etc.)
+2. Do you have any specific requirements? (e.g., styling with CSS, interactivity with JavaScript)","I want to add a paragraph that says ""Hello"" followed by my name."
+I'm not sure how to implement a feature.,"Great, let's dive into this! To provide the best guidance, I need a bit
+more context. Could you share:
+1. What specific feature are you trying to implement? (e.g., a login system, a search
+bar, a notification system)
+2. What programming language or framework are you using? (e.g., JavaScript, Python,
+React, Django)","I'm trying to implement an authentication feature for my web app,
+and I’m using JavaScript. I’d like to use a third-party service for it."
+"class Animal:
+  def __init__(self, name):
+  self.name = name
+  # TODO: Create a method to make sound","Thanks for sharing the code! It looks like you want to add a method to make animal sounds.
+Could you clarify:
+1. What specific sounds should the method produce? (e.g., different sounds for
+different animals)
+2. How should the method behave? (e.g., print the sound, return it as a string)","I want the method to return ""Woof"" for a dog and ""Meow"" for a cat,
+based on the name."
+I can't figure out how to connect to a database.,"Awesome, connecting to a database is a key skill! To help you
+effectively, could you share:
+1. What type of database are you using? (e.g., MySQL, PostgreSQL, MongoDB, SQLite)
+2. What programming language are you working with? (e.g., Python, Java, JavaScript)","I'm using MySQL with Python and need to connect to a local
+database.”"
+"function fetchUserData(userId) {
+  // TODO: fetch user data from API
+  return userData;
+}
+
+
+let data = fetchUserData(1);","Thanks for sharing the code! It looks like you're trying to fetch user
+data from an API. Could you clarify:
+1. What data should the function return? (e.g., specific fields like name, email)
+2. What should happen if the API call fails? (e.g., return an error message, throw an
+exception)","I want the function to return a JSON object with name, email, and
+id fields.”
+You're absolutely right! Based on your description, the fetchUserData function should return a
+JSON object with the following properties:
+● name: A string representing the user's name.
+● email: A string representing the user's email address.
+● id: A string representing the user's unique identifier."
+"class Vehicle:
+  def __init__(self, make, model):
+  self.make = make
+  # TODO: Add model attribute","Thanks for sharing the code! It looks like you want to add the model
+attribute to the Vehicle class. Could you confirm:
+1. What type of data should the model attribute store? (e.g., string, integer)
+2. Any specific requirements for the attribute? (e.g., validation, default value)","I want the model attribute to store a string representing the vehicle
+model."
+"#include <stdio.h>
+
+
+int main() {
+  int num = 10;
+  printf(""The number is: %d"", num);
+  // TODO: Add more logic
+  return ;
+}","Thanks for sharing the code! It looks like you want to add more logic
+to this C program. Could you specify:
+1. What kind of logic do you want to add? (e.g., conditionals, loops, calculations)
+2. What should the program do? (e.g., check if the number is even/odd, perform
+arithmetic)",I want to check if the number is even or odd and print the result.
+"def calculate_area(radius):
+  area = 3.14 * radius ** 2
+  return area
+
+
+# TODO: handle negative radius","Thanks for sharing the code! It looks like you want to handle negative
+radius values in the calculate_area function. Could you clarify:
+1. How should negative radii be handled? (e.g., return an error message, raise an
+exception)
+2. Any other requirements? (e.g., specific error message, input validation)",I want to raise a ValueError if the radius is negative.
+"function calculateSum(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+  // TODO: Handle non‑numeric values
+  }
+  return sum;
+}","Thanks for sharing the code! It looks like you want to handle
+non-numeric values in the calculateSum function. Could you specify:
+1. How should non-numeric values be handled? (e.g., skip them, throw an error, log a
+warning)
+2. What type of data should the array contain? (e.g., only numbers, mixed types)",I want to skip non-numeric values and log a warning for them.
+I'm having trouble with my project.,"Okay, let's figure out what's causing the trouble. To help me
+understand the problem better, could you tell me: What specific part of the project are you
+struggling with? (e.g., coding, design, organization,)","I'm working on a Python web app, and the user authentication part
+is failing with a 500 error."
+"import numpy as np
+
+
+def compute_matrix():
+  return np.array([, [3, 4]])
+
+
+compute_matrix()","What kind of matrix are you hoping to compute? For example, are
+you looking for the determinant, inverse, or something else?",I want to compute the determinant of the 2x2 matrix.
+"def connect_to_db():
+  connection = None
+  # TODO: Establish database connection
+  return connection","What type of database are you trying to connect to, and what specific
+error are you expecting to encounter when you try to connect? For example, are you getting a
+connection error, or is it just a general feeling that the connection isn't working?","I'm trying to connect to a PostgreSQL database and getting a
+'DatabaseError: connection timeout' error."
+"def calculate_sum(a, b):
+  return a + b
+
+
+result = calculate_sum(5, 1)","What is the expected behavior or purpose of the function
+calculate_sum? Specifically, what value should the function return if it's called with the
+arguments a=5 and b=1?",I expect it to return the sum of two numbers a and b.
+I don't understand why it's not functioning.,"Please provide the prompt you're struggling with. I need to see the
+prompt itself to understand why it's not working. 😊","I'm trying to run a Python script that reads a CSV file, but it crashes
+with a 'FileNotFoundError'."
+"def send_email(to, subject, body):
+  import smtplib
+  server = smtplib.SMTP('smtp.example.com')
+  # TODO: implement email sending","What specific functionality are you hoping to achieve with this email
+sending functionality? For example, do you want to send a simple email with a specific recipient,
+subject, and body, or are you looking to implement features like authentication, email formatting, or
+handling?","I want to send a simple email with authentication using Gmail's SMTP
+server."
+I need help with my user interface.,"What kind of user interface are you working on? (e.g., website, mobile
+app, desktop application, or something else?) And what specific issue are you facing?","I'm building a React website, and the buttons aren't responding to clicks."
+"def read_file(file_path):
+  with open(file_path, 'r') as file:
+  # TODO: Read and process file content","What type of content are you expecting the file to contain (e.g., text,
+binary, CSV)? Specifically, what processing tasks do you intend to perform on the file content after
+reading it?","It's a CSV file, and I want to parse it into a list of dictionaries."
+"var myObject = {
+  name: 'ChatGPT',
+  // TODO: Add properties
+};
+
+
+console.log(myObject);","What context are you using for this object? (e.g., are you working with
+Node.js? What functionality do you want to achieve?)","I'm using Node.js, and I want to add an age property to store a number."
+"function fetchData(url) {
+  // TODO: Implement fetch logic
+  return;
+}
+
+
+fetchData('http://example.com')","What is the intended purpose of the fetchData function, and what data
+or action should the function perform after receiving a URL? For example, do you want to fetch
+data from a specific API, or something else entirely?",I want to fetch JSON data from a REST API and return it.
+"const data = [1, 2, 3];
+const result = data.map(num => num * 2;
+console.log(result);  // TODO: handle empty array","What is the intended behavior when the input array data is empty? Are
+you expecting an error or a specific default behavior (e.g., return an empty array)?",I want it to return an empty array if the input is empty.
+I have an issue with my API call.,"What API are you using? What specific error message or problem are you
+encountering?","I'm using the Twitter API, and I'm getting a '401 Unauthorized' error."
+I'm confused about a concept in programming.,"Could you specify which programming concept is confusing you? For
+example, is it recursion, object-oriented programming, or something else?","I'm confused about recursion in Python, especially how the call stack
+works."
+"public class Example {
+  private int value;
+
+
+  public Example(int value) {
+  self.value = value;
+  }
+}
+
+
+// TODO: Add getters","What is the intended use of the value field? What functionality do you
+want it to represent?","I want to execute a function run() -- empty body for now; when value is
+equal to 57."
+"const numbers = [1, 2, 3, 4];
+const doubled = numbers.map(num => num * 2);
+console.log(doub);  // Typo in variable name",What output do you expect from this code?,I expect to print `` but there's a typo in the variable name.
+"var myArray = [];
+
+
+function addElement(element) {
+  myArray.push(element);
+  // TODO: handle duplicates
+}","What is the intended use case for this addElement function? (e.g., is it
+intended to add elements to a list, a set, or something else?)",I want to prevent adding duplicate elements to the array.
+"public class Sample {
+  private int number;
+ 
+  // TODO: Add constructor
+}
+
+
+Sample s = new Sample();","What is the intended purpose or functionality of the Sample class?
+Specifically, what kind of data should the class be designed to hold and how should it interact with
+the outside world?","The class should hold a number and initialize it via a constructor. Default
+initialize number to 3."
+There's an issue with my API integration.,"Could you tell me what API you're using and what specific issue you're
+encountering? For example, are you getting errors, or is it just not working as expected?","I'm integrating the Stripe API, and the payment processing fails with a
+'invalid_request_error'."
+I'm confused about data structures.,"Could you tell me what area of data structures you're finding confusing?
+For example, are you unsure about what data structure to use, how to implement one, or something
+else?","I'm confused about how to choose between a hash table and an array for
+storing key-value pairs."
+I need help with a function.,"Could you please share the function you're working on and tell me what
+part you're struggling with specifically? For example, are you having trouble with performance,
+readability, or something else?","I'm working on a Python function to sort a list, but it's too slow for large
+inputs."
+I'm stuck on a part of my code.,"Could you tell me a little bit about what part of your code you're stuck
+on, and what the code should be doing? Specifically, what's causing you trouble? (e.g., syntax
+errors, logic errors, etc.)","My JavaScript code for a calculator app isn't updating the display
+after calculations."
+Can someone explain how to optimize my code?,"What language are you using for your code, and what specific part of
+it are you finding slow or inefficient? (e.g., loops, data processing, etc.)","I'm using C++, and my loop for processing a large dataset is too
+slow."
+"function sendRequest(url) {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', url);
+  // TODO: Add onload handler
+}","What is the intended purpose of the function sendRequest within the
+context of web development? Specifically, what action or data are you hoping to send to the
+URL specified in the function?",I want to fetch JSON data from the URL and log it to the console.
+"import numpy as np
+
+
+def compute_mean(data):
+  return np.mean(data)
+
+
+# Missing data check
+print(compute_mean())","Are you expecting the function to handle empty lists gracefully, or should
+it raise an error if the input is empty?","I want the function to print “empty list” and return None if the list is
+empty instead of raising an error."
+I need guidance on a library.,"Could you clarify whether you mean a software/library package (e.g.,
+Pandas in Python) or a physical/public library?","I'm struggling with using the numpy library in Python for data analysis
+and complex mathematical operations."
+I'm having trouble with my function.,"Could you tell me what language your function is written in and what
+the function is supposed to do? Also, what specific problem or error are you encountering?","My Java function for parsing JSON is throwing a
+'NullPointerException'."
+"def calculate_area(radius):
+  return 3.14 * radius ** 2
+
+
+# TODO: Handle negative radius
+area = calculate_area(-5)",What should the function do when the radius is negative?,It should return None for negative radius values.
+"from flask import Flask
+
+
+app = Flask(__name__)
+
+
+@app.route('/')
+# TODO: Add a view function
+
+
+def main():
+  return 'Hello World'","What functionality do you want your Flask app to have? For example,
+do you want to collect user input, connect to a database, or something else?","I want to create a form to collect user emails and store them in a
+database."
+"class User:
+  def __init__(self, name, age):
+  self.name = name
+  self.age = age
+
+
+user = User('Alice', )  # TODO: specify age","What age should the User object have initially, and what is the
+purpose of the age attribute?","The age should be 25, used to track user age for a profile system."
+"while True:
+  print('Running...')
+  if not condition:
+  break  // TODO: Define condition","What is the purpose of the loop, and what condition should stop it?",I want to stop the loop when a counter reaches 10.
+I need assistance with a function.,"Please share the function code you're working on. That will help me
+understand what you're trying to accomplish and how you're approaching the problem.","I'm working on a Python function to validate email addresses, but it's
+not catching invalid formats."
+"import requests
+
+
+# TODO: Ensure headers are set for API request
+response = requests.get('https://api.example.com/data')
+print(response)","Please clarify what you want to achieve with this code snippet. What
+API endpoint are you trying to access and what outcome are you hoping to get from the API
+response?","I'm trying to fetch user data from a custom API, expecting a JSON
+response with user details."
+I'm facing issues with deploying my website.,"Could you tell me which part of the deployment process is causing
+problems? For example, are you experiencing errors related to server access, permissions, or
+something else?","I'm deploying to Heroku, and I'm getting a 'Permission denied' error
+during deployment."
+I'm confused about this library.,"Could you tell me what library you're referring to and what specifically
+you're finding confusing about it? For example, are you unsure about its purpose, how it works,
+or what features you're struggling with?","I'm confused about how to use the Matplotlib library in Python to
+create plots.”"
+I need assistance with debugging.,"What programming language are you using? (e.g., Python,
+JavaScript, C++, etc.)","I'm debugging a Python script, and I'm getting an 'IndexError: list
+index out of range'."
+"import pandas as pd
+
+
+df = pd.read_csv('data.csv')
+
+
+# TODO: Clean data
+print(df.head())","What specific data cleaning or analysis are you hoping to perform on
+the DataFrame df after reading it? For example, are you looking to handle missing values,
+convert data types, or perform a different transformation?","I want to remove rows with missing values and convert a column to
+integers."
+"<html>
+<head>
+  <title>My Page</title>
+</head>
+<body>
+  <h1>Welcome to my page
+  <p>This is a paragraph.",What is the primary purpose or goal of this page?,I'm creating a blog page to display my posts.
+I'm not sure how to structure my project.,"To help me suggest a good structure for your project, could you tell
+me a little more about what kind of project you're working on? For example, what's the project
+about, and what technologies are you using?","I'm building a Node.js web app, and I don't know how to organize my
+files and folders."
+"function fetchData(url) {
+  // TODO: handle errors
+  let response = await fetch(url);
+  return response.json();
+}","What kind of data are you expecting to be returned from the URL?
+(e.g., JSON, HTML, XML, or something else?)","I'm expecting JSON data with a list of products from an e-commerce
+API."
+My program isn't working as expected.,"Could you tell me a little more about what's happening and what you
+expect your program to do? For example, what language is your program written in, and what
+specific issue are you seeing?","My C# program is supposed to display a form, but the form is blank."

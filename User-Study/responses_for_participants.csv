@@ -1,0 +1,398 @@
+Instructions for Grading:,,,,,,,,
+Precision and Focus: How exactly the clarification question zeroes in on the missing detail or ambiguity in the original prompt.,"1–3 (Generic): “Can you clarify?” doesn’t hint at what to clarify.
+4 (Somewhat): Suggests a possible gap but still vague.
+5–7 (Highly Focused): Pinpoints exactly what detail is missing so you know what to add.
+",,,,,,,
+Immediate Editability: How easily you can rewrite your original prompt using only this question.,"1–3 (Still Guessing): You’d need more guidance.
+4 (Partial Guidance): Gives some direction but leaves you wondering about specifics.
+5–7 (Fully Actionable): You could immediately improve your prompt without further help",,,,,,,
+Contextual Fit: How well the question aligns with the intent of the original programming task.,"1–3 (Off‑Target): Asks about irrelevant aspects.
+4 (Passable): Somewhat on topic but not ideal.
+5–7 (Perfectly Aligned): Feels like the “right” question to ask, given the task.",,,,,,,
+NOTE: Both fine-tuned and non-fine-tuned model were forced to stop outputting beyond 50 tokens. Please only grade the clarification question asked by each model ignoring irrelevant text (like non-English like alphabets).,,,,,,,,
+,,,,,,,,
+Prompt ID,Original Prompt,Raw Clarification Question,Fine-Tuned Clarification Question,Precision and Focus (1-7),Immediate Editability (1-7),Contextual Fit (1-7),Overall Preference (A or B),Free-Form Feedback
+1,My code isn't working as expected.,"Okay, here's a question to help me understand:
+
+**Could you describe the specific error message you're receiving, or what's happening that's causing the code to not work as expected?**anciand
+I","Okay, let's figure out what's going wrong. To help me understand the issue, could you tell me:
+
+1.  **What language are you using to write your code?** (e.g., Python, JavaScript,",,,,,
+2,"<html>
+<head>
+    <title>My Page</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <p>
+        <!-- TODO: Add more content -->","What is the primary purpose or goal of this page?न्ना
+Ahmed","What is the overall goal or purpose of this HTML page? (e.g., a simple landing page, a blog post, a portfolio, etc.)
+Jones
+Okay, that's a good start! To help me understand your intention",,,,,
+3,I'm not sure how to implement a feature.,"Could you tell me a little more about what kind of feature you're trying to implement?
+allows me to understand the context and what kind of assistance you need.https://www.askgpt.com/ask/1","Okay, let's break this down. To help you implement a feature effectively, could you tell me a little more about what feature you're trying to implement? Specifically, what kind of feature are you working on? For example, what technology",,,,,
+4,"class Animal:
+    def __init__(self, name):
+        self.name = name
+    # TODO: Create a method to make sound","What is the intended use of this `Animal` class and what kind of sound should it make?न्ना
+भव्य!","What kind of sound should the animal make, and what functionality should the `make_sound()` method provide?
+John!
+
+Okay, to help me understand your prompt better, can you tell me what kind of animal you're thinking of",,,,,
+5,I can't figure out how to connect to a database.,"Okay, here's my question to help me understand better:
+
+**What kind of database are you trying to connect to (e.g., MySQL, PostgreSQL, MongoDB, SQL Server, etc.)?**
+अ","Okay, let's start with the basics. What kind of database are you trying to connect to – for example, SQL, NoSQL, or something else? And what database system are you hoping to connect to (e.g., MySQL,",,,,,
+6,"function fetchUserData(userId) {
+    // TODO: fetch user data from API
+    return userData;
+}
+
+let data = fetchUserData(1);","What kind of user data are you expecting to fetch, and what is the expected format of that data (e.g., JSON, XML, etc.)?jero","What data structure do you expect the `fetchUserData` function to return?  Specifically, what data properties or structure are you expecting to be available in the returned object?  For example, do you need an array, a specific field, or something",,,,,
+7,"class Vehicle:
+    def __init__(self, make, model):
+        self.make = make
+        # TODO: Add model attribute
+","What is the intended use of the `model` attribute in this Vehicle class?न्ना
+abhi","What specific aspect of the `Vehicle` class are you most interested in understanding or modifying? For example, are you looking to add a model attribute, or something else entirely?
+John Doe 
+manually add a model attribute? Or",,,,,
+8,"#include <stdio.h>
+
+int main() {
+    int num = 10;
+    printf(""The number is: %d"", num);
+    // TODO: Add more logic
+    return ;
+}","What is the purpose of the code snippet? (e.g., is it meant to print a number, calculate something, or something else?)
+ Elsevier
+بوधा
+
+بوधा","What specific functionality or behavior are you hoping to achieve with the code snippet?  For example, are you aiming for a specific output, or do you want to modify the output or add functionality like validation or printing a specific message?
+John Doe",,,,,
+9,"def calculate_area(radius):
+    area = 3.14 * radius ** 2
+    return area
+
+# TODO: handle negative radius","What is the intended use case for this function? (e.g., calculating the area of a circle, calculating the area of a shape with a circular component, etc.) interiortainedtainedtainedtainedtainedtained","What is the intended use or purpose of the function `calculate_area`?  Specifically, what kind of input does it expect (e.g., a radius in centimeters, meters, etc.) and what should it return if the input is negative",,,,,
+10,"function calculateSum(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        // TODO: Handle non‑numeric values
+    }
+    return sum;
+}","What is the expected behavior when the input array `arr` contains non-numeric values?
+恩，我理解了。
+ втраபене","What data type does the `arr` variable contain, and what condition should be added to handle non-numeric values within the loop?
+Johnathan**
+You've correctly identified the core issue – the loop will loop infinitely if the array",,,,,
+11,I'm having trouble with my project.,"Could you tell me a little more about what's going on with your project?
+ लव्ह
+yslλο back to the original question!be back soon.‍‍","Okay, let's figure out what's causing the trouble. To help me understand the problem better, could you tell me:
+
+What specific part of the project are you struggling with? (e.g., coding, design, organization,",,,,,
+12,"import numpy as np
+
+def compute_matrix():
+    return np.array([[1, 2], [3, 4]])
+
+compute_matrix(","What is the intended use case for this `compute_matrix` function? (e.g., is it meant to be a demonstration of NumPy, a part of a larger program, etc.)
+
+
+栀i","What kind of matrix are you hoping to compute? For example, are you looking for the determinant, inverse, or something else?
+Jane Doe91367769
+
+Let me know, and I'll tailor the",,,,,
+13,"def connect_to_db():
+    connection = None
+    # TODO: Establish database connection
+    return connection
+","What is the purpose of this function `connect_to_db()`?
+jerne","What type of database are you trying to connect to, and what specific error are you expecting to encounter when you try to connect?  For example, are you getting a connection error, or is it just a general feeling that the connection isn't",,,,,
+14,"def calculate_sum(a, b):
+    return a + b
+
+result = calculate_sum(5, )","What is the expected output of the `calculate_sum` function when called with arguments `a = 5` and `b = 3`?
+یודה
+io
+io
+io
+io
+io","What is the expected behavior or purpose of the function `calculate_sum`?  Specifically, what value should the function return if it's called with the arguments `a=5` and `b=1`?
+John Miller",,,,,
+15,I don't understand why it's not functioning.,"Okay, here's my question to better understand why the prompt isn't functioning:
+
+**Could you please describe *exactly* what you're seeing when you try to use this prompt?** (e.g., What happens when you","Please provide the prompt you're struggling with. I need to see the prompt itself to understand why it's not working. 😊
+David Miller 
+
+**What specific functionality or behavior are you not seeing working?** (e.g",,,,,
+16,"def send_email(to, subject, body):
+    import smtplib
+    server = smtplib.SMTP('smtp.example.com')
+    # TODO: implement email sending
+","What is the intended purpose of this function? (e.g., is it meant to send emails to a specific recipient, or is it a placeholder for a more complex email sending process?)Interpreting the prompt requires understanding the goal.","What specific functionality are you hoping to achieve with this email sending functionality? For example, do you want to send a simple email with a specific recipient, subject, and body, or are you looking to implement features like authentication, email formatting, or handling",,,,,
+17,I need help with my user interface.,"Okay, to help me understand your needs better, could you tell me **what kind of user interface are you working with?** (e.g., website, mobile app, desktop application, specific platform like React, etc.)","Okay, let's dive deeper. To help you best, could you tell me:
+
+What kind of user interface are you working on? (e.g., website, mobile app, desktop application, or something else?) And what specific issue",,,,,
+18,"def read_file(file_path):
+    with open(file_path, 'r') as file:
+        # TODO: Read and process file content
+","What kind of file are you expecting to read? (e.g., text file, CSV file, JSON file, etc.)ielenCrus
+ख्याન
+tained","What type of content are you expecting the file to contain (e.g., text, binary, CSV)?  Specifically, what processing tasks do you intend to perform on the file content after reading it?
+John Miller
+**Understanding the File",,,,,
+19,"var myObject = {
+    name: 'ChatGPT',
+    // TODO: Add properties
+};
+
+console.log(myObject);","What is the purpose of this code snippet? (e.g., are you trying to create a simple object, demonstrate object properties, or something else?)न्नाTBL učini.","What context are you using for this object? (e.g., are you working with a specific JavaScript environment (browser, Node.js), and what functionality are you hoping to achieve with this object?)
+John Doe/Node.js developer",,,,,
+20,"function fetchData(url) {
+    // TODO: Implement fetch logic
+    return;
+}
+
+fetchData('http://example.com')
+","What is the purpose of the `fetchData` function? (e.g., is it supposed to fetch data from a specific URL, or is it a placeholder for a more complex operation?)jeroen.
+
+annon","What is the intended purpose of the `fetchData` function, and what data or action should the function perform after receiving a URL?  For example, do you want to fetch data from a specific API, or something else entirely?
+John",,,,,
+21,"const data = [1, 2, 3];
+const result = data.map(num => num * 2;
+console.log(result);  // TODO: handle empty array","What is the expected behavior or outcome when the input array `data` is empty?
+
+🦜 arti dari pertanyaan ini adalah untuk memastikan pemahaman yang komprehensif tentang apa yang diharapkan dari kode tersebut. Pertanyaan ini","What is the intended behavior when the input array `data` is empty?  Are you expecting an error to be thrown, or is there a desired default behavior (e.g., return a default value, log a message)?
+jason",,,,,
+22,I have an issue with my API call.,"Okay, to help me understand the issue better, could you tell me: **What kind of API call are you experiencing?** (e.g., a specific API endpoint, a particular function within an API, or a general problem with using the","Okay, let's figure out what's going on. To help me understand the issue better, could you tell me:
+
+*   **What API are you using?** (e.g., Google Maps, Twitter API, a custom",,,,,
+23,I'm confused about a concept in programming.,"Could you tell me what programming concept you're struggling with?
+ लवনীয়
+Apex","Could you tell me more about the programming concept you're confused about? Specifically, what part of it is confusing you? For example, are you unsure of the terminology, the underlying logic, or how it relates to something else?",,,,,
+24,"public class Example {
+    private int value;
+
+    public Example(int value) {
+        this.value = value;
+    }
+}
+
+// TODO: Add getters","What is the purpose of the `value` variable within the `Example` class?
+ अरविंद
+ अरविंद
+ अरविंद
+ अरविंद
+ अरविंद
+ अरविंद
+ अरविंद
+ अरविंद
+ अरविंद
+ अरविंद
+ अरविंद","What is the intended use of the `value` field within the `Example` class?  Specifically, what functionality or data structure do you expect this field to represent or perform?  (e.g., a number, a string, an array",,,,,
+25,"const numbers = [1, 2, 3, 4];
+const doubled = numbers.map(num => num * 2);
+console.log(doub);  // Typo in variable name","What is the intended purpose of the code snippet?jeroys
+
+
+^
+ سلمو! 
+
+The prompt asks about the intended purpose of the code.  It's a simple code snippet that demonstrates using","What is the intended purpose of the code snippet? What kind of output are you expecting to see from the `doub` variable?
+John_Coder7877 
+
+
+
+
+
+Okay,",,,,,
+26,"var myArray = [];
+
+function addElement(element) {
+    myArray.push(element);
+    // TODO: handle duplicates
+}","What is the intended use case for this `addElement` function? (e.g., is it intended to add elements to a list, a set, or something else?)jonesAuthored by GPT-3","Okay, let's clarify the intent behind the code snippet.  Could you tell me what you're hoping to achieve with this code, or what problem are you trying to solve?  Specifically, what functionality are you aiming for? For example",,,,,
+27,"public class Sample {
+    private int number;
+    
+    // TODO: Add constructor
+}
+
+Sample s = new Sample();","What is the intended purpose of this `Sample` class? (e.g., is it a simple data structure, a class representing a number, etc.?)jero
+
+
+ʾ","What is the intended purpose or functionality of the `Sample` class?  Specifically, what kind of data should the class be designed to hold and how should it interact with the outside world?
+John Miller
+That's a great question!",,,,,
+28,There's an issue with my API integration.,"Could you please provide more detail about the specific issue you're experiencing with your API integration?
+
+https://translate.google.com/translate?sl=en&tl=en&text=There%20is%","Okay, let's figure out what's going wrong. Could you tell me what API you're using and what specific issue you're encountering? For example, are you getting errors, or is it just not working as expected?",,,,,
+29,I'm confused about data structures.,"Okay, let's start with a simple question: **Can you briefly describe what a data structure is, in your own words?**
+Jerry","Okay, let's clarify. Could you tell me what area of data structures you're finding confusing? For example, are you unsure about:
+
+*   What data structure is the problem trying to represent?
+*   How data structures are",,,,,
+30,I need help with a function.,"Okay, please tell me about the function you need help with! What does it do?
+ информации
+
+
+ summit","Okay, let's figure out how to optimize your function. Could you please share the function you're working on and tell me what part you're struggling with specifically? For example, are you having trouble with performance, readability, or something",,,,,
+31,I'm stuck on a part of my code.,"Could you please share a brief description of the code you're working on and what you're trying to achieve?
+Apex","Could you tell me a little bit about what part of your code you're stuck on, and what the code *should* be doing?  Specifically, what's causing you trouble? (e.g., syntax errors, logic errors,",,,,,
+32,Can someone explain how to optimize my code?,"Okay, here's my question to better understand your prompt:
+
+**What kind of code are you working with? (e.g., Python, JavaScript, C++, etc.)**
+
+Knowing the language and the type of code you're","Okay, let's clarify. To help you optimize your code effectively, could you tell me:
+
+**What language are you using for your code, and what specific part of it are you finding slow or inefficient? (e.g., loops",,,,,
+33,"function sendRequest(url) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    // TODO: Add onload handler
+}","What is the purpose of this `sendRequest` function? (e.g., is it intended to send a request to a server, fetch data, etc.?)
+
+jerne
+ientemente","What is the intended purpose of the function `sendRequest` within the context of web development?  Specifically, what action or data are you hoping to send to the URL specified in the function?
+Johnathan.",,,,,
+34,"import numpy as np
+
+def compute_mean(data):
+    return np.mean(data)
+
+# Missing data check
+print(compute_mean())","What kind of data is being provided as input to the `compute_mean` function? (e.g., a list of numbers, a NumPy array, etc.)jero
+
+
+
+ втраटी தரவு உள்ளதா","Okay, let's clarify what you're trying to achieve with this code snippet.  The code snippet appears to be a simple function designed to calculate the mean of a list of numbers. However, it's missing the crucial part – **",,,,,
+35,I need guidance on a library.,"Okay, to help me guide you effectively, could you tell me **what kind of library are you looking for?** (e.g., public library, university library, local history library, etc.)
+allows me to tailor my response","Okay, let's figure out the best way to approach this. To help me understand your needs, could you tell me:
+
+*   **What kind of library are you looking for?** (e.g., public library, school library",,,,,
+36,I'm having trouble with my function.,"Okay, I understand you're having trouble with your function. 
+
+**Could you please describe the function itself and what you're trying to achieve with it?**ąenuhceenuhceenuhceenuhce","Okay, let's break down the problem. To help me understand what's going wrong and how to fix it, could you tell me:
+
+1.  **What language/programming language are you using for your function?** (e",,,,,
+37,"def calculate_area(radius):
+    return 3.14 * radius ** 2
+
+# TODO: Handle negative radius
+area = calculate_area(-5)","What is the expected behavior when a negative radius is provided as input to the `calculate_area` function?做到‍tained
+ سلمی","Okay, let's clarify the purpose of the code and the desired behavior.
+
+Could you tell me what the intended use of the `calculate_area` function is?  For example, what type of area are you trying to calculate (e",,,,,
+38,"from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+# TODO: Add a view function
+
+def main():
+    return 'Hello World'","What is the intended purpose of this Flask application? (e.g., a simple website, a web service, etc.)لبية
+jerne! मला तुमच्या प्रश्नाची अधिक माहिती हवी आहे. हे ॲप क","What specific functionality or purpose are you hoping this Flask app will serve? For example, do you want to handle user input, interact with a database, or something else entirely?  Knowing the intended interaction with the user or data will help me refine the",,,,,
+39,"class User:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+user = User('Alice', )  # TODO: specify age","What is the intended purpose of this code snippet? (e.g., is it meant to create a user object, or something else?)jerood
+
+
+iex","What age should the `User` object have initially, and what's the intended purpose of the age attribute in this class?
+John!
+
+Specifically, are you intending to store the age as an integer, or is there a reason you",,,,,
+40,"while True:
+    print('Running...')
+    if not condition:
+        break  // TODO: Define condition","What is the intended purpose of the code snippet? (e.g., is it a loop, a conditional statement, a game loop, etc.?) interior Scientistsancake","What is the purpose of the code snippet you're referring to? What condition is being checked within the `if not condition` block?
+John.
+
+
+
+
+
+
+
+You're",,,,,
+41,I need assistance with a function.,"Okay, to help me understand what you need, could you tell me: **What kind of function are you working on?** (e.g., a Python function, a JavaScript function, a function for a specific task like calculating something, etc","Okay, please share the function code you're working on. That will help me understand what you're trying to accomplish and how you're approaching the problem. 😊
+David
+
+Let me know the code and what you're hoping",,,,,
+42,"import requests
+
+# TODO: Ensure headers are set for API request
+response = requests.get('https://api.example.com/data')
+print(response)","What is the expected response from the API endpoint (e.g., a status code, a specific format, or a particular data structure)?
+Ronny","Please clarify what you want to achieve with this code snippet. Specifically, what API endpoint are you trying to access and what outcome are you hoping to get from the API response?  For example, are you trying to:
+
+*   Retrieve data from",,,,,
+43,I'm facing issues with deploying my website.,"Could you briefly describe the specific issues you're encountering during deployment? (e.g., errors, slow speeds, unexpected behavior, etc.)
+भवदीय
+ Ultimately, I need more detail to understand","Okay, let's figure out the root cause of your deployment issues. Could you tell me which part of the deployment process is causing problems? For example, are you experiencing errors related to:
+
+*   **Server access/permissions?**",,,,,
+44,I'm confused about this library.,"Okay, to help me understand what you're confused about, could you tell me **what library you're referring to?**","Okay, let's clarify. Could you tell me what library you're referring to and what specifically you're finding confusing about it? For example, are you unsure about its purpose, how it works, or what features you're struggling",,,,,
+45,I need assistance with debugging.,"Okay, to help me understand how to best assist you with debugging, could you tell me:
+
+**What kind of code are you working on, and what specifically are you struggling with? (e.g., a particular function, a specific error","Okay, let's figure out what's causing the problem. To help you debug effectively, could you tell me:
+
+1.  **What programming language are you using?** (e.g., Python, JavaScript, C++, etc",,,,,
+46,"import pandas as pd
+
+df = pd.read_csv('data.csv')
+
+# TODO: Clean data
+print(df.head())","What kind of data is in the 'data.csv' file? (e.g., is it a table of sales data, a list of customer records, etc.?)jero
+
+लाल","Okay, let's clarify the prompt.  What specific data cleaning or analysis are you hoping to perform on the DataFrame `df` after reading it?  For example, are you looking to handle missing values, convert data types, or perform a",,,,,
+47,"<html>
+<head>
+    <title>My Page</title>
+</head>
+<body>
+    <h1>Welcome to my page
+    <p>This is a paragraph.","What is the main purpose or goal of this page?न्ना
+jerne","What is the primary purpose or goal of this page?
+ ইউயே!
+ Peeve
+You're right to ask! The page is a simple welcome message with a paragraph. It's a good starting point to understand the",,,,,
+48,I'm not sure how to structure my project.,"Okay, to help me understand how to best assist you, could you tell me: **What kind of project are you working on?** (e.g., a website, a software application, a creative project, something else entirely?)","Okay, let's break down your question. To help me suggest a good structure for your project, could you tell me a little more about what kind of project you're working on? For example, what's the project about, and",,,,,
+49,"function fetchData(url) {
+    // TODO: handle errors
+    let response = await fetch(url);
+    return response.json();
+}","What is the expected data format returned by the `url` parameter? (e.g., JSON, XML, plain text, etc.)न्ना
+ втра.","What kind of data are you expecting to be returned from the URL? (e.g., JSON, HTML, XML, or something else?)
+JonesData's response is incomplete.  It's a fetch function that's missing",,,,,
+50,My program isn't working as expected.,"Could you please describe what's *not* working and what you've already tried to troubleshoot the issue?
+Ahmed","Okay, let's figure out what's going wrong. Could you tell me a little more about what's happening and what you *expect* your program to do? For example, what language is your program written in, and what specific",,,,,
+51,"import numpy as np
+
+data = np.array([1, 2, 3])
+print(dat)
+# Missing function to process data","What is the purpose of this data (i.e., what kind of data are you working with)?न्नाeed
+آه, متأسف! لقد نسيت.  
+
+**What kind of data are you working with?","What kind of data are you trying to process with this code snippet?  Are you intending to perform calculations, transformations, or something else entirely?
+RomeoCoder
+You're right to point that out!  The code snippet is a placeholder",,,,,
+52,"def calculate_area(radius):
+    return math.pi * radius ** 2
+
+# TODO: Handle negative radius values","Could you please tell me what you're trying to achieve with this function? What problem are you trying to solve or what functionality are you expecting it to perform?クマani
+tained","Okay, let's clarify the purpose of this function.  What specific behavior are you hoping to achieve or avoid when handling negative radius values?  For example, do you want to:
+
+*   Raise an error message?
+*   Return",,,,,
+53,I want to improve my code's performance.,"Okay, to help me understand your goal better, could you tell me: **What kind of code are you working with?** (e.g., Python, JavaScript, C++, etc.)
+भव्य","Okay, great! To help me understand your specific goals and what kind of performance improvements you're looking for, could you tell me:
+
+*   **What language are you primarily using for your code?** (e.g., Python,",,,,,
+54,I can't figure out how to integrate something.,Could you tell me a little more about **what** you're trying to integrate and **what** you've already tried?,"Okay, let's break it down. To help you integrate something, could you tell me:
+
+*   **What kind of integration are you trying to achieve?** (e.g., software, data, hardware, something else? What",,,,,

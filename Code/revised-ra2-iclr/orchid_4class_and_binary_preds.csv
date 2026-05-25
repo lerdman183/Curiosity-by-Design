@@ -1,0 +1,1072 @@
+idx,prompt,logit_c1,logit_c2,logit_c3,logit_c4,prob_c1,prob_c2,prob_c3,prob_c4,top_4class,top_prob,p_ambiguous(c3+c4),bin_from_argmax(0/1)
+0,"from typing import List
+
+
+def has_close_elements(numbers: List[float], threshold: float) -> bool:
+    """""" Check if in given list of numbers, are any two numbers closer to each other than
+    given threshold.
+    """"""",-1.729714274406433,5.56412410736084,-1.9821438789367676,-7.268167972564697,0.0006788921891711652,0.9987910389900208,0.0005274388240650296,2.669812602107413e-06,2,0.9987910389900208,0.0005301086348481476,0
+1,"from typing import List
+
+
+def separate_paren_groups(paren_string: str) -> List[str]:
+    """""" Input to this function is a string containing multiple groups of nested parentheses. Your goal is to
+    separate those group into separate strings and return the list of those.
+    Separate groups are balanced (each open brace is properly closed) and not nested within each other
+    Ignore any spaces in the input string.
+    """"""",-1.540400743484497,5.643838882446289,-2.0584194660186768,-7.240585803985596,0.0007575270137749612,0.9987887740135193,0.0004512585583142936,2.534190798542113e-06,2,0.9987887740135193,0.00045379274524748325,0
+2,"def truncate_number(number: float) -> float:
+    """""" Given a positive floating point number, it can be decomposed into
+    and integer part (largest integer smaller than given number) and decimals
+    (leftover part always smaller than 1).
+
+    Return the decimal part of the number.
+    """"""",5.894453525543213,-0.7863881587982178,-3.612696409225464,-6.131752014160156,0.9986667633056641,0.0012530488893389702,7.421948248520494e-05,5.977314231131459e-06,1,0.9986667633056641,8.019679808057845e-05,0
+3,"from typing import List
+
+
+def below_zero(operations: List[int]) -> bool:
+    """""" You're given a list of deposit and withdrawal operations on a bank account that starts with
+    zero balance. Your task is to detect if at any point the balance of account fallls below zero, and
+    at that point function should return True. Otherwise it should return False.
+    """"""",5.244332790374756,-0.2930032014846802,-3.1665735244750977,-5.916631698608398,0.9958437085151672,0.0039206380024552345,0.00022150379663798958,1.4159427337290253e-05,1,0.9958437085151672,0.00023566321760881692,0
+4,"from typing import List
+
+
+def mean_absolute_deviation(numbers: List[float]) -> float:
+    """""" For a given list of input numbers, calculate Mean Absolute Deviation
+    around the mean of this dataset.
+    Mean Absolute Deviation is the average absolute difference between each
+    element and a centerpoint (mean in this case):
+    MAD = average | x - x_mean |
+    """"""",0.021040882915258408,4.589521884918213,-1.9920873641967773,-7.694718360900879,0.010253089480102062,0.9883728623390198,0.0013695069355890155,4.57028045275365e-06,2,0.9883728623390198,0.0013740771682932973,0
+5,"from typing import List
+
+
+def intersperse(numbers: List[int], delimeter: int) -> List[int]:
+    """""" Insert a number 'delimeter' between every two consecutive elements of input list `numbers'
+    """"""",-3.823153257369995,2.634887218475342,0.8295246362686157,-6.114196300506592,0.00134449009783566,0.8575290441513062,0.1409904956817627,0.00013600978127215058,2,0.8575290441513062,0.14112649857997894,0
+6,"from typing import List
+
+
+def parse_nested_parens(paren_string: str) -> List[int]:
+    """""" Input to this function is a string represented multiple groups for nested parentheses separated by spaces.
+    For each of the group, output the deepest level of nesting of parentheses.
+    E.g. (()()) has maximum two levels of nesting while ((())) has three.
+    """"""",5.076364994049072,1.1006299257278442,-3.768550395965576,-7.233742713928223,0.9814370274543762,0.018417157232761383,0.00014143747102934867,4.422322490427177e-06,1,0.9814370274543762,0.00014585979806724936,0
+7,"from typing import List
+
+
+def filter_by_substring(strings: List[str], substring: str) -> List[str]:
+    """""" Filter an input list of strings only for ones that contain given substring
+    """"""",-1.809401035308838,4.137979507446289,-0.8447021245956421,-6.584448337554932,0.002588113071396947,0.9905988574028015,0.006791201885789633,2.1837693566340022e-05,2,0.9905988574028015,0.0068130395375192165,0
+8,"from typing import List, Tuple
+
+
+def sum_product(numbers: List[int]) -> Tuple[int, int]:
+    """""" For a given list of integers, return a tuple consisting of a sum and a product of all the integers in a list.
+    Empty sum should be equal to 0 and empty product should be equal to 1.
+    """"""",-1.5810904502868652,5.346805572509766,-1.8380744457244873,-6.946818828582764,0.000978355878032744,0.9982604384422302,0.000756641267798841,4.57288660982158e-06,2,0.9982604384422302,0.0007612141780555248,0
+9,"from typing import List, Tuple
+
+
+def rolling_max(numbers: List[int]) -> List[int]:
+    """""" From a given list of integers, generate a list of rolling maximum element found until given moment
+    in the sequence.
+    """"""",5.434354305267334,-0.37906309962272644,-3.182443857192993,-6.4000372886657715,0.9968345761299133,0.0029777484014630318,0.0001804658822948113,7.227899914141744e-06,1,0.9968345761299133,0.00018769377493299544,0
+10,"def is_palindrome(string: str) -> bool:
+    """""" Test if given string is a palindrome 
+    """"""
+    return string == string[::-1]
+
+
+def make_palindrome(string: str) -> str:
+    """""" Find the shortest palindrome that begins with a supplied string.
+    Algorithm idea is simple:
+    - Find the longest postfix of supplied string that is a palindrome.
+    - Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.
+    """"""",6.238368988037109,-0.935092568397522,-4.015211582183838,-5.903930187225342,0.9991933703422546,0.0007660459959879518,3.520272366586141e-05,5.324953235685825e-06,1,0.9991933703422546,4.052767690154724e-05,0
+11,"from typing import List
+
+
+def string_xor(a: str, b: str) -> str:
+    """""" Input are two strings a and b consisting only of 1s and 0s.
+    Perform binary XOR on these inputs and return result also as a string.
+    """"""",-0.30198320746421814,4.4448933601379395,-1.8755478858947754,-7.425509929656982,0.008588707074522972,0.9896238446235657,0.0017804811941459775,6.921807198523311e-06,2,0.9896238446235657,0.0017874030163511634,0
+12,"from typing import List, Optional
+
+
+def longest(strings: List[str]) -> Optional[str]:
+    """""" Out of list of strings, return the longest one. Return the first one in case of multiple
+    strings of the same length. Return None in case the input list is empty.
+    """"""",6.196939468383789,-1.0540409088134766,-3.897014617919922,-5.816496849060059,0.9992437362670898,0.0007089419523254037,4.129741500946693e-05,6.057623977540061e-06,1,0.9992437362670898,4.735503898700699e-05,0
+13,"def greatest_common_divisor(a: int, b: int) -> int:
+    """""" Return a greatest common divisor of two integers a and b
+    """"""",-2.3584465980529785,-0.5941441059112549,1.2989495992660522,-5.314616680145264,0.021905895322561264,0.1278756707906723,0.8490789532661438,0.0011394956381991506,3,0.8490789532661438,0.8502184748649597,1
+14,"from typing import List
+
+
+def all_prefixes(string: str) -> List[str]:
+    """""" Return list of all prefixes from shortest to longest of the input string
+    """"""",-2.5703816413879395,1.5050158500671387,0.4710676074028015,-5.049944877624512,0.012361975386738777,0.7277974486351013,0.25880491733551025,0.0010356840211898088,2,0.7277974486351013,0.25984060764312744,0
+15,"def string_sequence(n: int) -> str:
+    """""" Return a string containing space-delimited numbers starting from 0 upto n inclusive.
+    """"""",6.199471473693848,-0.9339097142219543,-3.922747850418091,-5.954174041748047,0.9991573095321655,0.0007973439642228186,4.0143015212379396e-05,5.2646887525042985e-06,1,0.9991573095321655,4.540770532912575e-05,0
+16,"def count_distinct_characters(string: str) -> int:
+    """""" Given a string, find out how many distinct characters (regardless of case) does it consist of
+    """"""",2.337087392807007,0.8064522743225098,-1.8103073835372925,-6.909769058227539,0.8114906549453735,0.17560510337352753,0.012826049700379372,7.82392526161857e-05,1,0.8114906549453735,0.012904289178550243,0
+17,"from typing import List
+
+
+def parse_music(music_string: str) -> List[int]:",-0.45614662766456604,-2.3715505599975586,0.6866344809532166,-3.9264001846313477,0.23181051015853882,0.03414159268140793,0.7268363833427429,0.007211425341665745,3,0.7268363833427429,0.7340478301048279,1
+18,"def how_many_times(string: str, substring: str) -> int:
+    """""" Find how many times a given substring can be found in the original string. Count overlaping cases.
+    """"""",6.240082740783691,-0.9868629574775696,-3.9967525005340576,-5.86340856552124,0.9992324113845825,0.0007261791615746915,3.579854455892928e-05,5.535887339647161e-06,1,0.9992324113845825,4.133443144382909e-05,0
+19,"from typing import List
+
+
+def sort_numbers(numbers: str) -> str:
+    """""" Input is a space-delimited string of numberals from 'zero' to 'nine'.
+    Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.
+    Return the string with numbers sorted from smallest to largest
+    """"""",6.243067264556885,-0.8918595910072327,-4.027772903442383,-5.968730449676514,0.999164342880249,0.0007961182855069637,3.4599350328790024e-05,4.9673017201712355e-06,1,0.999164342880249,3.9566650229971856e-05,0
+20,"from typing import List, Tuple
+
+
+def find_closest_elements(numbers: List[float]) -> Tuple[float, float]:
+    """""" From a supplied list of numbers (of length at least two) select and return two that are the closest to each
+    other and return them in order (smaller number, larger number).
+    """"""",6.153575420379639,-0.8384101390838623,-3.847050666809082,-6.1071367263793945,0.9990315437316895,0.0009183295187540352,4.532759703579359e-05,4.7295498006860726e-06,1,0.9990315437316895,5.005714774597436e-05,0
+21,"from typing import List
+
+
+def rescale_to_unit(numbers: List[float]) -> List[float]:
+    """""" Given list of numbers (of at least two elements), apply a linear transform to that list,
+    such that the smallest number will become 0 and the largest will become 1
+    """"""",6.246104717254639,-0.9573240280151367,-3.9147346019744873,-6.030683517456055,0.9992133378982544,0.0007434450672008097,3.8624410080956295e-05,4.6549671424145345e-06,1,0.9992133378982544,4.327937858761288e-05,0
+22,"from typing import List, Any
+
+
+def filter_integers(values: List[Any]) -> List[int]:
+    """""" Filter given list of any python values only for integers
+    """"""",-1.9324638843536377,4.696399688720703,-1.0866448879241943,-6.556692600250244,0.0013158563524484634,0.9956054091453552,0.0030657928436994553,1.2910158147860784e-05,2,0.9956054091453552,0.0030787030700594187,0
+23,"def strlen(string: str) -> int:
+    """""" Return length of given string
+    """"""",6.171902179718018,-1.0664291381835938,-3.9114413261413574,-5.727921009063721,0.999233603477478,0.0007179590757004917,4.1737515857676044e-05,6.786400263081305e-06,1,0.999233603477478,4.8523914301767945e-05,0
+24,"def largest_divisor(n: int) -> int:
+    """""" For a given number n, find the largest number that divides n evenly, smaller than n
+    """"""",6.180307865142822,-0.9420578479766846,-3.9406886100769043,-5.892670631408691,0.9991480112075806,0.0008061680709943175,4.019174593850039e-05,5.706918727810262e-06,1,0.9991480112075806,4.5898665121058e-05,0
+25,"from typing import List
+
+
+def factorize(n: int) -> List[int]:
+    """""" Return list of prime factors of given integer in the order from smallest to largest.
+    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.
+    Input number should be equal to the product of all factors
+    """"""",6.091862678527832,-0.958012580871582,-3.8336520195007324,-5.855767250061035,0.9990779161453247,0.0008667171932756901,4.886560782324523e-05,6.46859007247258e-06,1,0.9990779161453247,5.5334196076728404e-05,0
+26,"from typing import List
+
+
+def remove_duplicates(numbers: List[int]) -> List[int]:
+    """""" From a list of integers, remove all elements that occur more than once.
+    Keep order of elements left the same as in the input.
+    """"""",-2.2797915935516357,5.3870015144348145,-1.4616172313690186,-7.0172319412231445,0.0004674001829698682,0.9984692931175232,0.0010592963080853224,4.094909854757134e-06,2,0.9984692931175232,0.0010633912170305848,0
+27,"def flip_case(string: str) -> str:
+    """""" For a given string, flip lowercase characters to uppercase and uppercase to lowercase.
+    """"""",6.126615524291992,-0.9820841550827026,-3.8348870277404785,-5.894587516784668,0.999129593372345,0.0008172458619810641,4.7140743845375255e-05,6.010071956552565e-06,1,0.999129593372345,5.315081580192782e-05,0
+28,"from typing import List
+
+
+def concatenate(strings: List[str]) -> str:
+    """""" Concatenate list of strings into a single string
+    """"""",0.8754286766052246,-1.1487990617752075,-0.6708700060844421,-3.52221941947937,0.7366823554039001,0.09731266647577286,0.15693913400173187,0.009065799415111542,1,0.7366823554039001,0.16600492596626282,0
+29,"from typing import List
+
+
+def filter_by_prefix(strings: List[str], prefix: str) -> List[str]:
+    """""" Filter an input list of strings only for ones that start with a given prefix.
+    """"""",4.725661277770996,-0.383352130651474,-2.9411489963531494,-5.603183746337891,0.993499755859375,0.0060027651488780975,0.00046506585204042494,3.2464398827869445e-05,1,0.993499755859375,0.0004975302726961672,0
+30,"def get_positive(l: list):
+    """"""Return only positive numbers in the list.
+    """"""",-5.219731330871582,-1.334617257118225,2.9209136962890625,-4.472825050354004,0.0002871159522328526,0.01397465169429779,0.9851322770118713,0.0006059469887986779,3,0.9851322770118713,0.985738217830658,1
+31,"def is_prime(n):
+    """"""Return true if a given number is prime, and false otherwise.
+    """"""",6.095670700073242,-1.0180554389953613,-3.825796365737915,-5.736458778381348,0.9991305470466614,0.0008131491485983133,4.9066369683714584e-05,7.260954134835629e-06,1,0.9991305470466614,5.632732427329756e-05,0
+32,"import math
+
+
+def poly(xs: list, x: float):
+    """"""
+    Evaluates polynomial with coefficients xs at point x.
+    return xs[0] + xs[1] * x + xs[1] * x^2 + .... xs[n] * x^n
+    """"""
+    return sum([coeff * math.pow(x, i) for i, coeff in enumerate(xs)])
+
+
+def find_zero(xs: list):
+    """""" xs are coefficients of a polynomial.
+    find_zero find x such that poly(x) = 0.
+    find_zero returns only only zero point, even if there are many.
+    Moreover, find_zero only takes list xs having even number of coefficients
+    and largest non zero coefficient as it guarantees
+    a solution.
+    """"""",6.214315414428711,-0.89471834897995,-4.013267993927002,-5.915562629699707,0.9991414546966553,0.0008169827633537352,3.612802174757235e-05,5.391230388340773e-06,1,0.9991414546966553,4.151925168116577e-05,0
+33,"def sort_third(l: list):
+    """"""This function takes a list l and returns a list l' such that
+    l' is identical to l in the indicies that are not divisible by three, while its values at the indicies that are divisible by three are equal
+    to the values of the corresponding indicies of l, but sorted.
+    """"""",6.1258864402771,-0.916616678237915,-3.8337173461914062,-5.919720649719238,0.9990737438201904,0.0008731265552341938,4.722765152109787e-05,5.86485202802578e-06,1,0.9990737438201904,5.309250263962895e-05,0
+34,"def unique(l: list):
+    """"""Return sorted unique elements in a list
+    """"""",-4.067774295806885,-0.637610137462616,2.2065296173095703,-4.9856719970703125,0.001776079530827701,0.05484837293624878,0.9426662921905518,0.0007092911400832236,3,0.9426662921905518,0.9433755874633789,1
+35,"def max_element(l: list):
+    """"""Return maximum element in the list.
+    """"""",-1.177570104598999,-0.3219001293182373,0.7064515948295593,-5.571635723114014,0.10055086016654968,0.236591175198555,0.6616160869598389,0.001241845078766346,3,0.6616160869598389,0.6628579497337341,1
+36,"def fizz_buzz(n: int):
+    """"""Return the number of times the digit 7 appears in integers less than n which are divisible by 11 or 13.
+    """"""",1.682981252670288,-1.6292604207992554,-0.4964163899421692,-5.301489353179932,0.869209885597229,0.03166915103793144,0.0983160212635994,0.0008050219039432704,1,0.869209885597229,0.09912104159593582,0
+37,"def sort_even(l: list):
+    """"""This function takes a list l and returns a list l' such that
+    l' is identical to l in the odd indicies, while its values at the even indicies are equal
+    to the values of the even indicies of l, but sorted.
+    """"""",6.25045919418335,-0.8546149134635925,-3.9862117767333984,-6.113866329193115,0.999139666557312,0.0008202227181755006,3.5801091144094244e-05,4.26449742008117e-06,1,0.999139666557312,4.006558810942806e-05,0
+38,"def encode_cyclic(s: str):
+    """"""
+    returns encoded string by cycling groups of three characters.
+    """"""
+    # split string to groups. Each of length 3.
+    groups = [s[(3 * i):min((3 * i + 3), len(s))] for i in range((len(s) + 2) // 3)]
+    # cycle elements in each group. Unless group has fewer elements than 3.
+    groups = [(group[1:] + group[0]) if len(group) == 3 else group for group in groups]
+    return """".join(groups)
+
+
+def decode_cyclic(s: str):
+    """"""
+    takes as input string encoded with encode_cyclic function. Returns decoded string.
+    """"""",6.215725421905518,-0.8719999194145203,-3.9952263832092285,-5.9596405029296875,0.9991236329078674,0.0008345633395947516,3.6733235901920125e-05,5.151399363967357e-06,1,0.9991236329078674,4.188463572063483e-05,0
+39,"def prime_fib(n: int):
+    """"""
+    prime_fib returns n-th number that is a Fibonacci number and it's also prime.
+    """"""",6.168724060058594,-0.9971591830253601,-3.9867746829986572,-5.741553783416748,0.9991825222969055,0.0007718650158494711,3.883003955706954e-05,6.715474228258245e-06,1,0.9991825222969055,4.554551560431719e-05,0
+40,"def triples_sum_to_zero(l: list):
+    """"""
+    triples_sum_to_zero takes a list of integers as an input.
+    it returns True if there are three distinct elements in the list that
+    sum to zero, and False otherwise.
+    """"""",6.2697296142578125,-1.0572065114974976,-3.973782777786255,-5.836442947387695,0.9993016719818115,0.0006571259582415223,3.556278898031451e-05,5.521443654288305e-06,1,0.9993016719818115,4.1084233089350164e-05,0
+41,"def car_race_collision(n: int):
+    """"""
+    Imagine a road that's a perfectly straight infinitely long line.
+    n cars are driving left to right;  simultaneously, a different set of n cars
+    are driving right to left.   The two sets of cars start out being very far from
+    each other.  All cars move in the same speed.  Two cars are said to collide
+    when a car that's moving left to right hits a car that's moving right to left.
+    However, the cars are infinitely sturdy and strong; as a result, they continue moving
+    in their trajectory as if they did not collide.
+
+    This function outputs the number of such collisions.
+    """"""",5.90657901763916,-0.37833958864212036,-3.824424982070923,-6.179288387298584,0.9980745315551758,0.0018606189405545592,5.929823237238452e-05,5.627787231787806e-06,1,0.9980745315551758,6.492601823993027e-05,0
+42,"def incr_list(l: list):
+    """"""Return list with elements incremented by 1.
+    """"""",-3.362783670425415,3.448719024658203,0.042367734014987946,-6.184426307678223,0.0010644948342815042,0.9668107628822327,0.03206135332584381,6.334605859592557e-05,2,0.9668107628822327,0.03212469816207886,0
+43,"def pairs_sum_to_zero(l):
+    """"""
+    pairs_sum_to_zero takes a list of integers as an input.
+    it returns True if there are two distinct elements in the list that
+    sum to zero, and False otherwise.
+    """"""",6.272005081176758,-0.9462154507637024,-3.96854829788208,-5.963639259338379,0.9992270469665527,0.0007325389888137579,3.5665518225869164e-05,4.850553978030803e-06,1,0.9992270469665527,4.0516071749152616e-05,0
+44,"def change_base(x: int, base: int):
+    """"""Change numerical base of input number x to base.
+    return string representation after the conversion.
+    base numbers are less than 10.
+    """"""",3.909921646118164,1.1791304349899292,-2.6470141410827637,-7.44401216506958,0.9375588297843933,0.06109856814146042,0.001331549952737987,1.0991270755766891e-05,1,0.9375588297843933,0.0013425411889329553,0
+45,"def triangle_area(a, h):
+    """"""Given length of a side and high return area for a triangle.
+    """"""",6.159895896911621,-1.1470263004302979,-3.8952839374542236,-5.646344184875488,0.9992793202400208,0.0006703953840769827,4.293167876312509e-05,7.45250008549192e-06,1,0.9992793202400208,5.0384180212859064e-05,0
+46,"def fib4(n: int):
+    """"""The Fib4 number sequence is a sequence similar to the Fibbonacci sequnece that's defined as follows:
+    fib4(0) -> 0
+    fib4(1) -> 0
+    fib4(2) -> 2
+    fib4(3) -> 0
+    fib4(n) -> fib4(n-1) + fib4(n-2) + fib4(n-3) + fib4(n-4).
+    Please write a function to efficiently compute the n-th element of the fib4 number sequence.  Do not use recursion.
+    """"""",6.212207317352295,-0.9325597882270813,-3.870558261871338,-6.000964641571045,0.9991649389266968,0.0007883229409344494,4.175877620582469e-05,4.960483238392044e-06,1,0.9991649389266968,4.671925853472203e-05,0
+47,"def median(l: list):
+    """"""Return median of elements in the list l.
+    """"""",-0.7160302996635437,-2.1355345249176025,1.0868257284164429,-4.08182954788208,0.13617821037769318,0.03293250873684883,0.8261864185333252,0.004702833015471697,3,0.8261864185333252,0.8308892250061035,1
+48,"def is_palindrome(text: str):
+    """"""
+    Checks if given string is a palindrome
+    """"""",6.137375354766846,-1.1381672620773315,-3.831477403640747,-5.64382791519165,0.9992538094520569,0.0006917477585375309,4.680130587075837e-05,7.641247066203505e-06,1,0.9992538094520569,5.4442552936961874e-05,0
+49,"def modp(n: int, p: int):
+    """"""Return 2^n modulo p (be aware of numerics).
+    """"""",6.105549335479736,-1.0092366933822632,-3.7424004077911377,-5.8235979080200195,0.9991284012794495,0.0008122859289869666,5.280936966300942e-05,6.589588338101748e-06,1,0.9991284012794495,5.939895709161647e-05,0
+50,"def encode_shift(s: str):
+    """"""
+    returns encoded string by shifting every character by 5 in the alphabet.
+    """"""
+    return """".join([chr(((ord(ch) + 5 - ord(""a"")) % 26) + ord(""a"")) for ch in s])
+
+
+def decode_shift(s: str):
+    """"""
+    takes as input string encoded with encode_shift function. Returns decoded string.
+    """"""",6.225572109222412,-0.8119906783103943,-3.998504161834717,-6.061818599700928,0.9990817308425903,0.0008774579619057477,3.6252764402888715e-05,4.6052691686782055e-06,1,0.9990817308425903,4.085803448106162e-05,0
+51,"def remove_vowels(text):
+    """"""
+    remove_vowels is a function that takes string and returns string without vowels.
+    """"""",-2.5303595066070557,2.805539131164551,0.034217141568660736,-6.225584983825684,0.004511022474616766,0.9367554187774658,0.058621425181627274,0.00011206212366232648,2,0.9367554187774658,0.058733485639095306,0
+52,"def below_threshold(l: list, t: int):
+    """"""Return True if all numbers in the list l are below threshold t.
+    """"""",-2.2113897800445557,4.753093719482422,-1.1304072141647339,-7.156126976013184,0.0009413337102159858,0.996277391910553,0.0027746502310037613,6.703034159727395e-06,2,0.996277391910553,0.0027813531924039125,0
+53,"def add(x: int, y: int):
+    """"""Add two numbers x and y
+    """"""",6.192234992980957,-1.066504955291748,-3.934847831726074,-5.770705223083496,0.9992502331733704,0.0007034667069092393,3.995195947936736e-05,6.371406470861984e-06,1,0.9992502331733704,4.6323366404976696e-05,0
+54,"def same_chars(s0: str, s1: str):
+    """"""
+    Check if two words have the same characters.
+    """"""",-2.062558650970459,4.788368225097656,-1.5314997434616089,-6.762150287628174,0.001055446919053793,0.9971399307250977,0.0017950322944670916,9.603506441635545e-06,2,0.9971399307250977,0.001804635743610561,0
+55,"def fib(n: int):
+    """"""Return n-th Fibonacci number.
+    """"""",6.150642395019531,-1.0298278331756592,-3.9696502685546875,-5.676357746124268,0.9991917014122009,0.0007606942090205848,4.022180655738339e-05,7.298743639694294e-06,1,0.9991917014122009,4.752054883283563e-05,0
+56,"def correct_bracketing(brackets: str):
+    """""" brackets is a string of ""<"" and "">"".
+    return True if every opening bracket has a corresponding closing bracket.
+    """"""",6.223762512207031,-0.8436575531959534,-4.006408214569092,-6.069148540496826,0.9991076588630676,0.0008516688831150532,3.603341247071512e-05,4.580033419188112e-06,1,0.9991076588630676,4.061344588990323e-05,0
+57,"def monotonic(l: list):
+    """"""Return True is list elements are monotonically increasing or decreasing.
+    """"""",-6.007439136505127,-3.0700902938842773,3.551846981048584,-1.3996621370315552,6.995037256274372e-05,0.0013196672080084682,0.9915971159934998,0.0070132967084646225,3,0.9915971159934998,0.9986104369163513,1
+58,"def common(l1: list, l2: list):
+    """"""Return sorted unique common elements for two lists.
+    """"""",-4.387012958526611,2.0379719734191895,1.1479707956314087,-5.8733673095703125,0.001147181843407452,0.7078932523727417,0.2907000780105591,0.00025948771508410573,2,0.7078932523727417,0.29095956683158875,0
+59,"def largest_prime_factor(n: int):
+    """"""Return the largest prime factor of n. Assume n > 1 and is not a prime.
+    """"""",6.179410934448242,-1.1428474187850952,-3.9505133628845215,-5.625682830810547,0.9992924928665161,0.0006602010107599199,3.9840262616053224e-05,7.461146196874324e-06,1,0.9992924928665161,4.7301407903432846e-05,0
+60,"def sum_to_n(n: int):
+    """"""sum_to_n is a function that sums numbers from 1 to n.
+    """"""",6.186763763427734,-0.8749256730079651,-3.8942909240722656,-6.085638523101807,0.9990969896316528,0.0008565543685108423,4.182743214187212e-05,4.674888259614818e-06,1,0.9990969896316528,4.650231858249754e-05,0
+61,"def correct_bracketing(brackets: str):
+    """""" brackets is a string of ""("" and "")"".
+    return True if every opening bracket has a corresponding closing bracket.
+    """"""",6.225774765014648,-0.8441299200057983,-4.014341831207275,-6.061591625213623,0.9991100430488586,0.0008495572838000953,3.5676926927408203e-05,4.605509730026824e-06,1,0.9991100430488586,4.028243711218238e-05,0
+62,"def derivative(xs: list):
+    """""" xs represent coefficients of a polynomial.
+    xs[0] + xs[1] * x + xs[2] * x^2 + ....
+     Return derivative of this polynomial in the same form.
+    """"""",6.216624736785889,-0.9565763473510742,-3.997727155685425,-5.864189624786377,0.9991915822029114,0.0007662440184503794,3.661105438368395e-05,5.662624516844517e-06,1,0.9991915822029114,4.2273677536286414e-05,0
+63,"def fibfib(n: int):
+    """"""The FibFib number sequence is a sequence similar to the Fibbonacci sequnece that's defined as follows:
+    fibfib(0) == 0
+    fibfib(1) == 0
+    fibfib(2) == 1
+    fibfib(n) == fibfib(n-1) + fibfib(n-2) + fibfib(n-3).
+    Please write a function to efficiently compute the n-th element of the fibfib number sequence.
+    """"""",6.246772289276123,-0.929088294506073,-4.022727012634277,-5.910965442657471,0.9991958737373352,0.0007642123382538557,3.464686596998945e-05,5.243391115072882e-06,1,0.9991958737373352,3.989025572082028e-05,0
+64,"FIX = """"""
+Add more test cases.
+""""""
+
+def vowels_count(s):
+""""""Write a function vowels_count which takes a string representing
+    a word as input and returns the number of vowels in the string.
+    Vowels in this case are 'a', 'e', 'i', 'o', 'u'. Here, 'y' is also a
+    vowel, but only when it is at the end of the given word.
+
+    Example:
+    """"""",6.18618631362915,-0.6638041138648987,-4.024777889251709,-6.163936614990234,0.9989006519317627,0.0010583011899143457,3.672458478831686e-05,4.324463589000516e-06,1,0.9989006519317627,4.104904655832797e-05,0
+65,"def circular_shift(x, shift):
+    """"""Circular shift the digits of the integer x, shift the digits right by shift
+    and return the result as a string.
+    If shift > number of digits, return digits reversed.
+    """"""",0.6365768313407898,4.470283508300781,-2.6037566661834717,-7.908713340759277,0.021153753623366356,0.9780139923095703,0.0008281869231723249,4.113533577765338e-06,2,0.9780139923095703,0.0008323004585690796,0
+66,"def digitSum(s):
+    """"""Task
+    Write a function that takes a string as input and returns the sum of the upper characters only'
+    ASCII codes.
+    """"""",-5.937596797943115,-2.067474126815796,3.413073778152466,-3.859731435775757,8.647919457871467e-05,0.00414652843028307,0.9950762391090393,0.0006907440838404,3,0.9950762391090393,0.9957669973373413,1
+67,"def fruit_distribution(s,n):
+    """"""
+    In this task, you will be given a string that represents a number of apples and oranges 
+    that are distributed in a basket of fruit this basket contains 
+    apples, oranges, and mango fruits. Given the string that represents the total number of 
+    the oranges and apples and an integer that represent the total number of the fruits 
+    in the basket return the number of the mango fruits in the basket.
+    """"""",4.795357704162598,1.478920340538025,-3.8229153156280518,-7.656192302703857,0.9648165106773376,0.035005342215299606,0.0001744120236253366,3.774031029024627e-06,1,0.9648165106773376,0.0001781860482878983,0
+68,"def pluck(arr):
+    """"""
+    ""Given an array representing a branch of a tree that has non-negative integer nodes
+    your task is to pluck one of the nodes and return it.
+    The plucked node should be the node with the smallest even value.
+    If multiple nodes with the same smallest even value are found return the node that has smallest index.
+
+    The plucked node should be returned in a list, [ smalest_value, its index ],
+    If there are no even values or the given array is empty, return [].
+    """"""",6.307508945465088,-0.7221763134002686,-4.025735378265381,-6.2629475593566895,0.9990795850753784,0.0008843958494253457,3.250342342653312e-05,3.469925786703243e-06,1,0.9990795850753784,3.5973349440610036e-05,0
+69,"def search(lst):
+    '''
+    You are given a non-empty list of positive integers. Return the greatest integer that is greater than 
+    zero, and has a frequency greater than or equal to the value of the integer itself. 
+    The frequency of an integer is the number of times it appears in the list.
+    If no such a value exist, return -1.
+    '''",6.137991428375244,-0.7871150374412537,-3.833183526992798,-6.105625152587891,0.9989666938781738,0.0009817829122766852,4.6679335355293006e-05,4.810786322195781e-06,1,0.9989666938781738,5.149012213223614e-05,0
+70,"def strange_sort_list(lst):
+    '''
+    Given list of integers, return list in strange order.
+    Strange sorting, is when you start with the minimum value,
+    then maximum of the remaining integers, then minimum and so on.
+    '''",-1.6793240308761597,4.2787675857543945,-1.0296680927276611,-6.74042272567749,0.002565468195825815,0.9925057291984558,0.004912570584565401,1.6261466953437775e-05,2,0.9925057291984558,0.004928831942379475,0
+71,"def triangle_area(a, b, c):
+    '''
+    Given the lengths of the three sides of a triangle. Return the area of
+    the triangle rounded to 2 decimal points if the three sides form a valid triangle. 
+    Otherwise return -1
+    Three sides make a valid triangle when the sum of any two sides is greater 
+    than the third side.
+    '''",6.2524213790893555,-0.9545372128486633,-4.007778167724609,-5.921442985534668,0.9992189407348633,0.0007408293895423412,3.4971366403624415e-05,5.159629836271051e-06,1,0.9992189407348633,4.0130995330400765e-05,0
+72,"def will_it_fly(q,w):
+    '''
+    Write a function that returns True if the object q will fly, and False otherwise.
+    The object q will fly if it's balanced (it is a palindromic list) and the sum of its elements is less than or equal the maximum possible weight w.
+    '''",-2.5590755939483643,3.3591597080230713,-0.13052520155906677,-6.955037593841553,0.002603422151878476,0.9678354263305664,0.029529130086302757,3.2092419132823125e-05,2,0.9678354263305664,0.029561221599578857,0
+73,"def smallest_change(arr):
+    """"""
+    Given an array arr of integers, find the minimum number of elements that
+    need to be changed to make the array palindromic. A palindromic array is an array that
+    is read the same backwards and forwards. In one change, you can change one element to any other element.
+    """"""",6.212177753448486,-0.7976312637329102,-3.846644878387451,-6.231749057769775,0.9990511536598206,0.0009021242149174213,4.2765794205479324e-05,3.937848305213265e-06,1,0.9990511536598206,4.670364432968199e-05,0
+74,"def total_match(lst1, lst2):
+    '''
+    Write a function that accepts two lists of strings and returns the list that has 
+    total number of chars in the all strings of the list less than the other list.
+
+    if the two lists have the same number of chars, return the first list.
+    '''",-0.9832924604415894,0.03011712059378624,0.05777648091316223,-3.701547861099243,0.15030336380004883,0.41408249735832214,0.42569562792778015,0.009918485768139362,3,0.42569562792778015,0.43561410903930664,1
+75,"def is_multiply_prime(a):
+    """"""Write a function that returns true if the given number is the multiplication of 3 prime numbers
+    and false otherwise.
+    Knowing that (a) is less then 100. 
+    """"""",6.008353233337402,-0.921235203742981,-3.6939101219177246,-5.865109920501709,0.9989545345306396,0.0009773806668817997,6.108104571467265e-05,6.965726242924575e-06,1,0.9989545345306396,6.804677104810253e-05,0
+76,"def is_simple_power(x, n):
+    """"""Your task is to write a function that returns true if a number x is a simple
+    power of n and false in other cases.
+    x is a simple power of n if n**int=x
+    """"""",2.2808218002319336,1.805830717086792,-1.9600807428359985,-7.43746280670166,0.6111178994178772,0.3800484836101532,0.008796795271337032,3.6772878956981e-05,1,0.6111178994178772,0.008833568543195724,0
+77,"def iscube(a):
+    '''
+    Write a function that takes an integer a and returns True 
+    if this ingeger is a cube of some integer number.
+    '''",5.860136985778809,-1.0666682720184326,-3.4951703548431396,-5.812498569488525,0.9989249110221863,0.000980075215920806,8.641206659376621e-05,8.514740329701453e-06,1,0.9989249110221863,9.492680692346767e-05,0
+78,"def hex_key(num):
+    """"""You have been tasked to write a function that receives 
+    a hexadecimal number as a string and counts the number of hexadecimal 
+    digits that are primes (prime number, or a prime, is a natural number 
+    greater than 1 that is not a product of two smaller natural numbers).
+    Hexadecimal digits are 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F.
+    Prime numbers are 2, 3, 5, 7, 11, 13, 17,...
+    So you have to determine a number of the following digits: 2, 3, 5, 7, 
+    B (=decimal 11), D (=decimal 13).
+    """"""",6.249054908752441,-0.964705765247345,-4.011441230773926,-5.898237228393555,0.9992238283157349,0.0007358109578490257,3.496116551104933e-05,5.298596533975797e-06,1,0.9992238283157349,4.0259761590277776e-05,0
+79,"def decimal_to_binary(decimal):
+    """"""You will be given a number in decimal form and your task is to convert it to
+    binary format. The function should return a string, with each character representing a binary
+    number. Each character in the string will be '0' or '1'.
+
+    There will be an extra couple of characters 'db' at the beginning and at the end of the string.
+    The extra characters are there to help with the format.
+    """"""",5.439082622528076,0.7449201941490173,-3.8088488578796387,-7.445554733276367,0.9908373355865479,0.009064702317118645,9.542820043861866e-05,2.5134791030723136e-06,1,0.9908373355865479,9.794167999643832e-05,0
+80,"def is_happy(s):
+    """"""You are given a string s.
+    Your task is to check if the string is happy or not.
+    A string is happy if its length is at least 3 and every 3 consecutive letters are distinct
+    """"""",5.001967430114746,-0.9832165837287903,-3.0867626667022705,-5.128210067749023,0.9971455931663513,0.002508569275960326,0.00030610314570367336,3.974462379119359e-05,1,0.9971455931663513,0.00034584777313284576,0
+81,"def numerical_letter_grade(grades):
+    """"""It is the last week of the semester and the teacher has to give the grades
+    to students. The teacher has been making her own algorithm for grading.
+    The only problem is, she has lost the code she used for grading.
+    She has given you a list of GPAs for some students and you have to write 
+    a function that can output a list of letter grades using the following table:
+             GPA       |    Letter grade
+              4.0                A+
+            > 3.7                A 
+            > 3.3                A- 
+            > 3.0                B+
+            > 2.7                B 
+            > 2.3                B-
+            > 2.0                C+
+            > 1.7                C
+            > 1.3                C-
+            > 1.0                D+ 
+            > 0.7                D 
+            > 0.0                D-
+              0.0                E
+    """"""",5.394179821014404,-0.16521477699279785,-3.748807430267334,-5.989981651306152,0.996046245098114,0.0038358797319233418,0.00010654439392965287,1.1329251719871536e-05,1,0.996046245098114,0.0001178736420115456,0
+82,"def prime_length(string):
+    """"""Write a function that takes a string and returns True if the string
+    length is a prime number or False otherwise
+    """"""",6.158578395843506,-0.9746092557907104,-3.9017562866210938,-5.818799018859863,0.9991534948348999,0.0007974952459335327,4.2705538362497464e-05,6.279477474890882e-06,1,0.9991534948348999,4.89850172016304e-05,0
+83,"def starts_one_ends(n):
+    """"""
+    Given a positive integer n, return the count of the numbers of n-digit
+    positive integers that start or end with 1.
+    """"""",5.906059265136719,-1.073403000831604,-3.5912039279937744,-5.726578712463379,0.9989861845970154,0.0009298600489273667,7.498088962165639e-05,8.862760296324268e-06,1,0.9989861845970154,8.384365355595946e-05,0
+84,"def solve(N):
+    """"""Given a positive integer N, return the total sum of its digits in binary.
+    """"""",5.966848850250244,-1.1569172143936157,-3.578852891921997,-5.627093315124512,0.9991143345832825,0.0008050131145864725,7.144461415009573e-05,9.213611519953702e-06,1,0.9991143345832825,8.065822476055473e-05,0
+85,"def add(lst):
+    """"""Given a non-empty list of integers lst. add the even elements that are at odd indices..
+    """"""",5.870059490203857,-1.0453550815582275,-3.6081249713897705,-5.717482089996338,0.9989230036735535,0.0009913009125739336,7.64202923164703e-05,9.271001545130275e-06,1,0.9989230036735535,8.569129568058997e-05,0
+86,"def anti_shuffle(s):
+    """"""
+    Write a function that takes a string and returns an ordered version of it.
+    Ordered version of string, is a string where all words (separated by space)
+    are replaced by a new word where all the characters arranged in
+    ascending order based on ascii value.
+    """"""",6.214371204376221,-0.9125514030456543,-3.937739133834839,-5.996167182922363,0.9991536140441895,0.0008025075076147914,3.896070847986266e-05,4.973505383532029e-06,1,0.9991536140441895,4.393421477288939e-05,0
+87,"def get_row(lst, x):
+    """"""
+    You are given a 2 dimensional data, as a nested lists,
+    which is similar to matrix, however, unlike matrices,
+    each row may contain a different number of columns.
+    Given lst, and integer x, find integers x in the list,
+    and return list of tuples, [(x1, y1), (x2, y2) ...] such that
+    each tuple is a coordinate - (row, columns), starting with 0.
+    Sort coordinates initially by rows in ascending order.
+    Also, sort coordinates of the row by columns in descending order.
+    """"""",6.324426651000977,-0.9080932140350342,-4.078636169433594,-6.003448486328125,0.9992430210113525,0.0007221502019092441,3.031645064766053e-05,4.423265181685565e-06,1,0.9992430210113525,3.4739714465104043e-05,0
+88,"def sort_array(array):
+    """"""
+    Given an array of non-negative integers, return a copy of the given array after sorting,
+    you will sort the given array in ascending order if the sum( first index value, last index value) is odd,
+    or sort it in descending order if the sum( first index value, last index value) is even.
+    """"""",6.264033317565918,-0.8146500587463379,-4.059243679046631,-6.070204257965088,0.9991205334663391,0.0008421409293077886,3.2830375857884064e-05,4.394670668261824e-06,1,0.9991205334663391,3.722504698089324e-05,0
+89,"def encrypt(s):
+    """"""Create a function encrypt that takes a string as an argument and
+    returns a string encrypted with the alphabet being rotated. 
+    The alphabet should be rotated in a manner such that the letters 
+    shift down by two multiplied to two places.
+    """"""",-1.5483201742172241,4.568185806274414,-1.2773547172546387,-7.021501064300537,0.0021949384827166796,0.9949177503585815,0.002878068946301937,9.21403625397943e-06,2,0.9949177503585815,0.0028872829861938953,0
+90,"def next_smallest(lst):
+    """"""
+    You are given a list of integers.
+    Write a function next_smallest() that returns the 2nd smallest element of the list.
+    Return None if there is no such element.
+    
+    next_smallest([1, 2, 3, 4, 5]) == 2
+    next_smallest([5, 1, 4, 3, 2]) == 2
+    next_smallest([]) == None
+    next_smallest([1, 1]) == None
+    """"""",6.219166278839111,-0.7522671818733215,-3.939276933670044,-6.234160423278809,0.999019980430603,0.0009373871725983918,3.8709560612915084e-05,3.900882802554406e-06,1,0.999019980430603,4.2610445234458894e-05,0
+91,"def is_bored(S):
+    """"""
+    You'll be given a string of words, and your task is to count the number
+    of boredoms. A boredom is a sentence that starts with the word ""I"".
+    Sentences are delimited by '.', '?' or '!'.
+    """"""",-1.3692830801010132,5.898693084716797,-2.7011213302612305,-7.702539920806885,0.0006969068781472743,0.999117910861969,0.00018397753592580557,1.2378742439977941e-06,2,0.999117910861969,0.00018521540914662182,0
+92,"def any_int(x, y, z):
+    '''
+    Create a function that takes 3 numbers.
+    Returns true if one of the numbers is equal to the sum of the other two, and all numbers are integers.
+    Returns false in any other cases.
+    '''",5.3599772453308105,-0.5812518000602722,-3.3547871112823486,-6.004119396209717,0.9972033500671387,0.0026214453391730785,0.0001636852539377287,1.1572288713068701e-05,1,0.9972033500671387,0.00017525754810776561,0
+93,"def encode(message):
+    """"""
+    Write a function that takes a message, and encodes in such a 
+    way that it swaps case of all letters, replaces all vowels in 
+    the message with the letter that appears 2 places ahead of that 
+    vowel in the english alphabet. 
+    Assume only letters. 
+    """"""",-1.6795532703399658,5.4656219482421875,-2.156360387802124,-6.662581920623779,0.000787649187259376,0.9987180233001709,0.0004889426636509597,5.397972472565016e-06,2,0.9987180233001709,0.000494340609293431,0
+94,"def skjkasdkd(lst):
+    """"""You are given a list of integers.
+    You need to find the largest prime value and return the sum of its digits.
+    """"""",-3.8000435829162598,2.528916358947754,0.43435099720954895,-5.847825527191162,0.0015854841331019998,0.8887799978256226,0.10942991822957993,0.0002045604633167386,2,0.8887799978256226,0.10963448137044907,0
+95,"def check_dict_case(dict):
+    """"""
+    Given a dictionary, return True if all keys are strings in lower 
+    case or all keys are strings in upper case, else return False.
+    The function should return False is the given dictionary is empty.
+    """"""",-0.004623635206371546,4.804566860198975,-2.529773473739624,-7.862125396728516,0.008083244785666466,0.991266667842865,0.0006470339139923453,3.1269125884136884e-06,2,0.991266667842865,0.0006501608295366168,0
+96,"def count_up_to(n):
+    """"""Implement a function that takes an non-negative integer and returns an array of the first n
+    integers that are prime numbers and less than n.
+    """"""",6.198400974273682,-1.0229530334472656,-3.89931321144104,-5.882236480712891,0.999222993850708,0.0007302443264052272,4.1141560359392315e-05,5.6638068599568214e-06,1,0.999222993850708,4.6805365855107084e-05,0
+97,"def multiply(a, b):
+    """"""Complete the function that takes two integers and returns 
+    the product of their unit digits.
+    Assume the input is always valid.
+    """"""",-2.981144905090332,4.3181328773498535,-0.46156609058380127,-6.690012454986572,0.0006699363002553582,0.9909907579421997,0.008322863839566708,1.6416963262599893e-05,2,0.9909907579421997,0.00833928119391203,0
+98,"def count_upper(s):
+    """"""
+    Given a string s, count the number of uppercase vowels in even indices.
+    """"""",6.111373424530029,-1.0439262390136719,-3.858260154724121,-5.7513298988342285,0.9991661310195923,0.0007800646126270294,4.6760706027271226e-05,7.042568995530019e-06,1,0.9991661310195923,5.38032763870433e-05,0
+99,"def closest_integer(value):
+    '''
+    Create a function that takes a value (string) representing a number
+    and returns the closest integer to it. If the number is equidistant
+    from two integers, round it away from zero.
+    '''",6.217136383056641,-0.9015272259712219,-3.952205181121826,-6.009621620178223,0.9991475343704224,0.0008091578492894769,3.8294860132737085e-05,4.893460300081642e-06,1,0.9991475343704224,4.318831997807138e-05,0
+100,"def make_a_pile(n):
+    """"""
+    Given a positive integer n, you have to make a pile of n levels of stones.
+    The first level has n stones.
+    The number of stones in the next level is:
+        - the next odd number if n is odd.
+        - the next even number if n is even.
+    Return the number of stones in each level in a list, where element at index
+    i represents the number of stones in the level (i+1).
+    """"""",6.2415080070495605,-0.9092432260513306,-4.04487943649292,-5.910354137420654,0.9991770386695862,0.000783629366196692,3.406599716981873e-05,5.274189788906369e-06,1,0.9991770386695862,3.93401860492304e-05,0
+101,"def words_string(s):
+    """"""
+    You will be given a string of words separated by commas or spaces. Your task is
+    to split the string into words and return an array of the words.
+    """"""",4.335438251495361,-0.6546083688735962,-2.37784481048584,-5.951624393463135,0.9920103549957275,0.006750975735485554,0.0012049650540575385,3.379883128218353e-05,1,0.9920103549957275,0.0012387639144435525,0
+102,"def choose_num(x, y):
+    """"""This function takes two positive numbers x and y and returns the
+    biggest even integer number that is in the range [x, y] inclusive. If 
+    there's no such number, then the function should return -1.
+    """"""",6.268631458282471,-0.8844079375267029,-3.985961437225342,-6.088664531707764,0.9991787075996399,0.0007818394806236029,3.516657307045534e-05,4.29474812335684e-06,1,0.9991787075996399,3.946131982957013e-05,0
+103,"def rounded_avg(n, m):
+    """"""You are given two positive integers n and m, and your task is to compute the
+    average of the integers from n through m (including n and m). 
+    Round the answer to the nearest integer and convert that to binary.
+    If n is greater than m, return -1.
+    """"""",6.263401985168457,-0.8370574712753296,-4.035383224487305,-6.103818416595459,0.9991381168365479,0.000824015005491674,3.364495205460116e-05,4.252165581419831e-06,1,0.9991381168365479,3.789711627177894e-05,0
+104,"def unique_digits(x):
+    """"""Given a list of positive integers x. return a sorted list of all 
+    elements that hasn't any even digit.
+    """"""",-4.021775245666504,2.5154998302459717,0.7061170339584351,-6.257090091705322,0.0012429046910256147,0.8581050038337708,0.1405191421508789,0.00013293922529555857,2,0.8581050038337708,0.14065207540988922,0
+105,"def by_length(arr):
+    """"""
+    Given an array of integers, sort the integers that are between 1 and 9 inclusive,
+    reverse the resulting array, and then replace each digit by its corresponding name from
+    ""One"", ""Two"", ""Three"", ""Four"", ""Five"", ""Six"", ""Seven"", ""Eight"", ""Nine"".
+    """"""",6.287546634674072,-0.849563717842102,-4.062075138092041,-6.0895538330078125,0.9991694688796997,0.000794385967310518,3.1978310289559886e-05,4.2104929889319465e-06,1,0.9991694688796997,3.618880145950243e-05,0
+106,"def f(n):
+    """""" Implement the function f that takes n as a parameter,
+    and returns a list of size n, such that the value of the element at index i is the factorial of i if i is even
+    or the sum of numbers from 1 to i otherwise.
+    i starts from 1.
+    the factorial of i is the multiplication of the numbers from 1 to i (1 * 2 * ... * i).
+    """"""",6.214756965637207,-0.9010092616081238,-4.024803161621094,-5.905066967010498,0.9991472959518433,0.0008115057135000825,3.569809632608667e-05,5.445742317533586e-06,1,0.9991472959518433,4.1143837734125555e-05,0
+107,"def even_odd_palindrome(n):
+    """"""
+    Given a positive integer n, return a tuple that has the number of even and odd
+    integer palindromes that fall within the range(1, n), inclusive.
+    """"""",6.18283748626709,-0.9809198379516602,-3.944700002670288,-5.839115619659424,0.9991806149482727,0.0007735060062259436,3.993100472143851e-05,6.005869636283023e-06,1,0.9991806149482727,4.5936874812468886e-05,0
+108,"def count_nums(arr):
+    """"""
+    Write a function count_nums which takes an array of integers and returns
+    the number of elements which has a sum of digits > 0.
+    If a number is negative, then its first signed digit will be negative:
+    e.g. -123 has signed digits -1, 2, and 3.
+    """"""",-0.34898051619529724,5.41043758392334,-2.8618478775024414,-7.648101329803467,0.0031422290485352278,0.9966009855270386,0.0002546322357375175,2.1245652988000074e-06,2,0.9966009855270386,0.00025675681536085904,0
+109,"def move_one_ball(arr):
+    """"""We have an array 'arr' of N integers arr[1], arr[2], ..., arr[N].The
+    numbers in the array will be randomly ordered. Your task is to determine if
+    it is possible to get an array sorted in non-decreasing order by performing 
+    the following operation on the given array:
+        You are allowed to perform right shift operation any number of times.
+    
+    One right shift operation means shifting all elements of the array by one
+    position in the right direction. The last element of the array will be moved to
+    the starting position in the array i.e. 0th index. 
+
+    If it is possible to obtain the sorted array by performing the above operation
+    then return True else return False.
+    If the given array is empty then return True.
+    """"""",6.25855827331543,-0.9027706980705261,-4.011677265167236,-5.978590488433838,0.9991851449012756,0.0007753903046250343,3.462099630269222e-05,4.843061560677597e-06,1,0.9991851449012756,3.946405922761187e-05,0
+110,"def exchange(lst1, lst2):
+    """"""In this problem, you will implement a function that takes two lists of numbers,
+    and determines whether it is possible to perform an exchange of elements
+    between them to make lst1 a list of only even numbers.
+    There is no limit on the number of exchanged elements between lst1 and lst2.
+    If it is possible to exchange elements between the lst1 and lst2 to make
+    all the elements of lst1 to be even, return ""YES"".
+    Otherwise, return ""NO"".
+    """"""",-1.6667330265045166,5.588281631469727,-1.883863925933838,-7.376836776733398,0.0007057204493321478,0.9987239241600037,0.0005679810419678688,2.3375778255285695e-06,2,0.9987239241600037,0.0005703186034224927,0
+111,"def histogram(test):
+    """"""Given a string representing a space separated lowercase letters, return a dictionary
+    of the letter with the most repetition and containing the corresponding count.
+    If several letters have the same occurrence, return all of them.
+    """"""",-3.950937271118164,2.7611751556396484,0.343521386384964,-5.7454833984375,0.001115119899623096,0.9169696569442749,0.081729955971241,0.00018533613183535635,2,0.9169696569442749,0.08191528916358948,0
+112,"def reverse_delete(s,c):
+    """"""Task
+    We are given two strings s and c, you have to deleted all the characters in s that are equal to any character in c
+    then check if the result string is palindrome.
+    A string is called palindrome if it reads the same backward as forward.
+    You should return a tuple containing the result string and True/False for the check.
+    """"""",6.1419782638549805,-0.916764497756958,-3.813608407974243,-5.957469463348389,0.999087929725647,0.0008590744691900909,4.741845987155102e-05,5.5575133046659175e-06,1,0.999087929725647,5.297597454045899e-05,0
+113,"def odd_count(lst):
+    """"""Given a list of strings, where each string consists of only digits, return a list.
+    Each element i of the output should be ""the number of odd elements in the
+    string i of the input."" where all the i's should be replaced by the number
+    of odd digits in the i'th string of the input.
+    """"""",6.129434108734131,-0.9122984409332275,-3.855560302734375,-5.924768447875977,0.9990742206573486,0.0008738000760786235,4.604363130056299e-05,5.814653832203476e-06,1,0.9990742206573486,5.185828558751382e-05,0
+114,"def minSubArraySum(nums):
+    """"""
+    Given an array of integers nums, find the minimum sum of any non-empty sub-array
+    of nums.
+    """"""",-1.1374233961105347,0.6051483154296875,0.4245185852050781,-6.6000142097473145,0.08707518875598907,0.49737468361854553,0.4151807427406311,0.00036942079896107316,2,0.49737468361854553,0.415550172328949,0
+115,"def max_fill(grid, capacity):
+    import math
+    """"""
+    You are given a rectangular grid of wells. Each row represents a single well,
+    and each 1 in a row represents a single unit of water.
+    Each well has a corresponding bucket that can be used to extract water from it, 
+    and all buckets have the same capacity.
+    Your task is to use the buckets to empty the wells.
+    Output the number of times you need to lower the buckets.
+    """"""",4.2406182289123535,2.2953226566314697,-3.914369821548462,-7.519265174865723,0.8747069239616394,0.12503494322299957,0.0002513021172489971,6.832975941506447e-06,1,0.8747069239616394,0.0002581350854597986,0
+116,"def sort_array(arr):
+    """"""
+    In this Kata, you have to sort an array of non-negative integers according to
+    number of ones in their binary representation in ascending order.
+    For similar number of ones, sort based on decimal value.
+
+    It must be implemented like this:
+    """"""",5.4763407707214355,-0.9102495908737183,-3.1867690086364746,-5.97637939453125,0.998136043548584,0.0016808491200208664,0.00017252378165721893,1.0600744644762017e-05,1,0.998136043548584,0.00018312453175894916,0
+117,"def select_words(s, n):
+    """"""Given a string s and a natural number n, you have been tasked to implement 
+    a function that returns a list of all words from string s that contain exactly 
+    n consonants, in order these words appear in the string s.
+    If the string s is empty then the function should return an empty list.
+    """"""",1.4685142040252686,1.8925853967666626,-1.655673861503601,-7.163908958435059,0.3887539505958557,0.5940822958946228,0.017094532027840614,6.928846414666623e-05,2,0.5940822958946228,0.017163820564746857,0
+118,"def get_closest_vowel(word):
+    """"""You are given a word. Your task is to find the closest vowel that stands between 
+    two consonants from the right side of the word (case sensitive).
+    
+    Vowels in the beginning and ending doesn't count. Return empty string if you didn't
+    find any vowel met the above condition. 
+
+    You may assume that the given string contains English letter only.
+    """"""",5.509690284729004,-1.0064364671707153,-3.4415230751037598,-5.221436500549316,0.9983718991279602,0.0014769795816391706,0.00012936879647895694,2.181841409765184e-05,1,0.9983718991279602,0.00015118721057660878,0
+119,"def match_parens(lst):
+    '''
+    You are given a list of two strings, both strings consist of open
+    parentheses '(' or close parentheses ')' only.
+    Your job is to check if it is possible to concatenate the two strings in
+    some order, that the resulting string will be good.
+    A string S is considered to be good if and only if all parentheses in S
+    '''",2.3542838096618652,0.9708835482597351,-2.0202019214630127,-5.683493614196777,0.7913632392883301,0.19841422140598297,0.009966914542019367,0.00025563110830262303,1,0.7913632392883301,0.010222545824944973,0
+120,"def maximum(arr, k):
+    """"""
+    Given an array arr of integers and a positive integer k, return a sorted list 
+    of length k with the maximum k numbers in arr.
+    """"""",6.224469184875488,-0.933144211769104,-3.9673006534576416,-5.919748783111572,0.999178946018219,0.0007782718748785555,3.7446738133439794e-05,5.314668669598177e-06,1,0.999178946018219,4.276140680303797e-05,0
+121,"def solution(lst):
+    """"""Given a non-empty list of integers, return the sum of all of the odd elements that are in even positions.
+    """"""",-3.3404884338378906,-0.05544698238372803,1.6707302331924438,-5.673219203948975,0.005621305201202631,0.15014556050300598,0.8436877131462097,0.0005454375641420484,3,0.8436877131462097,0.8442331552505493,1
+122,"def add_elements(arr, k):
+    """"""
+    Given a non-empty array of integers arr and an integer k, return
+    the sum of the elements with at most two digits from the first k elements of arr.
+    """"""",0.5737607479095459,-0.09734298288822174,-0.22243645787239075,-6.337552070617676,0.5093772411346436,0.26036515831947327,0.22974997758865356,0.0005075682420283556,1,0.5093772411346436,0.2302575409412384,0
+123,"def get_odd_collatz(n):
+    """"""
+    Given a positive integer n, return a sorted list that has the odd numbers in collatz sequence.
+
+    The Collatz conjecture is a conjecture in mathematics that concerns a sequence defined
+    as follows: start with any positive integer n. Then each term is obtained from the 
+    previous term as follows: if the previous term is even, the next term is one half of 
+    the previous term. If the previous term is odd, the next term is 3 times the previous
+    term plus 1. The conjecture is that no matter what value of n, the sequence will always reach 1.
+    """"""",6.229614734649658,-0.9194693565368652,-4.019649028778076,-5.90521764755249,0.9991742968559265,0.0007849346147850156,3.535432551871054e-05,5.364762728277128e-06,1,0.9991742968559265,4.071908915648237e-05,0
+124,"def valid_date(date):
+    """"""You have to write a function which validates a given date string and
+    returns True if the date is valid otherwise False.
+    The date is valid if all of the following rules are satisfied:
+    1. The date string is not empty.
+    2. The number of days is not less than 1 or higher than 31 days for months 1,3,5,7,8,10,12. And the number of days is not less than 1 or higher than 30 days for months 4,6,9,11. And, the number of days is not less than 1 or higher than 29 for the month 2.
+    3. The months should not be less than 1 or higher than 12.
+    4. The date should be in the format: mm-dd-yyyy
+    """"""",5.875152111053467,-0.0933237224817276,-3.9159016609191895,-6.4801740646362305,0.9973885416984558,0.0025514571461826563,5.580379729508422e-05,4.295508915674873e-06,1,0.9973885416984558,6.00993080297485e-05,0
+125,"def split_words(txt):
+    '''
+    Given a string of words, return a list of words split on whitespace, if no whitespaces exists in the text you
+    should split on commas ',' if no commas exists you should return the number of lower-case letters with odd order in the
+    alphabet, ord('a') = 0, ord('b') = 1, ... ord('z') = 25
+    '''",4.850599765777588,1.4949448108673096,-3.9680283069610596,-7.5395026206970215,0.9661475419998169,0.033705517649650574,0.0001429426483809948,4.01874422095716e-06,1,0.9661475419998169,0.00014696139260195196,0
+126,"def is_sorted(lst):
+    '''
+    Given a list of numbers, return whether or not they are sorted
+    in ascending order. If list has more than 1 duplicate of the same
+    number, return False. Assume no negative numbers and only integers.
+    '''",4.981863498687744,-0.46733763813972473,-2.96531081199646,-6.0222063064575195,0.9953516721725464,0.004279751796275377,0.0003520162426866591,1.6556537957512774e-05,1,0.9953516721725464,0.00036857277154922485,0
+127,"def intersection(interval1, interval2):
+    """"""You are given two intervals,
+    """"""",5.897672176361084,-1.050787091255188,-3.571505546569824,-5.65131139755249,0.9989540576934814,0.0009591092239134014,7.711415673838928e-05,9.635753485781606e-06,1,0.9989540576934814,8.674991113366559e-05,0
+128,"def prod_signs(arr):
+    """"""
+    You are given an array arr of integers and you need to return
+    sum of magnitudes of integers multiplied by product of all signs
+    of each number in the array, represented by 1, -1 or 0.
+    """"""",-0.09600910544395447,3.9851176738739014,-1.558885931968689,-7.793147087097168,0.016544193029403687,0.979617178440094,0.0038311246316879988,7.513129730796209e-06,2,0.979617178440094,0.0038386378437280655,0
+129,"def minPath(grid, k):
+    """"""
+    Given a grid with N rows and N columns (N >= 2) and a positive integer k, 
+    each cell of the grid contains a value. Every integer in the range [1, N * N]
+    inclusive appears exactly once on the cells of the grid.
+
+    You have to find the minimum path of length k in the grid. You can start
+    from any cell, and in each step you can move to any of the neighbor cells,
+    in other words, you can go to cells which share an edge with you current
+    cell.
+    """"""",6.300934791564941,-0.8966611623764038,-4.026618003845215,-6.030233383178711,0.9992151260375977,0.0007477953331544995,3.269338048994541e-05,4.4086000343668275e-06,1,0.9992151260375977,3.710198143380694e-05,0
+130,"def tri(n):
+    """"""Everyone knows Fibonacci sequence, it was studied deeply by mathematicians in 
+    the last couple centuries. However, what people don't know is Tribonacci sequence.
+    Tribonacci sequence is defined by the recurrence:
+    tri(1) = 3
+    tri(n) = 1 + n / 2, if n is even.
+    tri(n) =  tri(n - 1) + tri(n - 2) + tri(n + 1), if n is odd.
+    """"""",6.2235426902771,-0.9389142394065857,-4.02006196975708,-5.863176345825195,0.9991841912269592,0.0007745153270661831,3.555531657184474e-05,5.629242423310643e-06,1,0.9991841912269592,4.118455763091333e-05,0
+131,"def digits(n):
+    """"""Given a positive integer n, return the product of the odd digits.
+    Return 0 if all digits are even.
+    """"""",-2.2301745414733887,5.086434841156006,-1.5313351154327393,-6.795433044433594,0.0006630798452533782,0.9979962706565857,0.0013337297132238746,6.900793778186198e-06,2,0.9979962706565857,0.0013406304642558098,0
+132,"def is_nested(string):
+    '''
+    Create a function that takes a string as input which contains only square brackets.
+    The function should return True if and only if there is a valid subsequence of brackets 
+    where at least one bracket in the subsequence is nested.
+
+    is_nested('[[]]') ➞ True
+    is_nested('[]]]]]]][[[[[]') ➞ False
+    is_nested('[][]') ➞ False
+    is_nested('[]') ➞ False
+    is_nested('[[][]]') ➞ True
+    is_nested('[[]][[') ➞ True
+    '''",1.9258105754852295,4.0772247314453125,-3.4526052474975586,-7.607736110687256,0.10414827615022659,0.8953635096549988,0.0004806575598195195,7.538504178228322e-06,2,0.8953635096549988,0.00048819606308825314,0
+133,"def sum_squares(lst):
+    """"""You are given a list of numbers.
+    You need to return the sum of squared numbers in the given list,
+    round each element in the list to the upper int(Ceiling) first.
+    """"""",-1.8092728853225708,2.1742966175079346,0.10360842198133469,-6.036787509918213,0.016261331737041473,0.8733702898025513,0.11013108491897583,0.00023723009508103132,2,0.8733702898025513,0.11036831140518188,0
+134,"def check_if_last_char_is_a_letter(txt):
+    '''
+    Create a function that returns True if the last character
+    of a given string is an alphabetical character and is not
+    a part of a word, and False otherwise.
+    '''",5.111973762512207,-0.5471054911613464,-2.888108968734741,-5.9218831062316895,0.9961773157119751,0.0034724005963653326,0.0003341525443829596,1.6083971786429174e-05,1,0.9961773157119751,0.0003502365143503994,0
+135,"def can_arrange(arr):
+    """"""Create a function which returns the largest index of an element which
+    is not greater than or equal to the element immediately preceding it. If
+    no such element exists then return -1. The given array will not contain
+    duplicate values.
+    """"""",4.6736016273498535,0.5671331286430359,-2.98942494392395,-7.04668664932251,0.983338475227356,0.016191473230719566,0.00046205404214560986,7.991835445864126e-06,1,0.983338475227356,0.00047004586667753756,0
+136,"def largest_smallest_integers(lst):
+    '''
+    Create a function that returns a tuple (a, b), where 'a' is
+    the largest of negative integers, and 'b' is the smallest
+    of positive integers in a list.
+    If there is no negative or positive integers, return them as None.
+    '''",4.457881450653076,0.3562944233417511,-2.8267722129821777,-6.89008903503418,0.9830482006072998,0.016265906393527985,0.0006743571138940752,1.15934744826518e-05,1,0.9830482006072998,0.0006859505665488541,0
+137,"def compare_one(a, b):
+    """"""
+    Create a function that takes integers, floats, or strings representing
+    real numbers, and returns the larger variable in its given variable type.
+    Return None if the values are equal.
+    """"""",-1.1089309453964233,2.626805305480957,-0.3918133080005646,-7.410198211669922,0.022237425670027733,0.9321680068969727,0.045553818345069885,4.078297934029251e-05,2,0.9321680068969727,0.045594602823257446,0
+138,"def is_equal_to_sum_even(n):
+    """"""Evaluate whether the given number n can be written as the sum of exactly 4 positive even numbers
+    """"""",6.070132732391357,-0.9674188494682312,-3.7531802654266357,-5.908303737640381,0.9990622401237488,0.0008774508023634553,5.4123021982377395e-05,6.2722542679694016e-06,1,0.9990622401237488,6.0395275795599446e-05,0
+139,"def special_factorial(n):
+    """"""The Brazilian factorial is defined as:
+    brazilian_factorial(n) = n! * (n-1)! * (n-2)! * ... * 1!
+    where n > 0
+    """"""",6.190876483917236,-0.9478157162666321,-4.012682914733887,-5.816850185394287,0.9991637468338013,0.0007931255968287587,3.7007259379606694e-05,6.091822342568776e-06,1,0.9991637468338013,4.309908035793342e-05,0
+140,"def fix_spaces(text):
+    """"""
+    Given a string text, replace all spaces in it with underscores, 
+    and if a string has more than 2 consecutive spaces, 
+    then replace all consecutive spaces with - 
+    """"""",6.231029033660889,-0.9318932294845581,-4.033979892730713,-5.9051737785339355,0.9991857409477234,0.000774156185798347,3.480242230580188e-05,5.357476766221225e-06,1,0.9991857409477234,4.015989907202311e-05,0
+141,"def file_name_check(file_name):
+    """"""Create a function which takes a string representing a file's name, and returns
+    'Yes' if the the file's name is valid, and returns 'No' otherwise.
+    A file's name is considered to be valid if and only if all the following conditions 
+    are met:
+    - There should not be more than three digits ('0'-'9') in the file's name.
+    - The file's name contains exactly one dot '.'
+    - The substring before the dot should not be empty, and it starts with a letter from 
+    the latin alphapet ('a'-'z' and 'A'-'Z').
+    - The substring after the dot should be one of these: ['txt', 'exe', 'dll']
+    """"""",6.265744209289551,-0.751302182674408,-4.065208435058594,-6.089404106140137,0.999067485332489,0.0008956333622336388,3.257760181440972e-05,4.303502919356106e-06,1,0.999067485332489,3.6881105188513175e-05,0
+142,"def sum_squares(lst):
+    """"""""
+    This function will take a list of integers. For all entries in the list, the function shall square the integer entry if its index is a 
+    multiple of 3 and will cube the integer entry if its index is a multiple of 4 and not a multiple of 3. The function will not 
+    change the entries in the list whose indexes are not a multiple of 3 or 4. The function shall then return the sum of all entries. 
+    """"""",6.282412052154541,-0.919834315776825,-4.063587665557861,-5.96129846572876,0.9992188215255737,0.000744328775908798,3.2095933420350775e-05,4.8115466597664636e-06,1,0.9992188215255737,3.690748053486459e-05,0
+143,"def words_in_sentence(sentence):
+    """"""
+    You are given a string representing a sentence,
+    the sentence contains some words separated by a space,
+    and you have to return a string that contains the words from the original sentence,
+    whose lengths are prime numbers,
+    the order of the words in the new string should be the same as the original one.
+    """"""",6.296096324920654,-1.0265156030654907,-4.054317474365234,-5.863379955291748,0.999302864074707,0.0006599745829589665,3.1957246392266825e-05,5.234843229118269e-06,1,0.999302864074707,3.7192090530879796e-05,0
+144,"def simplify(x, n):
+    """"""Your task is to implement a function that will simplify the expression
+    x * n. The function returns True if x * n evaluates to a whole number and False
+    otherwise. Both x and n, are string representation of a fraction, and have the following format,
+    <numerator>/<denominator> where both numerator and denominator are positive whole numbers.
+
+    You can assume that x, and n are valid fractions, and do not have zero as denominator.
+
+    simplify(""1/5"", ""5/1"") = True
+    simplify(""1/6"", ""2/1"") = False
+    simplify(""7/10"", ""10/2"") = False
+    """"""",6.225831508636475,-0.9209897518157959,-4.007111072540283,-5.89640998840332,0.9991719722747803,0.0007867111708037555,3.593600195017643e-05,5.432721991383005e-06,1,0.9991719722747803,4.1368723032064736e-05,0
+145,"def order_by_points(nums):
+    """"""
+    Write a function which sorts the given list of integers
+    in ascending order according to the sum of their digits.
+    """"""",-4.759693622589111,1.0160428285598755,1.546453595161438,-4.967210292816162,0.0011466258438304067,0.369651198387146,0.6282703876495361,0.0009317477233707905,3,0.6282703876495361,0.629202127456665,1
+146,"def specialFilter(nums):
+    """"""Write a function that takes an array of numbers as input and returns 
+    the number of elements in the array that are greater than 10 and both 
+    first and last digits of a number are odd (1, 3, 5, 7, 9).
+    """"""",-3.7121384143829346,2.042409658432007,0.8540882468223572,-6.268349647521973,0.002422005869448185,0.7644404172897339,0.23294974863529205,0.00018794319476000965,2,0.7644404172897339,0.23313769698143005,0
+147,"def get_max_triples(n):
+    """"""
+    You are given a positive integer n. You have to create an integer array a of length n.
+        For each i (1 ≤ i ≤ n), the value of a[i] = i * i - i + 1.
+        Return the number of triples (a[i], a[j], a[k]) of a where i < j < k, 
+    and a[i] + a[j] + a[k] is a multiple of 3.
+    """"""",6.258320331573486,-0.903298020362854,-4.011829853057861,-5.996178150177002,0.9991853833198547,0.0007751661469228566,3.4623943065525964e-05,4.759759576700162e-06,1,0.9991853833198547,3.938370355172083e-05,0
+148,"def bf(planet1, planet2):
+    '''
+    There are eight planets in our solar system: the closerst to the Sun 
+    is Mercury, the next one is Venus, then Earth, Mars, Jupiter, Saturn, 
+    Uranus, Neptune.
+    Write a function that takes two planet names as strings planet1 and planet2. 
+    The function should return a tuple containing all planets whose orbits are 
+    located between the orbit of planet1 and the orbit of planet2, sorted by 
+    the proximity to the sun. 
+    The function should return an empty tuple if planet1 or planet2
+    are not correct planet names. 
+    '''",6.285763740539551,-1.018581748008728,-4.09440803527832,-5.837381839752197,0.9992914199829102,0.0006721329409629107,3.1019932066556066e-05,5.428460553957848e-06,1,0.9992914199829102,3.6448393075261265e-05,0
+149,"def sorted_list_sum(lst):
+    """"""Write a function that accepts a list of strings as a parameter,
+    deletes the strings that have odd lengths from it,
+    and returns the resulted list with a sorted order,
+    The list is always a list of strings and never an array of numbers,
+    and it may contain duplicates.
+    The order of the list should be ascending by length of each word, and you
+    should return the list sorted by that rule.
+    If two words have the same length, sort the list alphabetically.
+    The function should return a list of strings in sorted order.
+    You may assume that all words will have the same length.
+    """"""",6.3437323570251465,-0.8865523934364319,-4.0828728675842285,-6.041101932525635,0.9992424249649048,0.0007237658719532192,2.9611046556965448e-05,4.1783582673815545e-06,1,0.9992424249649048,3.378940527909435e-05,0
+150,"def x_or_y(n, x, y):
+    """"""A simple program which should return the value of x if n is 
+    a prime number and should return the value of y otherwise.
+    """"""",6.20941686630249,-0.996561586856842,-3.8626866340637207,-5.9100799560546875,0.9992108345031738,0.0007415500585921109,4.2208328522974625e-05,5.447865078167524e-06,1,0.9992108345031738,4.765619451063685e-05,0
+151,"def double_the_difference(lst):
+    '''
+    Given a list of numbers, return the sum of squares of the numbers
+    in the list that are odd. Ignore numbers that are negative or not integers.
+    
+    double_the_difference([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10
+    double_the_difference([-1, -2, 0]) == 0
+    double_the_difference([9, -2]) == 81
+    double_the_difference([0]) == 0  
+   
+    If the input list is empty, return 0.
+    '''",6.169423580169678,-0.9448346495628357,-3.8576104640960693,-5.983975410461426,0.9991377592086792,0.0008127224864438176,4.415093644638546e-05,5.2658861022791825e-06,1,0.9991377592086792,4.941682345815934e-05,0
+152,"def compare(game,guess):
+    """"""I think we all remember that feeling when the result of some long-awaited
+    event is finally known. The feelings and thoughts you have at that moment are
+    definitely worth noting down and comparing.
+    Your task is to determine if a person correctly guessed the results of a number of matches.
+    You are given two arrays of scores and guesses of equal length, where each index shows a match. 
+    Return an array of the same length denoting how far off each guess was. If they have guessed correctly,
+    the value is 0, and if not, the value is the absolute difference between the guess and the score.
+    """"""",5.83231258392334,-0.3267151117324829,-3.7785801887512207,-6.292494297027588,0.9978179931640625,0.0021096947602927685,6.6848770075012e-05,5.4114593694976065e-06,1,0.9978179931640625,7.226022717077285e-05,0
+153,"def Strongest_Extension(class_name, extensions):
+    """"""You will be given the name of a class (a string) and a list of extensions.
+    The extensions are to be used to load additional classes to the class. The
+    strength of the extension is as follows: Let CAP be the number of the uppercase
+    letters in the extension's name, and let SM be the number of lowercase letters 
+    in the extension's name, the strength is given by the fraction CAP - SM. 
+    You should find the strongest extension and return a string in this 
+    format: ClassName.StrongestExtensionName.
+    If there are two or more extensions with the same strength, you should
+    choose the one that comes first in the list.
+    """"""",6.282822608947754,-0.9450497627258301,-4.041112899780273,-5.922064304351807,0.9992367029190063,0.0007255097734741867,3.2812560675665736e-05,5.002108991902787e-06,1,0.9992367029190063,3.781466875807382e-05,0
+154,"def cycpattern_check(a , b):
+    """"""You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word
+    cycpattern_check(""abcd"",""abd"") => False
+    cycpattern_check(""hello"",""ell"") => True
+    cycpattern_check(""whassup"",""psus"") => False
+    cycpattern_check(""abab"",""baa"") => True
+    cycpattern_check(""efef"",""eeff"") => False
+    cycpattern_check(""himenss"",""simen"") => True
+    """"""",6.303310871124268,-0.7482296824455261,-4.074272632598877,-6.222739219665527,0.9990999698638916,0.0008652943070046604,3.109436511294916e-05,3.6275575894251233e-06,1,0.9990999698638916,3.472192111075856e-05,0
+155,"def even_odd_count(num):
+    """"""Given an integer. return a tuple that has the number of even and odd digits respectively.
+    """"""",5.892271995544434,-0.8743996620178223,-3.6126601696014404,-5.981139183044434,0.9987685084342957,0.0011501029366627336,7.439181354129687e-05,6.964788099139696e-06,1,0.9987685084342957,8.135660027619451e-05,0
+156,"def int_to_mini_roman(number):
+    """"""
+    Given a positive integer, obtain its roman numeral equivalent as a string,
+    and return it in lowercase.
+    Restrictions: 1 <= num <= 1000
+    """"""",6.284921169281006,-0.9820645451545715,-4.028107643127441,-5.944843292236328,0.9992642998695374,0.0006976996664889157,3.31733281200286e-05,4.879338121099863e-06,1,0.9992642998695374,3.805266533163376e-05,0
+157,"def right_angle_triangle(a, b, c):
+    '''
+    Given the lengths of the three sides of a triangle. Return True if the three
+    sides form a right-angled triangle, False otherwise.
+    A right-angled triangle is a triangle in which one angle is right angle or 
+    90 degree.
+    '''",6.231479644775391,-0.9620692133903503,-4.003170490264893,-5.885618686676025,0.9992079138755798,0.0007508226553909481,3.587600076571107e-05,5.460936790768756e-06,1,0.9992079138755798,4.1336938011227176e-05,0
+158,"def find_max(words):
+    """"""Write a function that accepts a list of strings.
+    The list contains different words. Return the word with maximum number
+    of unique characters. If multiple strings have maximum number of unique
+    characters, return the one which comes first in lexicographical order.
+
+    find_max([""name"", ""of"", ""string""]) == ""string""
+    find_max([""name"", ""enam"", ""game""]) == ""enam""
+    find_max([""aaaaaaa"", ""bb"" ,""cc""]) == """"aaaaaaa""
+    """"""",6.221027851104736,-0.8519260883331299,-3.987405776977539,-6.037275314331055,0.9991114735603333,0.0008469718741253018,3.6825425922870636e-05,4.741335942526348e-06,1,0.9991114735603333,4.156676004640758e-05,0
+159,"def eat(number, need, remaining):
+    """"""
+    You're a hungry rabbit, and you already have eaten a certain number of carrots,
+    but now you need to eat more carrots to complete the day's meals.
+    you should return an array of [ total number of eaten carrots after your meals,
+                                    the number of carrots left after your meals ]
+    if there are not enough remaining carrots, you will eat all remaining carrots, but will still be hungry.
+    """"""",-1.5523669719696045,6.0149455070495605,-2.6612560749053955,-7.540092945098877,0.000516724307090044,0.9993114471435547,0.00017048034351319075,1.2966490885446547e-06,2,0.9993114471435547,0.00017177699191961437,0
+160,"def do_algebra(operator, operand):
+    """"""
+    Given two lists operator, and operand. The first list has basic algebra operations, and 
+    the second list is a list of integers. Use the two given lists to build the algebric 
+    expression and return the evaluation of this expression.
+
+    The basic algebra operations:
+    Addition ( + ) 
+    Subtraction ( - ) 
+    Multiplication ( * ) 
+    Floor division ( // ) 
+    Exponentiation ( ** ) 
+    """"""",6.325152397155762,-0.9383612871170044,-4.0944390296936035,-5.974299430847168,0.9992654919624329,0.0007001273334026337,2.9820135750924237e-05,4.550895027932711e-06,1,0.9992654919624329,3.437103077885695e-05,0
+161,"def solve(s):
+    """"""You are given a string s.
+    if s[i] is a letter, reverse its case from lower to upper or vise versa, 
+    otherwise keep it as it is.
+    If the string contains no letters, reverse the string.
+    The function should return the resulted string.
+    """"""",5.421667575836182,-0.25529932975769043,-3.4690747261047363,-6.203258514404297,0.9964421391487122,0.0034117468167096376,0.00013716767716687173,8.90863248059759e-06,1,0.9964421391487122,0.00014607631601393223,0
+162,"def string_to_md5(text):
+    """"""
+    Given a string 'text', return its md5 hash equivalent string.
+    If 'text' is an empty string, return None.
+    """"""",6.218349456787109,-0.9190084338188171,-4.015145301818848,-5.923416614532471,0.9991645812988281,0.000794185500126332,3.591589484130964e-05,5.3276444305083714e-06,1,0.9991645812988281,4.124354018131271e-05,0
+163,"def generate_integers(a, b):
+    """"""
+    Given two positive integers a and b, return the even digits between a
+    and b, in ascending order.
+    """"""",-5.89109468460083,-1.4265795946121216,3.237558603286743,-4.065742015838623,0.00010741497681010514,0.009332094341516495,0.9898939728736877,0.0006665080436505377,3,0.9898939728736877,0.9905604720115662,1

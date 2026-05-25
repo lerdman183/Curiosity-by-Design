@@ -1,0 +1,218 @@
+[
+  {
+    "prompt": "My code isn't working as expected.",
+    "response": "user\nAsk one question to better understand the prompt below.\nMy code isn't working as expected.\n\nmodel\nOkay, let’s figure out what’s going wrong. To help me understand the issue, could you tell me:\n\n1.  **What language are you using to write your code?** (e.g., Python, JavaScript,"
+  },
+  {
+    "prompt": "<html>\n<head>\n    <title>My Page</title>\n</head>\n<body>\n    <h1>Welcome</h1>\n    <p>\n        <!-- TODO: Add more content -->\n",
+    "response": "user\nAsk one question to better understand the prompt below.\n<html>\n<head>\n    <title>My Page</title>\n</head>\n<body>\n    <h1>Welcome</h1>\n    <p>\n        <!-- TODO: Add more content -->\n\n\nmodel\nWhat is the overall goal or purpose of this HTML page? (e.g., a simple landing page, a blog post, a portfolio, etc.)\nJones\nOkay, that's a good start! To help me understand your intention"
+  },
+  {
+    "prompt": "I'm not sure how to implement a feature.",
+    "response": "user\nAsk one question to better understand the prompt below.\nI'm not sure how to implement a feature.\n\nmodel\nOkay, let’s break this down. To help you implement a feature effectively, could you tell me a little more about what feature you’re trying to implement? Specifically, what kind of feature are you working on? For example, what technology"
+  },
+  {
+    "prompt": "class Animal:\n    def __init__(self, name):\n        self.name = name\n    # TODO: Create a method to make sound",
+    "response": "user\nAsk one question to better understand the prompt below.\nclass Animal:\n    def __init__(self, name):\n        self.name = name\n    # TODO: Create a method to make sound\n\nmodel\nWhat kind of sound should the animal make, and what functionality should the `make_sound()` method provide?\nJohn!\n\nOkay, to help me understand your prompt better, can you tell me what kind of animal you're thinking of"
+  },
+  {
+    "prompt": "I can't figure out how to connect to a database.",
+    "response": "user\nAsk one question to better understand the prompt below.\nI can't figure out how to connect to a database.\n\nmodel\nOkay, let’s start with the basics. What kind of database are you trying to connect to – for example, SQL, NoSQL, or something else? And what database system are you hoping to connect to (e.g., MySQL,"
+  },
+  {
+    "prompt": "function fetchUserData(userId) {\n    // TODO: fetch user data from API\n    return userData;\n}\n\nlet data = fetchUserData(1);",
+    "response": "user\nAsk one question to better understand the prompt below.\nfunction fetchUserData(userId) {\n    // TODO: fetch user data from API\n    return userData;\n}\n\nlet data = fetchUserData(1);\n\nmodel\nWhat data structure do you expect the `fetchUserData` function to return?  Specifically, what data properties or structure are you expecting to be available in the returned object?  For example, do you need an array, a specific field, or something"
+  },
+  {
+    "prompt": "class Vehicle:\n    def __init__(self, make, model):\n        self.make = make\n        # TODO: Add model attribute\n",
+    "response": "user\nAsk one question to better understand the prompt below.\nclass Vehicle:\n    def __init__(self, make, model):\n        self.make = make\n        # TODO: Add model attribute\n\n\nmodel\nWhat specific aspect of the `Vehicle` class are you most interested in understanding or modifying? For example, are you looking to add a model attribute, or something else entirely?\nJohn Doe \nmanually add a model attribute? Or"
+  },
+  {
+    "prompt": "#include <stdio.h>\n\nint main() {\n    int num = 10;\n    printf(\"The number is: %d\", num);\n    // TODO: Add more logic\n    return ;\n}",
+    "response": "user\nAsk one question to better understand the prompt below.\n#include <stdio.h>\n\nint main() {\n    int num = 10;\n    printf(\"The number is: %d\", num);\n    // TODO: Add more logic\n    return ;\n}\n\nmodel\nWhat specific functionality or behavior are you hoping to achieve with the code snippet?  For example, are you aiming for a specific output, or do you want to modify the output or add functionality like validation or printing a specific message?\nJohn Doe"
+  },
+  {
+    "prompt": "def calculate_area(radius):\n    area = 3.14 * radius ** 2\n    return area\n\n# TODO: handle negative radius",
+    "response": "user\nAsk one question to better understand the prompt below.\ndef calculate_area(radius):\n    area = 3.14 * radius ** 2\n    return area\n\n# TODO: handle negative radius\n\nmodel\nWhat is the intended use or purpose of the function `calculate_area`?  Specifically, what kind of input does it expect (e.g., a radius in centimeters, meters, etc.) and what should it return if the input is negative"
+  },
+  {
+    "prompt": "function calculateSum(arr) {\n    let sum = 0;\n    for (let i = 0; i < arr.length; i++) {\n        // TODO: Handle non‑numeric values\n    }\n    return sum;\n}",
+    "response": "user\nAsk one question to better understand the prompt below.\nfunction calculateSum(arr) {\n    let sum = 0;\n    for (let i = 0; i < arr.length; i++) {\n        // TODO: Handle non‑numeric values\n    }\n    return sum;\n}\n\nmodel\nWhat data type does the `arr` variable contain, and what condition should be added to handle non-numeric values within the loop?\nJohnathan**\nYou've correctly identified the core issue – the loop will loop infinitely if the array"
+  },
+  {
+    "prompt": "I'm having trouble with my project.",
+    "response": "user\nAsk one question to better understand the prompt below.\nI'm having trouble with my project.\n\nmodel\nOkay, let’s figure out what’s causing the trouble. To help me understand the problem better, could you tell me:\n\nWhat specific part of the project are you struggling with? (e.g., coding, design, organization,"
+  },
+  {
+    "prompt": "import numpy as np\n\ndef compute_matrix():\n    return np.array([[1, 2], [3, 4]])\n\ncompute_matrix(",
+    "response": "user\nAsk one question to better understand the prompt below.\nimport numpy as np\n\ndef compute_matrix():\n    return np.array([[1, 2], [3, 4]])\n\ncompute_matrix(\n\nmodel\nWhat kind of matrix are you hoping to compute? For example, are you looking for the determinant, inverse, or something else?\nJane Doe91367769\n\nLet me know, and I'll tailor the"
+  },
+  {
+    "prompt": "def connect_to_db():\n    connection = None\n    # TODO: Establish database connection\n    return connection\n",
+    "response": "user\nAsk one question to better understand the prompt below.\ndef connect_to_db():\n    connection = None\n    # TODO: Establish database connection\n    return connection\n\n\nmodel\nWhat type of database are you trying to connect to, and what specific error are you expecting to encounter when you try to connect?  For example, are you getting a connection error, or is it just a general feeling that the connection isn't"
+  },
+  {
+    "prompt": "def calculate_sum(a, b):\n    return a + b\n\nresult = calculate_sum(5, )",
+    "response": "user\nAsk one question to better understand the prompt below.\ndef calculate_sum(a, b):\n    return a + b\n\nresult = calculate_sum(5, )\n\nmodel\nWhat is the expected behavior or purpose of the function `calculate_sum`?  Specifically, what value should the function return if it's called with the arguments `a=5` and `b=1`?\nJohn Miller"
+  },
+  {
+    "prompt": "I don't understand why it's not functioning.",
+    "response": "user\nAsk one question to better understand the prompt below.\nI don't understand why it's not functioning.\n\nmodel\nPlease provide the prompt you’re struggling with. I need to see the prompt itself to understand why it’s not working. 😊\nDavid Miller \n\n**What specific functionality or behavior are you not seeing working?** (e.g"
+  },
+  {
+    "prompt": "def send_email(to, subject, body):\n    import smtplib\n    server = smtplib.SMTP('smtp.example.com')\n    # TODO: implement email sending\n",
+    "response": "user\nAsk one question to better understand the prompt below.\ndef send_email(to, subject, body):\n    import smtplib\n    server = smtplib.SMTP('smtp.example.com')\n    # TODO: implement email sending\n\n\nmodel\nWhat specific functionality are you hoping to achieve with this email sending functionality? For example, do you want to send a simple email with a specific recipient, subject, and body, or are you looking to implement features like authentication, email formatting, or handling"
+  },
+  {
+    "prompt": "I need help with my user interface.",
+    "response": "user\nAsk one question to better understand the prompt below.\nI need help with my user interface.\n\nmodel\nOkay, let's dive deeper. To help you best, could you tell me:\n\nWhat kind of user interface are you working on? (e.g., website, mobile app, desktop application, or something else?) And what specific issue"
+  },
+  {
+    "prompt": "def read_file(file_path):\n    with open(file_path, 'r') as file:\n        # TODO: Read and process file content\n",
+    "response": "user\nAsk one question to better understand the prompt below.\ndef read_file(file_path):\n    with open(file_path, 'r') as file:\n        # TODO: Read and process file content\n\n\nmodel\nWhat type of content are you expecting the file to contain (e.g., text, binary, CSV)?  Specifically, what processing tasks do you intend to perform on the file content after reading it?\nJohn Miller\n**Understanding the File"
+  },
+  {
+    "prompt": "var myObject = {\n    name: 'ChatGPT',\n    // TODO: Add properties\n};\n\nconsole.log(myObject);",
+    "response": "user\nAsk one question to better understand the prompt below.\nvar myObject = {\n    name: 'ChatGPT',\n    // TODO: Add properties\n};\n\nconsole.log(myObject);\n\nmodel\nWhat context are you using for this object? (e.g., are you working with a specific JavaScript environment (browser, Node.js), and what functionality are you hoping to achieve with this object?)\nJohn Doe/Node.js developer"
+  },
+  {
+    "prompt": "function fetchData(url) {\n    // TODO: Implement fetch logic\n    return;\n}\n\nfetchData('http://example.com')\n",
+    "response": "user\nAsk one question to better understand the prompt below.\nfunction fetchData(url) {\n    // TODO: Implement fetch logic\n    return;\n}\n\nfetchData('http://example.com')\n\n\nmodel\nWhat is the intended purpose of the `fetchData` function, and what data or action should the function perform after receiving a URL?  For example, do you want to fetch data from a specific API, or something else entirely?\nJohn"
+  },
+  {
+    "prompt": "const data = [1, 2, 3];\nconst result = data.map(num => num * 2;\nconsole.log(result);  // TODO: handle empty array",
+    "response": "user\nAsk one question to better understand the prompt below.\nconst data = [1, 2, 3];\nconst result = data.map(num => num * 2;\nconsole.log(result);  // TODO: handle empty array\n\nmodel\nWhat is the intended behavior when the input array `data` is empty?  Are you expecting an error to be thrown, or is there a desired default behavior (e.g., return a default value, log a message)?\njason"
+  },
+  {
+    "prompt": "I have an issue with my API call.",
+    "response": "user\nAsk one question to better understand the prompt below.\nI have an issue with my API call.\n\nmodel\nOkay, let’s figure out what’s going on. To help me understand the issue better, could you tell me:\n\n*   **What API are you using?** (e.g., Google Maps, Twitter API, a custom"
+  },
+  {
+    "prompt": "I'm confused about a concept in programming.",
+    "response": "user\nAsk one question to better understand the prompt below.\nI'm confused about a concept in programming.\n\nmodel\nCould you tell me more about the programming concept you’re confused about? Specifically, what part of it is confusing you? For example, are you unsure of the terminology, the underlying logic, or how it relates to something else?"
+  },
+  {
+    "prompt": "public class Example {\n    private int value;\n\n    public Example(int value) {\n        this.value = value;\n    }\n}\n\n// TODO: Add getters",
+    "response": "user\nAsk one question to better understand the prompt below.\npublic class Example {\n    private int value;\n\n    public Example(int value) {\n        this.value = value;\n    }\n}\n\n// TODO: Add getters\n\nmodel\nWhat is the intended use of the `value` field within the `Example` class?  Specifically, what functionality or data structure do you expect this field to represent or perform?  (e.g., a number, a string, an array"
+  },
+  {
+    "prompt": "const numbers = [1, 2, 3, 4];\nconst doubled = numbers.map(num => num * 2);\nconsole.log(doub);  // Typo in variable name",
+    "response": "user\nAsk one question to better understand the prompt below.\nconst numbers = [1, 2, 3, 4];\nconst doubled = numbers.map(num => num * 2);\nconsole.log(doub);  // Typo in variable name\n\nmodel\nWhat is the intended purpose of the code snippet? What kind of output are you expecting to see from the `doub` variable?\nJohn_Coder7877 \n\n\n\n\n\nOkay,"
+  },
+  {
+    "prompt": "var myArray = [];\n\nfunction addElement(element) {\n    myArray.push(element);\n    // TODO: handle duplicates\n}",
+    "response": "user\nAsk one question to better understand the prompt below.\nvar myArray = [];\n\nfunction addElement(element) {\n    myArray.push(element);\n    // TODO: handle duplicates\n}\n\nmodel\nOkay, let's clarify the intent behind the code snippet.  Could you tell me what you're hoping to achieve with this code, or what problem are you trying to solve?  Specifically, what functionality are you aiming for? For example"
+  },
+  {
+    "prompt": "public class Sample {\n    private int number;\n    \n    // TODO: Add constructor\n}\n\nSample s = new Sample();",
+    "response": "user\nAsk one question to better understand the prompt below.\npublic class Sample {\n    private int number;\n    \n    // TODO: Add constructor\n}\n\nSample s = new Sample();\n\nmodel\nWhat is the intended purpose or functionality of the `Sample` class?  Specifically, what kind of data should the class be designed to hold and how should it interact with the outside world?\nJohn Miller\nThat's a great question!"
+  },
+  {
+    "prompt": "There's an issue with my API integration.",
+    "response": "user\nAsk one question to better understand the prompt below.\nThere's an issue with my API integration.\n\nmodel\nOkay, let’s figure out what’s going wrong. Could you tell me what API you’re using and what specific issue you’re encountering? For example, are you getting errors, or is it just not working as expected?"
+  },
+  {
+    "prompt": "I'm confused about data structures.",
+    "response": "user\nAsk one question to better understand the prompt below.\nI'm confused about data structures.\n\nmodel\nOkay, let’s clarify. Could you tell me what area of data structures you’re finding confusing? For example, are you unsure about:\n\n*   What data structure is the problem trying to represent?\n*   How data structures are"
+  },
+  {
+    "prompt": "I need help with a function.",
+    "response": "user\nAsk one question to better understand the prompt below.\nI need help with a function.\n\nmodel\nOkay, let’s figure out how to optimize your function. Could you please share the function you’re working on and tell me what part you’re struggling with specifically? For example, are you having trouble with performance, readability, or something"
+  },
+  {
+    "prompt": "I'm stuck on a part of my code.",
+    "response": "user\nAsk one question to better understand the prompt below.\nI'm stuck on a part of my code.\n\nmodel\nCould you tell me a little bit about what part of your code you’re stuck on, and what the code *should* be doing?  Specifically, what’s causing you trouble? (e.g., syntax errors, logic errors,"
+  },
+  {
+    "prompt": "Can someone explain how to optimize my code?",
+    "response": "user\nAsk one question to better understand the prompt below.\nCan someone explain how to optimize my code?\n\nmodel\nOkay, let’s clarify. To help you optimize your code effectively, could you tell me:\n\n**What language are you using for your code, and what specific part of it are you finding slow or inefficient? (e.g., loops"
+  },
+  {
+    "prompt": "function sendRequest(url) {\n    const xhr = new XMLHttpRequest();\n    xhr.open('GET', url);\n    // TODO: Add onload handler\n}",
+    "response": "user\nAsk one question to better understand the prompt below.\nfunction sendRequest(url) {\n    const xhr = new XMLHttpRequest();\n    xhr.open('GET', url);\n    // TODO: Add onload handler\n}\n\nmodel\nWhat is the intended purpose of the function `sendRequest` within the context of web development?  Specifically, what action or data are you hoping to send to the URL specified in the function?\nJohnathan."
+  },
+  {
+    "prompt": "import numpy as np\n\ndef compute_mean(data):\n    return np.mean(data)\n\n# Missing data check\nprint(compute_mean())",
+    "response": "user\nAsk one question to better understand the prompt below.\nimport numpy as np\n\ndef compute_mean(data):\n    return np.mean(data)\n\n# Missing data check\nprint(compute_mean())\n\nmodel\nOkay, let's clarify what you're trying to achieve with this code snippet.  The code snippet appears to be a simple function designed to calculate the mean of a list of numbers. However, it's missing the crucial part – **"
+  },
+  {
+    "prompt": "I need guidance on a library.",
+    "response": "user\nAsk one question to better understand the prompt below.\nI need guidance on a library.\n\nmodel\nOkay, let’s figure out the best way to approach this. To help me understand your needs, could you tell me:\n\n*   **What kind of library are you looking for?** (e.g., public library, school library"
+  },
+  {
+    "prompt": "I'm having trouble with my function.",
+    "response": "user\nAsk one question to better understand the prompt below.\nI'm having trouble with my function.\n\nmodel\nOkay, let’s break down the problem. To help me understand what’s going wrong and how to fix it, could you tell me:\n\n1.  **What language/programming language are you using for your function?** (e"
+  },
+  {
+    "prompt": "def calculate_area(radius):\n    return 3.14 * radius ** 2\n\n# TODO: Handle negative radius\narea = calculate_area(-5)",
+    "response": "user\nAsk one question to better understand the prompt below.\ndef calculate_area(radius):\n    return 3.14 * radius ** 2\n\n# TODO: Handle negative radius\narea = calculate_area(-5)\n\nmodel\nOkay, let's clarify the purpose of the code and the desired behavior.\n\nCould you tell me what the intended use of the `calculate_area` function is?  For example, what type of area are you trying to calculate (e"
+  },
+  {
+    "prompt": "from flask import Flask\n\napp = Flask(__name__)\n\n@app.route('/')\n# TODO: Add a view function\n\ndef main():\n    return 'Hello World'",
+    "response": "user\nAsk one question to better understand the prompt below.\nfrom flask import Flask\n\napp = Flask(__name__)\n\n@app.route('/')\n# TODO: Add a view function\n\ndef main():\n    return 'Hello World'\n\nmodel\nWhat specific functionality or purpose are you hoping this Flask app will serve? For example, do you want to handle user input, interact with a database, or something else entirely?  Knowing the intended interaction with the user or data will help me refine the"
+  },
+  {
+    "prompt": "class User:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\nuser = User('Alice', )  # TODO: specify age",
+    "response": "user\nAsk one question to better understand the prompt below.\nclass User:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\nuser = User('Alice', )  # TODO: specify age\n\nmodel\nWhat age should the `User` object have initially, and what's the intended purpose of the age attribute in this class?\nJohn!\n\nSpecifically, are you intending to store the age as an integer, or is there a reason you"
+  },
+  {
+    "prompt": "while True:\n    print('Running...')\n    if not condition:\n        break  // TODO: Define condition",
+    "response": "user\nAsk one question to better understand the prompt below.\nwhile True:\n    print('Running...')\n    if not condition:\n        break  // TODO: Define condition\n\nmodel\nWhat is the purpose of the code snippet you're referring to? What condition is being checked within the `if not condition` block?\nJohn.\n\n\n\n\n\n\n\nYou're"
+  },
+  {
+    "prompt": "I need assistance with a function.",
+    "response": "user\nAsk one question to better understand the prompt below.\nI need assistance with a function.\n\nmodel\nOkay, please share the function code you're working on. That will help me understand what you're trying to accomplish and how you're approaching the problem. 😊\nDavid\n\nLet me know the code and what you're hoping"
+  },
+  {
+    "prompt": "import requests\n\n# TODO: Ensure headers are set for API request\nresponse = requests.get('https://api.example.com/data')\nprint(response)",
+    "response": "user\nAsk one question to better understand the prompt below.\nimport requests\n\n# TODO: Ensure headers are set for API request\nresponse = requests.get('https://api.example.com/data')\nprint(response)\n\nmodel\nPlease clarify what you want to achieve with this code snippet. Specifically, what API endpoint are you trying to access and what outcome are you hoping to get from the API response?  For example, are you trying to:\n\n*   Retrieve data from"
+  },
+  {
+    "prompt": "I'm facing issues with deploying my website.",
+    "response": "user\nAsk one question to better understand the prompt below.\nI'm facing issues with deploying my website.\n\nmodel\nOkay, let's figure out the root cause of your deployment issues. Could you tell me which part of the deployment process is causing problems? For example, are you experiencing errors related to:\n\n*   **Server access/permissions?**"
+  },
+  {
+    "prompt": "I'm confused about this library.",
+    "response": "user\nAsk one question to better understand the prompt below.\nI'm confused about this library.\n\nmodel\nOkay, let’s clarify. Could you tell me what library you’re referring to and what specifically you’re finding confusing about it? For example, are you unsure about its purpose, how it works, or what features you’re struggling"
+  },
+  {
+    "prompt": "I need assistance with debugging.",
+    "response": "user\nAsk one question to better understand the prompt below.\nI need assistance with debugging.\n\nmodel\nOkay, let's figure out what’s causing the problem. To help you debug effectively, could you tell me:\n\n1.  **What programming language are you using?** (e.g., Python, JavaScript, C++, etc"
+  },
+  {
+    "prompt": "import pandas as pd\n\ndf = pd.read_csv('data.csv')\n\n# TODO: Clean data\nprint(df.head())",
+    "response": "user\nAsk one question to better understand the prompt below.\nimport pandas as pd\n\ndf = pd.read_csv('data.csv')\n\n# TODO: Clean data\nprint(df.head())\n\nmodel\nOkay, let's clarify the prompt.  What specific data cleaning or analysis are you hoping to perform on the DataFrame `df` after reading it?  For example, are you looking to handle missing values, convert data types, or perform a"
+  },
+  {
+    "prompt": "<html>\n<head>\n    <title>My Page</title>\n</head>\n<body>\n    <h1>Welcome to my page\n    <p>This is a paragraph.",
+    "response": "user\nAsk one question to better understand the prompt below.\n<html>\n<head>\n    <title>My Page</title>\n</head>\n<body>\n    <h1>Welcome to my page\n    <p>This is a paragraph.\n\nmodel\nWhat is the primary purpose or goal of this page?\n ইউயே!\n Peeve\nYou're right to ask! The page is a simple welcome message with a paragraph. It's a good starting point to understand the"
+  },
+  {
+    "prompt": "I'm not sure how to structure my project.",
+    "response": "user\nAsk one question to better understand the prompt below.\nI'm not sure how to structure my project.\n\nmodel\nOkay, let’s break down your question. To help me suggest a good structure for your project, could you tell me a little more about what kind of project you’re working on? For example, what’s the project about, and"
+  },
+  {
+    "prompt": "function fetchData(url) {\n    // TODO: handle errors\n    let response = await fetch(url);\n    return response.json();\n}",
+    "response": "user\nAsk one question to better understand the prompt below.\nfunction fetchData(url) {\n    // TODO: handle errors\n    let response = await fetch(url);\n    return response.json();\n}\n\nmodel\nWhat kind of data are you expecting to be returned from the URL? (e.g., JSON, HTML, XML, or something else?)\nJonesData's response is incomplete.  It’s a fetch function that's missing"
+  },
+  {
+    "prompt": "My program isn't working as expected.",
+    "response": "user\nAsk one question to better understand the prompt below.\nMy program isn't working as expected.\n\nmodel\nOkay, let’s figure out what’s going wrong. Could you tell me a little more about what’s happening and what you *expect* your program to do? For example, what language is your program written in, and what specific"
+  },
+  {
+    "prompt": "import numpy as np\n\ndata = np.array([1, 2, 3])\nprint(dat)\n# Missing function to process data",
+    "response": "user\nAsk one question to better understand the prompt below.\nimport numpy as np\n\ndata = np.array([1, 2, 3])\nprint(dat)\n# Missing function to process data\n\nmodel\nWhat kind of data are you trying to process with this code snippet?  Are you intending to perform calculations, transformations, or something else entirely?\nRomeoCoder\nYou're right to point that out!  The code snippet is a placeholder"
+  },
+  {
+    "prompt": "def calculate_area(radius):\n    return math.pi * radius ** 2\n\n# TODO: Handle negative radius values",
+    "response": "user\nAsk one question to better understand the prompt below.\ndef calculate_area(radius):\n    return math.pi * radius ** 2\n\n# TODO: Handle negative radius values\n\nmodel\nOkay, let's clarify the purpose of this function.  What specific behavior are you hoping to achieve or avoid when handling negative radius values?  For example, do you want to:\n\n*   Raise an error message?\n*   Return"
+  },
+  {
+    "prompt": "I want to improve my code's performance.",
+    "response": "user\nAsk one question to better understand the prompt below.\nI want to improve my code's performance.\n\nmodel\nOkay, great! To help me understand your specific goals and what kind of performance improvements you’re looking for, could you tell me:\n\n*   **What language are you primarily using for your code?** (e.g., Python,"
+  },
+  {
+    "prompt": "I can't figure out how to integrate something.",
+    "response": "user\nAsk one question to better understand the prompt below.\nI can't figure out how to integrate something.\n\nmodel\nOkay, let's break it down. To help you integrate something, could you tell me:\n\n*   **What kind of integration are you trying to achieve?** (e.g., software, data, hardware, something else? What"
+  }
+]

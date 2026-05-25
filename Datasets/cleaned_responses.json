@@ -1,0 +1,272 @@
+[
+  {
+    "prompt": "My code isn't working as expected.",
+    "raw-response": "Okay, here's a question to help me understand:\n\n**Could you describe the specific error message you're receiving, or what's happening that's causing the code to not work as expected?**anciand\nI",
+    "finetuned-response": "Okay, let's figure out what's going wrong. To help me understand the issue, could you tell me:\n\n1.  **What language are you using to write your code?** (e.g., Python, JavaScript,"
+  },
+  {
+    "prompt": "<html>\n<head>\n    <title>My Page</title>\n</head>\n<body>\n    <h1>Welcome</h1>\n    <p>\n        <!-- TODO: Add more content -->\n",
+    "raw-response": "What is the primary purpose or goal of this page?न्ना\nAhmed",
+    "finetuned-response": "What is the overall goal or purpose of this HTML page? (e.g., a simple landing page, a blog post, a portfolio, etc.)\nJones\nOkay, that's a good start! To help me understand your intention"
+  },
+  {
+    "prompt": "I'm not sure how to implement a feature.",
+    "raw-response": "Could you tell me a little more about what kind of feature you're trying to implement?\nallows me to understand the context and what kind of assistance you need.https://www.askgpt.com/ask/1",
+    "finetuned-response": "Okay, let's break this down. To help you implement a feature effectively, could you tell me a little more about what feature you're trying to implement? Specifically, what kind of feature are you working on? For example, what technology"
+  },
+  {
+    "prompt": "class Animal:\n    def __init__(self, name):\n        self.name = name\n    # TODO: Create a method to make sound",
+    "raw-response": "What is the intended use of this `Animal` class and what kind of sound should it make?न्ना\nभव्य!",
+    "finetuned-response": "What kind of sound should the animal make, and what functionality should the `make_sound()` method provide?\nJohn!\n\nOkay, to help me understand your prompt better, can you tell me what kind of animal you're thinking of"
+  },
+  {
+    "prompt": "I can't figure out how to connect to a database.",
+    "raw-response": "Okay, here's my question to help me understand better:\n\n**What kind of database are you trying to connect to (e.g., MySQL, PostgreSQL, MongoDB, SQL Server, etc.)?**\nअ",
+    "finetuned-response": "Okay, let's start with the basics. What kind of database are you trying to connect to – for example, SQL, NoSQL, or something else? And what database system are you hoping to connect to (e.g., MySQL,"
+  },
+  {
+    "prompt": "function fetchUserData(userId) {\n    // TODO: fetch user data from API\n    return userData;\n}\n\nlet data = fetchUserData(1);",
+    "raw-response": "What kind of user data are you expecting to fetch, and what is the expected format of that data (e.g., JSON, XML, etc.)?jero",
+    "finetuned-response": "What data structure do you expect the `fetchUserData` function to return?  Specifically, what data properties or structure are you expecting to be available in the returned object?  For example, do you need an array, a specific field, or something"
+  },
+  {
+    "prompt": "class Vehicle:\n    def __init__(self, make, model):\n        self.make = make\n        # TODO: Add model attribute\n",
+    "raw-response": "What is the intended use of the `model` attribute in this Vehicle class?न्ना\nabhi",
+    "finetuned-response": "What specific aspect of the `Vehicle` class are you most interested in understanding or modifying? For example, are you looking to add a model attribute, or something else entirely?\nJohn Doe \nmanually add a model attribute? Or"
+  },
+  {
+    "prompt": "#include <stdio.h>\n\nint main() {\n    int num = 10;\n    printf(\"The number is: %d\", num);\n    // TODO: Add more logic\n    return ;\n}",
+    "raw-response": "What is the purpose of the code snippet? (e.g., is it meant to print a number, calculate something, or something else?)\n Elsevier\nبوधा\n\nبوधा",
+    "finetuned-response": "What specific functionality or behavior are you hoping to achieve with the code snippet?  For example, are you aiming for a specific output, or do you want to modify the output or add functionality like validation or printing a specific message?\nJohn Doe"
+  },
+  {
+    "prompt": "def calculate_area(radius):\n    area = 3.14 * radius ** 2\n    return area\n\n# TODO: handle negative radius",
+    "raw-response": "What is the intended use case for this function? (e.g., calculating the area of a circle, calculating the area of a shape with a circular component, etc.) interiortainedtainedtainedtainedtainedtained",
+    "finetuned-response": "What is the intended use or purpose of the function `calculate_area`?  Specifically, what kind of input does it expect (e.g., a radius in centimeters, meters, etc.) and what should it return if the input is negative"
+  },
+  {
+    "prompt": "function calculateSum(arr) {\n    let sum = 0;\n    for (let i = 0; i < arr.length; i++) {\n        // TODO: Handle non‑numeric values\n    }\n    return sum;\n}",
+    "raw-response": "What is the expected behavior when the input array `arr` contains non-numeric values?\n恩，我理解了。\n втраபене",
+    "finetuned-response": "What data type does the `arr` variable contain, and what condition should be added to handle non-numeric values within the loop?\nJohnathan**\nYou've correctly identified the core issue – the loop will loop infinitely if the array"
+  },
+  {
+    "prompt": "I'm having trouble with my project.",
+    "raw-response": "Could you tell me a little more about what's going on with your project?\n लव्ह\nyslλο back to the original question!be back soon.‍‍",
+    "finetuned-response": "Okay, let's figure out what's causing the trouble. To help me understand the problem better, could you tell me:\n\nWhat specific part of the project are you struggling with? (e.g., coding, design, organization,"
+  },
+  {
+    "prompt": "import numpy as np\n\ndef compute_matrix():\n    return np.array([[1, 2], [3, 4]])\n\ncompute_matrix(",
+    "raw-response": "What is the intended use case for this `compute_matrix` function? (e.g., is it meant to be a demonstration of NumPy, a part of a larger program, etc.)\n\n\n栀i",
+    "finetuned-response": "What kind of matrix are you hoping to compute? For example, are you looking for the determinant, inverse, or something else?\nJane Doe91367769\n\nLet me know, and I'll tailor the"
+  },
+  {
+    "prompt": "def connect_to_db():\n    connection = None\n    # TODO: Establish database connection\n    return connection\n",
+    "raw-response": "What is the purpose of this function `connect_to_db()`?\njerne",
+    "finetuned-response": "What type of database are you trying to connect to, and what specific error are you expecting to encounter when you try to connect?  For example, are you getting a connection error, or is it just a general feeling that the connection isn't"
+  },
+  {
+    "prompt": "def calculate_sum(a, b):\n    return a + b\n\nresult = calculate_sum(5, )",
+    "raw-response": "What is the expected output of the `calculate_sum` function when called with arguments `a = 5` and `b = 3`?\nیודה\nio\nio\nio\nio\nio",
+    "finetuned-response": "What is the expected behavior or purpose of the function `calculate_sum`?  Specifically, what value should the function return if it's called with the arguments `a=5` and `b=1`?\nJohn Miller"
+  },
+  {
+    "prompt": "I don't understand why it's not functioning.",
+    "raw-response": "Okay, here's my question to better understand why the prompt isn't functioning:\n\n**Could you please describe *exactly* what you're seeing when you try to use this prompt?** (e.g., What happens when you",
+    "finetuned-response": "Please provide the prompt you're struggling with. I need to see the prompt itself to understand why it's not working. 😊\nDavid Miller \n\n**What specific functionality or behavior are you not seeing working?** (e.g"
+  },
+  {
+    "prompt": "def send_email(to, subject, body):\n    import smtplib\n    server = smtplib.SMTP('smtp.example.com')\n    # TODO: implement email sending\n",
+    "raw-response": "What is the intended purpose of this function? (e.g., is it meant to send emails to a specific recipient, or is it a placeholder for a more complex email sending process?)Interpreting the prompt requires understanding the goal.",
+    "finetuned-response": "What specific functionality are you hoping to achieve with this email sending functionality? For example, do you want to send a simple email with a specific recipient, subject, and body, or are you looking to implement features like authentication, email formatting, or handling"
+  },
+  {
+    "prompt": "I need help with my user interface.",
+    "raw-response": "Okay, to help me understand your needs better, could you tell me **what kind of user interface are you working with?** (e.g., website, mobile app, desktop application, specific platform like React, etc.)",
+    "finetuned-response": "Okay, let's dive deeper. To help you best, could you tell me:\n\nWhat kind of user interface are you working on? (e.g., website, mobile app, desktop application, or something else?) And what specific issue"
+  },
+  {
+    "prompt": "def read_file(file_path):\n    with open(file_path, 'r') as file:\n        # TODO: Read and process file content\n",
+    "raw-response": "What kind of file are you expecting to read? (e.g., text file, CSV file, JSON file, etc.)ielenCrus\nख्याન\ntained",
+    "finetuned-response": "What type of content are you expecting the file to contain (e.g., text, binary, CSV)?  Specifically, what processing tasks do you intend to perform on the file content after reading it?\nJohn Miller\n**Understanding the File"
+  },
+  {
+    "prompt": "var myObject = {\n    name: 'ChatGPT',\n    // TODO: Add properties\n};\n\nconsole.log(myObject);",
+    "raw-response": "What is the purpose of this code snippet? (e.g., are you trying to create a simple object, demonstrate object properties, or something else?)न्नाTBL učini.",
+    "finetuned-response": "What context are you using for this object? (e.g., are you working with a specific JavaScript environment (browser, Node.js), and what functionality are you hoping to achieve with this object?)\nJohn Doe/Node.js developer"
+  },
+  {
+    "prompt": "function fetchData(url) {\n    // TODO: Implement fetch logic\n    return;\n}\n\nfetchData('http://example.com')\n",
+    "raw-response": "What is the purpose of the `fetchData` function? (e.g., is it supposed to fetch data from a specific URL, or is it a placeholder for a more complex operation?)jeroen.\n\nannon",
+    "finetuned-response": "What is the intended purpose of the `fetchData` function, and what data or action should the function perform after receiving a URL?  For example, do you want to fetch data from a specific API, or something else entirely?\nJohn"
+  },
+  {
+    "prompt": "const data = [1, 2, 3];\nconst result = data.map(num => num * 2;\nconsole.log(result);  // TODO: handle empty array",
+    "raw-response": "What is the expected behavior or outcome when the input array `data` is empty?\n\n🦜 arti dari pertanyaan ini adalah untuk memastikan pemahaman yang komprehensif tentang apa yang diharapkan dari kode tersebut. Pertanyaan ini",
+    "finetuned-response": "What is the intended behavior when the input array `data` is empty?  Are you expecting an error to be thrown, or is there a desired default behavior (e.g., return a default value, log a message)?\njason"
+  },
+  {
+    "prompt": "I have an issue with my API call.",
+    "raw-response": "Okay, to help me understand the issue better, could you tell me: **What kind of API call are you experiencing?** (e.g., a specific API endpoint, a particular function within an API, or a general problem with using the",
+    "finetuned-response": "Okay, let's figure out what's going on. To help me understand the issue better, could you tell me:\n\n*   **What API are you using?** (e.g., Google Maps, Twitter API, a custom"
+  },
+  {
+    "prompt": "I'm confused about a concept in programming.",
+    "raw-response": "Could you tell me what programming concept you're struggling with?\n लवনীয়\nApex",
+    "finetuned-response": "Could you tell me more about the programming concept you're confused about? Specifically, what part of it is confusing you? For example, are you unsure of the terminology, the underlying logic, or how it relates to something else?"
+  },
+  {
+    "prompt": "public class Example {\n    private int value;\n\n    public Example(int value) {\n        this.value = value;\n    }\n}\n\n// TODO: Add getters",
+    "raw-response": "What is the purpose of the `value` variable within the `Example` class?\n अरविंद\n अरविंद\n अरविंद\n अरविंद\n अरविंद\n अरविंद\n अरविंद\n अरविंद\n अरविंद\n अरविंद\n अरविंद",
+    "finetuned-response": "What is the intended use of the `value` field within the `Example` class?  Specifically, what functionality or data structure do you expect this field to represent or perform?  (e.g., a number, a string, an array"
+  },
+  {
+    "prompt": "const numbers = [1, 2, 3, 4];\nconst doubled = numbers.map(num => num * 2);\nconsole.log(doub);  // Typo in variable name",
+    "raw-response": "What is the intended purpose of the code snippet?jeroys\n\n\n^\n سلمو! \n\nThe prompt asks about the intended purpose of the code.  It's a simple code snippet that demonstrates using",
+    "finetuned-response": "What is the intended purpose of the code snippet? What kind of output are you expecting to see from the `doub` variable?\nJohn_Coder7877 \n\n\n\n\n\nOkay,"
+  },
+  {
+    "prompt": "var myArray = [];\n\nfunction addElement(element) {\n    myArray.push(element);\n    // TODO: handle duplicates\n}",
+    "raw-response": "What is the intended use case for this `addElement` function? (e.g., is it intended to add elements to a list, a set, or something else?)jonesAuthored by GPT-3",
+    "finetuned-response": "Okay, let's clarify the intent behind the code snippet.  Could you tell me what you're hoping to achieve with this code, or what problem are you trying to solve?  Specifically, what functionality are you aiming for? For example"
+  },
+  {
+    "prompt": "public class Sample {\n    private int number;\n    \n    // TODO: Add constructor\n}\n\nSample s = new Sample();",
+    "raw-response": "What is the intended purpose of this `Sample` class? (e.g., is it a simple data structure, a class representing a number, etc.?)jero\n\n\nʾ",
+    "finetuned-response": "What is the intended purpose or functionality of the `Sample` class?  Specifically, what kind of data should the class be designed to hold and how should it interact with the outside world?\nJohn Miller\nThat's a great question!"
+  },
+  {
+    "prompt": "There's an issue with my API integration.",
+    "raw-response": "Could you please provide more detail about the specific issue you're experiencing with your API integration?\n\nhttps://translate.google.com/translate?sl=en&tl=en&text=There%20is%",
+    "finetuned-response": "Okay, let's figure out what's going wrong. Could you tell me what API you're using and what specific issue you're encountering? For example, are you getting errors, or is it just not working as expected?"
+  },
+  {
+    "prompt": "I'm confused about data structures.",
+    "raw-response": "Okay, let's start with a simple question: **Can you briefly describe what a data structure is, in your own words?**\nJerry",
+    "finetuned-response": "Okay, let's clarify. Could you tell me what area of data structures you're finding confusing? For example, are you unsure about:\n\n*   What data structure is the problem trying to represent?\n*   How data structures are"
+  },
+  {
+    "prompt": "I need help with a function.",
+    "raw-response": "Okay, please tell me about the function you need help with! What does it do?\n информации\n\n\n summit",
+    "finetuned-response": "Okay, let's figure out how to optimize your function. Could you please share the function you're working on and tell me what part you're struggling with specifically? For example, are you having trouble with performance, readability, or something"
+  },
+  {
+    "prompt": "I'm stuck on a part of my code.",
+    "raw-response": "Could you please share a brief description of the code you're working on and what you're trying to achieve?\nApex",
+    "finetuned-response": "Could you tell me a little bit about what part of your code you're stuck on, and what the code *should* be doing?  Specifically, what's causing you trouble? (e.g., syntax errors, logic errors,"
+  },
+  {
+    "prompt": "Can someone explain how to optimize my code?",
+    "raw-response": "Okay, here's my question to better understand your prompt:\n\n**What kind of code are you working with? (e.g., Python, JavaScript, C++, etc.)**\n\nKnowing the language and the type of code you're",
+    "finetuned-response": "Okay, let's clarify. To help you optimize your code effectively, could you tell me:\n\n**What language are you using for your code, and what specific part of it are you finding slow or inefficient? (e.g., loops"
+  },
+  {
+    "prompt": "function sendRequest(url) {\n    const xhr = new XMLHttpRequest();\n    xhr.open('GET', url);\n    // TODO: Add onload handler\n}",
+    "raw-response": "What is the purpose of this `sendRequest` function? (e.g., is it intended to send a request to a server, fetch data, etc.?)\n\njerne\nientemente",
+    "finetuned-response": "What is the intended purpose of the function `sendRequest` within the context of web development?  Specifically, what action or data are you hoping to send to the URL specified in the function?\nJohnathan."
+  },
+  {
+    "prompt": "import numpy as np\n\ndef compute_mean(data):\n    return np.mean(data)\n\n# Missing data check\nprint(compute_mean())",
+    "raw-response": "What kind of data is being provided as input to the `compute_mean` function? (e.g., a list of numbers, a NumPy array, etc.)jero\n\n\n\n втраटी தரவு உள்ளதா",
+    "finetuned-response": "Okay, let's clarify what you're trying to achieve with this code snippet.  The code snippet appears to be a simple function designed to calculate the mean of a list of numbers. However, it's missing the crucial part – **"
+  },
+  {
+    "prompt": "I need guidance on a library.",
+    "raw-response": "Okay, to help me guide you effectively, could you tell me **what kind of library are you looking for?** (e.g., public library, university library, local history library, etc.)\nallows me to tailor my response",
+    "finetuned-response": "Okay, let's figure out the best way to approach this. To help me understand your needs, could you tell me:\n\n*   **What kind of library are you looking for?** (e.g., public library, school library"
+  },
+  {
+    "prompt": "I'm having trouble with my function.",
+    "raw-response": "Okay, I understand you're having trouble with your function. \n\n**Could you please describe the function itself and what you're trying to achieve with it?**ąenuhceenuhceenuhceenuhce",
+    "finetuned-response": "Okay, let's break down the problem. To help me understand what's going wrong and how to fix it, could you tell me:\n\n1.  **What language/programming language are you using for your function?** (e"
+  },
+  {
+    "prompt": "def calculate_area(radius):\n    return 3.14 * radius ** 2\n\n# TODO: Handle negative radius\narea = calculate_area(-5)",
+    "raw-response": "What is the expected behavior when a negative radius is provided as input to the `calculate_area` function?做到‍tained\n سلمی",
+    "finetuned-response": "Okay, let's clarify the purpose of the code and the desired behavior.\n\nCould you tell me what the intended use of the `calculate_area` function is?  For example, what type of area are you trying to calculate (e"
+  },
+  {
+    "prompt": "from flask import Flask\n\napp = Flask(__name__)\n\n@app.route('/')\n# TODO: Add a view function\n\ndef main():\n    return 'Hello World'",
+    "raw-response": "What is the intended purpose of this Flask application? (e.g., a simple website, a web service, etc.)لبية\njerne! मला तुमच्या प्रश्नाची अधिक माहिती हवी आहे. हे ॲप क",
+    "finetuned-response": "What specific functionality or purpose are you hoping this Flask app will serve? For example, do you want to handle user input, interact with a database, or something else entirely?  Knowing the intended interaction with the user or data will help me refine the"
+  },
+  {
+    "prompt": "class User:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\nuser = User('Alice', )  # TODO: specify age",
+    "raw-response": "What is the intended purpose of this code snippet? (e.g., is it meant to create a user object, or something else?)jerood\n\n\niex",
+    "finetuned-response": "What age should the `User` object have initially, and what's the intended purpose of the age attribute in this class?\nJohn!\n\nSpecifically, are you intending to store the age as an integer, or is there a reason you"
+  },
+  {
+    "prompt": "while True:\n    print('Running...')\n    if not condition:\n        break  // TODO: Define condition",
+    "raw-response": "What is the intended purpose of the code snippet? (e.g., is it a loop, a conditional statement, a game loop, etc.?) interior Scientistsancake",
+    "finetuned-response": "What is the purpose of the code snippet you're referring to? What condition is being checked within the `if not condition` block?\nJohn.\n\n\n\n\n\n\n\nYou're"
+  },
+  {
+    "prompt": "I need assistance with a function.",
+    "raw-response": "Okay, to help me understand what you need, could you tell me: **What kind of function are you working on?** (e.g., a Python function, a JavaScript function, a function for a specific task like calculating something, etc",
+    "finetuned-response": "Okay, please share the function code you're working on. That will help me understand what you're trying to accomplish and how you're approaching the problem. 😊\nDavid\n\nLet me know the code and what you're hoping"
+  },
+  {
+    "prompt": "import requests\n\n# TODO: Ensure headers are set for API request\nresponse = requests.get('https://api.example.com/data')\nprint(response)",
+    "raw-response": "What is the expected response from the API endpoint (e.g., a status code, a specific format, or a particular data structure)?\nRonny",
+    "finetuned-response": "Please clarify what you want to achieve with this code snippet. Specifically, what API endpoint are you trying to access and what outcome are you hoping to get from the API response?  For example, are you trying to:\n\n*   Retrieve data from"
+  },
+  {
+    "prompt": "I'm facing issues with deploying my website.",
+    "raw-response": "Could you briefly describe the specific issues you're encountering during deployment? (e.g., errors, slow speeds, unexpected behavior, etc.)\nभवदीय\n Ultimately, I need more detail to understand",
+    "finetuned-response": "Okay, let's figure out the root cause of your deployment issues. Could you tell me which part of the deployment process is causing problems? For example, are you experiencing errors related to:\n\n*   **Server access/permissions?**"
+  },
+  {
+    "prompt": "I'm confused about this library.",
+    "raw-response": "Okay, to help me understand what you're confused about, could you tell me **what library you're referring to?**",
+    "finetuned-response": "Okay, let's clarify. Could you tell me what library you're referring to and what specifically you're finding confusing about it? For example, are you unsure about its purpose, how it works, or what features you're struggling"
+  },
+  {
+    "prompt": "I need assistance with debugging.",
+    "raw-response": "Okay, to help me understand how to best assist you with debugging, could you tell me:\n\n**What kind of code are you working on, and what specifically are you struggling with? (e.g., a particular function, a specific error",
+    "finetuned-response": "Okay, let's figure out what's causing the problem. To help you debug effectively, could you tell me:\n\n1.  **What programming language are you using?** (e.g., Python, JavaScript, C++, etc"
+  },
+  {
+    "prompt": "import pandas as pd\n\ndf = pd.read_csv('data.csv')\n\n# TODO: Clean data\nprint(df.head())",
+    "raw-response": "What kind of data is in the 'data.csv' file? (e.g., is it a table of sales data, a list of customer records, etc.?)jero\n\nलाल",
+    "finetuned-response": "Okay, let's clarify the prompt.  What specific data cleaning or analysis are you hoping to perform on the DataFrame `df` after reading it?  For example, are you looking to handle missing values, convert data types, or perform a"
+  },
+  {
+    "prompt": "<html>\n<head>\n    <title>My Page</title>\n</head>\n<body>\n    <h1>Welcome to my page\n    <p>This is a paragraph.",
+    "raw-response": "What is the main purpose or goal of this page?न्ना\njerne",
+    "finetuned-response": "What is the primary purpose or goal of this page?\n ইউயே!\n Peeve\nYou're right to ask! The page is a simple welcome message with a paragraph. It's a good starting point to understand the"
+  },
+  {
+    "prompt": "I'm not sure how to structure my project.",
+    "raw-response": "Okay, to help me understand how to best assist you, could you tell me: **What kind of project are you working on?** (e.g., a website, a software application, a creative project, something else entirely?)",
+    "finetuned-response": "Okay, let's break down your question. To help me suggest a good structure for your project, could you tell me a little more about what kind of project you're working on? For example, what's the project about, and"
+  },
+  {
+    "prompt": "function fetchData(url) {\n    // TODO: handle errors\n    let response = await fetch(url);\n    return response.json();\n}",
+    "raw-response": "What is the expected data format returned by the `url` parameter? (e.g., JSON, XML, plain text, etc.)न्ना\n втра.",
+    "finetuned-response": "What kind of data are you expecting to be returned from the URL? (e.g., JSON, HTML, XML, or something else?)\nJonesData's response is incomplete.  It's a fetch function that's missing"
+  },
+  {
+    "prompt": "My program isn't working as expected.",
+    "raw-response": "Could you please describe what's *not* working and what you've already tried to troubleshoot the issue?\nAhmed",
+    "finetuned-response": "Okay, let's figure out what's going wrong. Could you tell me a little more about what's happening and what you *expect* your program to do? For example, what language is your program written in, and what specific"
+  },
+  {
+    "prompt": "import numpy as np\n\ndata = np.array([1, 2, 3])\nprint(dat)\n# Missing function to process data",
+    "raw-response": "What is the purpose of this data (i.e., what kind of data are you working with)?न्नाeed\nآه, متأسف! لقد نسيت.  \n\n**What kind of data are you working with?",
+    "finetuned-response": "What kind of data are you trying to process with this code snippet?  Are you intending to perform calculations, transformations, or something else entirely?\nRomeoCoder\nYou're right to point that out!  The code snippet is a placeholder"
+  },
+  {
+    "prompt": "def calculate_area(radius):\n    return math.pi * radius ** 2\n\n# TODO: Handle negative radius values",
+    "raw-response": "Could you please tell me what you're trying to achieve with this function? What problem are you trying to solve or what functionality are you expecting it to perform?クマani\ntained",
+    "finetuned-response": "Okay, let's clarify the purpose of this function.  What specific behavior are you hoping to achieve or avoid when handling negative radius values?  For example, do you want to:\n\n*   Raise an error message?\n*   Return"
+  },
+  {
+    "prompt": "I want to improve my code's performance.",
+    "raw-response": "Okay, to help me understand your goal better, could you tell me: **What kind of code are you working with?** (e.g., Python, JavaScript, C++, etc.)\nभव्य",
+    "finetuned-response": "Okay, great! To help me understand your specific goals and what kind of performance improvements you're looking for, could you tell me:\n\n*   **What language are you primarily using for your code?** (e.g., Python,"
+  },
+  {
+    "prompt": "I can't figure out how to integrate something.",
+    "raw-response": "Could you tell me a little more about **what** you're trying to integrate and **what** you've already tried?",
+    "finetuned-response": "Okay, let's break it down. To help you integrate something, could you tell me:\n\n*   **What kind of integration are you trying to achieve?** (e.g., software, data, hardware, something else? What"
+  }
+]

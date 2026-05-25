@@ -1,0 +1,62 @@
+topic_id	initial request	predicted_clarification_need	clarification_need
+201.0	I would like to know more about raspberry pi	3	3
+202.0	Give me information on uss carl vinson.	2	2
+204.0	What is most importan rule of golf	2	2
+206.0	I'm looking for wind power	3	3
+207.0	Tell me about bph treatment	4	2
+208.0	tell me more about Doctor Zhivago	4	2
+209.0	I'm interested to know about land surveyor	4	3
+210.0	golf gps	3	3
+212.0	Tell me about home theater systems.	4	2
+213.0	I'm looking for information on carpal tunnel syndrome	3	2
+215.0	Info on maryland department of natural resources	3	2
+216.0	which are famous movies where Nicolas Cage appeared?	3	1
+218.0	Tell me information about solar water fountains.	4	2
+220.0	I'm interested in NBA records	3	2
+222.0	I'm looking for information on male menopause	3	2
+225.0	I'm looking for black and gold.	3	4
+226.0	Tell me about traverse city.	4	3
+230.0	tell me about world's biggest dog	4	3
+233.0	Tell me about hair dye.	4	3
+235.0	How do you get a ham radio license?	1	1
+237.0	Find me information about a lump in the throat.	4	2
+242.0	cannellini beans	3	3
+243.0	Find information about afghanistan flag	4	2
+244.0	old town scottsdale	3	3
+245.0	roosevelt island	3	3
+247.0	Tell me about rain main.	4	2
+248.0	What is the shelf life of an egg?	2	1
+249.0	What is an occupational therapist?	2	2
+253.0	What treatments are available for a tooth abscess?	3	2
+254.0	Tell me about barrett's esophagus	4	3
+255.0	Tell me about teddy bears.	4	4
+257.0	Find information about holes by louis sachar	4	2
+258.0	Find information on hip roof	3	2
+259.0	What is special about Carpenter bees?	2	3
+260.0	Tell me about american revolution.	4	2
+265.0	What were the worst tornadoes in the USA?	3	2
+267.0	What are the lyrics to feliz navidad?	3	1
+268.0	What are the benefits of running?	3	2
+269.0	Find information about marshall county schools.	3	4
+270.0	I'm interested in sun tzu	4	2
+271.0	Tell me about halloween activities for middle school	2	1
+272.0	How can I interpret my dreams	3	3
+273.0	Give me information on wilson's disease.	2	2
+274.0	Find information on golf instruction.	3	2
+275.0	Tell me about USS Cole.	3	2
+276.0	how has african american music influence history	3	2
+277.0	What is bewitched cast?	2	4
+278.0	Find information about mister rogers	4	3
+279.0	Tell me about game theory.	4	3
+281.0	What is a ketogenic diet?	2	2
+282.0	Tell me about nasa interplanetary missions	4	1
+285.0	I'm interested in magnesium rich foods	3	1
+288.0	I'm interested in Fidel Castro	3	3
+289.0	tell me about benefits of yoga	2	1
+290.0	Tell me about norway spruce.	4	2
+291.0	tell me about sangre de cristo mountains	4	3
+294.0	tell me more flowering plants	4	2
+297.0	Tell me about altitude sickness.	4	2
+298.0	I'm interested in the topic of medical care and jehovah's witnesses	3	2
+299.0	What is pink slime in ground beef	2	2
+300.0	How to compute the mean of a set of numbers	2	3

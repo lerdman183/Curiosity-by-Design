@@ -1,0 +1,490 @@
+[
+  {
+    "type": "Q",
+    "category": "Modal Verbs",
+    "body": "Hello, can I have a look at this?",
+    "comment_url": "https://github.com/markedjs/marked/issues/2832#issuecomment-1742006468",
+    "issue_url": "https://github.com/markedjs/marked/issues/2832",
+    "user": "AnuMessi10",
+    "created_at": "2023-10-01T08:36:23Z",
+    "repo_url": "https://github.com/markedjs/marked"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "Something like this would statically compile:\r\n\r\n`CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags \"-static\"' .`\r\n\r\nThis is passing `-static` to the external linker and disabling cgo (i.e. disable the ability to call c code. Not sure if it's required or not but all the examples I've seen disable it).\r\n\r\n",
+    "comment_url": "https://github.com/mislav/hub/issues/1818#issuecomment-416146232",
+    "issue_url": "https://github.com/mislav/hub/issues/1818",
+    "user": "philwinder",
+    "created_at": "2018-08-27T07:55:18Z",
+    "repo_url": "https://github.com/mislav/hub"
+  },
+  {
+    "type": "Q",
+    "category": "Modal Verbs",
+    "body": "I really like this idea. It would have helped me when I started using restic. \r\n\r\nFor me 15 second sounds too short to be useful with any backend except local repositories. \r\n\r\nOne option could be a timeout that is dependent on the backend (but rclone could be any backend...).\r\n\r\nI am wondering if this could be a little more interactive and tell the user what is going on. For example (only when a local tty is detected?) show something like:\r\n\r\n> Shutdown request received. Presevering intermediate data. Can take up to XYZ. \r\n>\r\n> To immediately exit send signal again or press CTRL-C. \r\n\r\nAnd in case the signal is sent again or on keystroke it would immediately exit. With this the timeout could be longer, the user would know what is going on and has the choice to exit directly. ",
+    "comment_url": "https://github.com/restic/restic/issues/2960#issuecomment-700866889",
+    "issue_url": "https://github.com/restic/restic/issues/2960",
+    "user": "buschjost",
+    "created_at": "2020-09-29T17:31:50Z",
+    "repo_url": "https://github.com/restic/restic"
+  },
+  {
+    "type": "Q",
+    "category": "Modal Verbs",
+    "body": "Thank Dimitri - the nightly build solved the issue with off-screen selection, thank you! But the missing cursor is still missing. So - half way there... But - the hidden cursor has nothing to do with selection - it remains hidden regardless.... in 24 bit mode - if I am using colourscheme SIMPLE the cursor is there and is WHITE but if I use other colorschemes, for example with a soft dark background - for example darkduke-dc -  so in 24bit mode there is no cursor ever - either in the file being edited or indeed in the set colorscheme line...... Can we do anything about  this?\r\n\r\n",
+    "comment_url": "https://github.com/zyedidia/micro/issues/1645#issuecomment-627945521",
+    "issue_url": "https://github.com/zyedidia/micro/issues/1645",
+    "user": "scargill",
+    "created_at": "2020-05-13T12:21:38Z",
+    "repo_url": "https://github.com/zyedidia/micro"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "Add `encoding='utf8'` anywhere in the `download.py` when it tries to open some file.",
+    "comment_url": "https://github.com/floodsung/Deep-Learning-Papers-Reading-Roadmap/issues/85#issuecomment-416879851",
+    "issue_url": "https://github.com/floodsung/Deep-Learning-Papers-Reading-Roadmap/issues/85",
+    "user": "FoxerLee",
+    "created_at": "2018-08-29T09:01:35Z",
+    "repo_url": "https://github.com/floodsung/Deep-Learning-Papers-Reading-Roadmap"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "your @dosubot is useless and harmful! It proposes to delete table. ",
+    "comment_url": "https://github.com/QuivrHQ/quivr/issues/3457#issuecomment-2461827822",
+    "issue_url": "https://github.com/QuivrHQ/quivr/issues/3457",
+    "user": "wonderu",
+    "created_at": "2024-11-07T10:10:49Z",
+    "repo_url": "https://github.com/QuivrHQ/quivr"
+  },
+  {
+    "type": "Q",
+    "category": "Modal Verbs",
+    "body": "@truemiller Is it a backup job? If so, could you delete and recreate the backup job and create a new one?",
+    "comment_url": "https://github.com/coollabsio/coolify/issues/3395#issuecomment-2347094587",
+    "issue_url": "https://github.com/coollabsio/coolify/issues/3395",
+    "user": "peaklabs-dev",
+    "created_at": "2024-09-12T19:37:22Z",
+    "repo_url": "https://github.com/coollabsio/coolify"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "https://github.com/XTLS/Xray-core/pull/3780#issuecomment-2337215375\r\nhttps://github.com/XTLS/Xray-core/pull/3899#issuecomment-2408285585",
+    "comment_url": "https://github.com/XTLS/Xray-core/pull/3903#issuecomment-2408286047",
+    "issue_url": "https://github.com/XTLS/Xray-core/pull/3903",
+    "user": "RPRX",
+    "created_at": "2024-10-12T01:21:24Z",
+    "repo_url": "https://github.com/XTLS/Xray-core"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "I'll try and give this a test on macOS at some point...",
+    "comment_url": "https://github.com/tmux/tmux/issues/4185#issuecomment-2421788602",
+    "issue_url": "https://github.com/tmux/tmux/issues/4185",
+    "user": "nicm",
+    "created_at": "2024-10-18T08:12:51Z",
+    "repo_url": "https://github.com/tmux/tmux"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "\u540c\u6c42\r\n",
+    "comment_url": "https://github.com/LC044/WeChatMsg/issues/320#issuecomment-1895463692",
+    "issue_url": "https://github.com/LC044/WeChatMsg/issues/320",
+    "user": "WanQian1997",
+    "created_at": "2024-01-17T09:55:18Z",
+    "repo_url": "https://github.com/LC044/WeChatMsg"
+  },
+  {
+    "type": "Q",
+    "category": "Modal Verbs",
+    "body": "Since I do have problems with the include paths for libc (https://stackoverflow.com/questions/47078520/clang-toolchain-fails-for-system-libc-files), how does `libc_top` (`inputsForLibc`) work?\r\n\r\nEspecially since I cannot seem to be able to glob system files.",
+    "comment_url": "https://github.com/bazelbuild/bazel/issues/4005#issuecomment-342951851",
+    "issue_url": "https://github.com/bazelbuild/bazel/issues/4005",
+    "user": "abergmeier",
+    "created_at": "2017-11-08T20:39:20Z",
+    "repo_url": "https://github.com/bazelbuild/bazel"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "Hey @ValentinCalomme - this isn't currently on the Streamlit feature roadmap, but it's something that you can possibly achieve with a [Custom Component](https://docs.streamlit.io/en/stable/streamlit_components.html). \r\n\r\nYou could create a component that registers keydown/keyup listeners and uses `Streamlit.setComponentValue` to return key states to your Python script. There's an (old) example here:\r\n\r\nhttps://github.com/tconkling/gamelit/blob/master/frontend/src/index.tsx#L33\r\n\r\n(The limitation of this approach is that your component's iframe needs to have keyboard focus to get those events. That may not be feasible for you, of course.)",
+    "comment_url": "https://github.com/streamlit/streamlit/issues/1291#issuecomment-767138732",
+    "issue_url": "https://github.com/streamlit/streamlit/issues/1291",
+    "user": "tconkling",
+    "created_at": "2021-01-25T21:57:10Z",
+    "repo_url": "https://github.com/streamlit/streamlit"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "Your suggestion comes close to the system i wrote at work a few years ago. It's a big mess, especially if it has to be general purpose.\n\nWe should make this a higher priority imo, i want to be able to support the asian and arabic markets. For what it's worth, Unity has zero support for asian and arabic scripts...\n\nUltimately i think we need to expose a simple method that takes a string in utf and spits out a layouted texture/pixmap. Any glyph caching will fail on mobile due to layouting, The layouting and rendering can cache glyphs though via LRU on the heap. It's still going to be slow to generate textures for new strings.\n\nbased on this functionality, we can implement a special label in scene2d. for long blocks of text we'll need to be able to split the text up into multiple textures, which is going to be a pain. and of course, there's a limit to the amount of Ram se have available. the benefit of this method is that we can implement it per platform using systme libraries, including gwt.\n\ni'll also try to find Androids implementation of text rendering and will try to get inspired by it. they actually have a glyph cache and freetype. we'll see.\n",
+    "comment_url": "https://github.com/libgdx/libgdx/issues/1589#issuecomment-42612840",
+    "issue_url": "https://github.com/libgdx/libgdx/issues/1589",
+    "user": "badlogic",
+    "created_at": "2014-05-08T22:12:21Z",
+    "repo_url": "https://github.com/libgdx/libgdx"
+  },
+  {
+    "type": "Q",
+    "category": "Do/Does/Did Questions",
+    "body": "@Keboo I added a page for [ComboBox](https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit/wiki/ComboBox)\r\nNote that I did not have to create a pr (Is everyone supposed to be able to just add/edit pages without anyone actually approving the changes?)",
+    "comment_url": "https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit/issues/1177#issuecomment-1272621089",
+    "issue_url": "https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit/issues/1177",
+    "user": "Alex-451",
+    "created_at": "2022-10-09T20:23:34Z",
+    "repo_url": "https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "@1091662876 \u89e3\u5bc6\u7684\u8fd9\u4e2a\u4ee3\u4ef7\u4e5f\u592a\u4f4e\u4e86\u5427",
+    "comment_url": "https://github.com/alibaba/druid/issues/2774#issuecomment-420563987",
+    "issue_url": "https://github.com/alibaba/druid/issues/2774",
+    "user": "OlnyBigRoc",
+    "created_at": "2018-09-12T08:43:53Z",
+    "repo_url": "https://github.com/alibaba/druid"
+  },
+  {
+    "type": "Q",
+    "category": "Modal Verbs",
+    "body": "Why don't Chinese start learning English ?, How much can you realistically translate ? The world is full of information and most of it is created in the western world. Learning English isn't that difficult, translating everything in the world to Chinese would be more difficult.\n",
+    "comment_url": "https://github.com/SamyPesse/How-to-Make-a-Computer-Operating-System/issues/89#issuecomment-133411915",
+    "issue_url": "https://github.com/SamyPesse/How-to-Make-a-Computer-Operating-System/issues/89",
+    "user": "metacritical",
+    "created_at": "2015-08-21T12:37:38Z",
+    "repo_url": "https://github.com/SamyPesse/How-to-Make-a-Computer-Operating-System"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "Can look at supporting those as well now that I'm familiar with the logic behind this, would need stable code for the positioning of `spinner-osu.png` though.",
+    "comment_url": "https://github.com/ppy/osu/issues/10815#issuecomment-782876788",
+    "issue_url": "https://github.com/ppy/osu/issues/10815",
+    "user": "frenzibyte",
+    "created_at": "2021-02-21T15:35:22Z",
+    "repo_url": "https://github.com/ppy/osu"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "Maybe key case sensitive can be viper config param, maybe like `WithCaseSensitive` etc. When `WithCaseSensitive == true`, all viper operation is case sensitive, or not.",
+    "comment_url": "https://github.com/spf13/viper/issues/1014#issuecomment-731516968",
+    "issue_url": "https://github.com/spf13/viper/issues/1014",
+    "user": "li1234yun",
+    "created_at": "2020-11-21T06:27:08Z",
+    "repo_url": "https://github.com/spf13/viper"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "According to the usage code. We should change `Color(Color) Builder` to `Paint(Color) Builder`. Thus,\r\n```go\r\ntype Builder interface {\r\n\tPaint(Color) Builder\r\n\tWheels(Wheels) Builder\r\n\tTopSpeed(Speed) Builder\r\n\tBuild() Interface\r\n}\r\n```\r\nAnd the `NewBuilder()` should be:\r\n```go\r\nfunc NewBuilder(b Builder) Builder {\r\n\treturn b\r\n}\r\n```\r\n\r\nHere, we assume that they are in the same package. Thus, the usage part should be:\r\n```go\r\nimport (\r\n\t\"log\"\r\n\t\"testing\"\r\n)\r\n\r\n// the implementation of Builder interface\r\ntype Car struct {\r\n\tcolor  Color\r\n\twheels Wheels\r\n\tspeed  Speed\r\n}\r\n\r\nfunc (c Car) Paint(color Color) Builder {\r\n\tc.color = color\r\n\treturn c\r\n}\r\nfunc (c Car) Wheels(w Wheels) Builder {\r\n\tc.wheels = w\r\n\treturn c\r\n}\r\nfunc (c Car) TopSpeed(s Speed) Builder {\r\n\tc.speed = s\r\n\treturn c\r\n}\r\nfunc (c Car) Build() Interface {\r\n\tswitch c.wheels {\r\n\tcase SportsWheels:\r\n\t\treturn SportsCar{}\r\n\tcase SteelWheels:\r\n\t\treturn FamilyCar{}\r\n\t}\r\n\treturn nil\r\n}\r\n\r\n// the implementation of Interface interface\r\ntype FamilyCar struct{}\r\n\r\nfunc (f FamilyCar) Drive() error {\r\n\tlog.Println(\"FamilyCar Drive()\")\r\n\treturn nil\r\n}\r\nfunc (f FamilyCar) Stop() error {\r\n\tlog.Println(\"FamilyCar Stop()\")\r\n\treturn nil\r\n}\r\n\r\n// the implementation of Interface interface\r\ntype SportsCar struct{}\r\n\r\nfunc (s SportsCar) Drive() error {\r\n\tlog.Println(\"SportsCar Drive()\")\r\n\treturn nil\r\n}\r\n\r\nfunc (s SportsCar) Stop() error {\r\n\tlog.Println(\"SportsCar Stop()\")\r\n\treturn nil\r\n}\r\n\r\n// the testcase\r\nfunc TestCarBuilder(t *testing.T) {\r\n\tassembly := NewBuilder(Car{}).Paint(RedColor)\r\n\r\n\tfamilyCar := assembly.Wheels(SportsWheels).TopSpeed(50 * MPH).Build()\r\n\tfamilyCar.Drive()\r\n\tfamilyCar.Stop()\r\n\r\n\tsportsCar := assembly.Wheels(SteelWheels).TopSpeed(150 * MPH).Build()\r\n\tsportsCar.Drive()\r\n\tsportsCar.Stop()\r\n\r\n}\r\n```\r\nI also create a UML illustration of the demo code. \r\n\r\n![UML](https://v3.processon.com/chart_image/5cf89cb5e4b0c653917ff6d1.png)",
+    "comment_url": "https://github.com/tmrts/go-patterns/issues/59#issuecomment-499348518",
+    "issue_url": "https://github.com/tmrts/go-patterns/issues/59",
+    "user": "zhongqin0820",
+    "created_at": "2019-06-06T04:58:40Z",
+    "repo_url": "https://github.com/tmrts/go-patterns"
+  },
+  {
+    "type": "Issue",
+    "body": "Maintainer(s): @EladLeev\r\n\r\nPlease check out the [Translations Contributing Guidelines](https://github.com/donnemartin/system-design-primer/blob/master/CONTRIBUTING.md#translations).\r\n\r\nOriginal translations thread: #28\r\n\r\nInterested in helping? Let us know!\r\n\r\n---\r\n\r\nHey guys,\r\nI found myself sending it over and over to people, so I decided to create Hebrew translation as well \ud83d\ude04 \r\n\r\nWIP here:\r\nhttps://github.com/EladLeev/system-design-primer/tree/he-translate",
+    "issue_url": "https://github.com/donnemartin/system-design-primer/issues/272",
+    "repo_url": "https://github.com/donnemartin/system-design-primer"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "Regarding `-j`, currently it's a bit annoying that hashcat count words every time when `-j` is used, even when there isn't any reject rule specified.\r\n\r\nI have an attack (-a 0) that runs for 6 hours (sha512crypt), so there is no way I can use any rule file with a big wordlist. So, instead of using a rule file, I constructed a single rule that I have specified in `-j` parameter. Now every start of hashcat takes appox. 20-30 min since hashcat counts words in my wordlist. But it doesn't make any sense since the amount of words is always the same. \r\n\r\n@davidbolvansky I haven't properly checked, but it seems like the case with reject rules in `-j` parameter is not covered in the current PR code.",
+    "comment_url": "https://github.com/hashcat/hashcat/pull/3800#issuecomment-1658966557",
+    "issue_url": "https://github.com/hashcat/hashcat/pull/3800",
+    "user": "mohemiv",
+    "created_at": "2023-07-31T18:56:27Z",
+    "repo_url": "https://github.com/hashcat/hashcat"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "\u8bf7\u95ee\u89e3\u51b3\u4e86\u5417\uff0c\u6211\u5c1d\u8bd5\u5bfc\u5165\u6ce8\u518c\u8868\u540e\u8fd8\u662f\u6ca1\u6709\u9009\u9879\uff0c\u611f\u89c9\u53ef\u80fd\u662f\u6709\u4e9b\u6587\u4ef6\u635f\u574f\u4e86",
+    "comment_url": "https://github.com/BluePointLilac/ContextMenuManager/issues/194#issuecomment-2373192818",
+    "issue_url": "https://github.com/BluePointLilac/ContextMenuManager/issues/194",
+    "user": "Forest-Lee",
+    "created_at": "2024-09-25T06:57:50Z",
+    "repo_url": "https://github.com/BluePointLilac/ContextMenuManager"
+  },
+  {
+    "type": "Issue",
+    "body": "I mean, at runtime,\r\nload a font file, read some glyhps and render them into a texture.\r\nthen use it like a normal SpriteFont.\r\nThis feature is very important for asian users. because we use about 2000 common characters and a large amount of rare characters.\r\nPut then into a xnb file is almost impossible (takes very long time to build and gets very large xnb file).\r\nI have searched on the internet but no usable solution yet.",
+    "issue_url": "https://github.com/MonoGame/MonoGame/issues/6324",
+    "repo_url": "https://github.com/MonoGame/MonoGame"
+  },
+  {
+    "type": "Q",
+    "category": "Modal Verbs",
+    "body": "Thank you for your explanation @ramsey \r\n\r\nTherefore it would be nice to have a `fromStrictString` method that validates the string before doing any conversion on it.\r\nWould you accept a PR for that?",
+    "comment_url": "https://github.com/ramsey/uuid/issues/531#issuecomment-1898818691",
+    "issue_url": "https://github.com/ramsey/uuid/issues/531",
+    "user": "rogervila",
+    "created_at": "2024-01-18T16:30:56Z",
+    "repo_url": "https://github.com/ramsey/uuid"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "Hello,\r\nthe used compiler is the \"xlc\" shipped with AIX 7.1.\r\nThe version info from xlc -qversion is,\r\nIBM XL C/C++ for AIX, V12.1 (5765-J02, 5725-C72)\r\n\r\nI use the xlc with gnu make 3.81, the IBM make doesn't know how to handle the gnu Makefile in the right way.\r\nWith regards,\r\nLutz",
+    "comment_url": "https://github.com/jqlang/jq/issues/1335#issuecomment-278329050",
+    "issue_url": "https://github.com/jqlang/jq/issues/1335",
+    "user": "lutzmad",
+    "created_at": "2017-02-08T13:30:42Z",
+    "repo_url": "https://github.com/jqlang/jq"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "+1\n",
+    "comment_url": "https://github.com/hashicorp/terraform/issues/1768#issuecomment-136975729",
+    "issue_url": "https://github.com/hashicorp/terraform/issues/1768",
+    "user": "JorritSalverda",
+    "created_at": "2015-09-02T08:31:48Z",
+    "repo_url": "https://github.com/hashicorp/terraform"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "The DeepCopy object is a service (as opposed to an entity or value object). Making a service immutable makes no sense and adds no value, imo. You should be able to add filters to a DeepCopy object that is injected (either via constructor or setter) as a dependency into your own application service.",
+    "comment_url": "https://github.com/myclabs/DeepCopy/issues/68#issuecomment-317971200",
+    "issue_url": "https://github.com/myclabs/DeepCopy/issues/68",
+    "user": "mjpvandenberg",
+    "created_at": "2017-07-26T07:23:47Z",
+    "repo_url": "https://github.com/myclabs/DeepCopy"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "I don't have much input right now, but I'm noticing that the globs look very broken. Perhaps this isn't even picking up the files at all and the output is an older generated file",
+    "comment_url": "https://github.com/gulpjs/gulp/issues/2803#issuecomment-2103051371",
+    "issue_url": "https://github.com/gulpjs/gulp/issues/2803",
+    "user": "phated",
+    "created_at": "2024-05-09T16:59:12Z",
+    "repo_url": "https://github.com/gulpjs/gulp"
+  },
+  {
+    "type": "Q",
+    "category": "Modal Verbs",
+    "body": "When I add custom fields to the envelope do they arrive as HTTP request headers in the HTTP call from dapr sidecar to the subscriber? I am aware that I can manually read data from the envelope in the Java code of the subscriber but the Datadog Java agent instrumentation expects the tracing information in HTTP request headers. (Just the same way the OpenTelemetry Java agent does too, only other headers than \"traceparent\")\r\n\r\nI was thinking of something already implemented like\r\n1. dapr sidecars propagate the \"traceparent\" HTTP request header from publisher to the subscriber\r\n2. dapr sidecars propagate arbitrary HTTP headers from caller to service when using dapr service invocation",
+    "comment_url": "https://github.com/dapr/dapr/issues/6075#issuecomment-1468902672",
+    "issue_url": "https://github.com/dapr/dapr/issues/6075",
+    "user": "tilm4nn",
+    "created_at": "2021-09-09T19:34:18Z",
+    "repo_url": "https://github.com/dapr/dapr"
+  },
+  {
+    "type": "Issue",
+    "body": "In `.gitignore` files, ignore patterns can be prefixed with a \"/\". `man gitignore` says:\n\n```\nA leading slash matches the beginning of the pathname. For example, \"/*.c\" matches \"cat-file.c\"\nbut not \"mozilla-sha1/sha1.c\".\n```\n\n`ag` currently doesn't apply such patterns when they match files in subdirectories. Steps to reproduce:\n\n```\n% mkdir ag-test                                                                                            % cd ag-test                                                                                               % mkdir ignored\n% echo 'hello' > ignored/a\n% echo 'hello' > b\n% ag hello\nb\n1:hello\n\nignored/a\n1:hello\n% echo '/ignored/*' > .gitignore  ## should ignore \"a\", but doesn't\n% ag hello\nb\n1:hello\n\nignored/a\n1:hello\n% echo 'ignored/*' > .gitignore\n% ag hello\nb\n1:hello\n```\n\nHowever, the non-subdir case currently works correctly:\n\n```\n% echo '/b' > .gitignore\n% ag hello\nignored/a\n1:hello\n```\n\nOther than this minor hiccup, it's awesomeness all the way. :-)\n",
+    "issue_url": "https://github.com/ggreer/the_silver_searcher/issues/285",
+    "repo_url": "https://github.com/ggreer/the_silver_searcher"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "@aarzilli Wanna mention that if I remove --continue from the command & run the command and then connect vscode client then debugger will work properly however I don't prefer setup without --continue",
+    "comment_url": "https://github.com/go-delve/delve/issues/3720#issuecomment-2096675996",
+    "issue_url": "https://github.com/go-delve/delve/issues/3720",
+    "user": "taman9333",
+    "created_at": "2024-05-06T18:40:49Z",
+    "repo_url": "https://github.com/go-delve/delve"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "\u8fd9\u79cd\u95ee\u9898\u5c31\u662f\u5c5e\u4e8e \u4e0d\u91cd\u8981\u4e0d\u7d27\u6025\u7684\u95ee\u9898\u3002\u6309\u76ee\u524d\u8f6f\u4ef6\u7684\u5f00\u53d1\u60c5\u51b5\uff0c\u4f18\u5148\u7ea7\u4e3a0\u3002\u76ee\u524d\u6838\u5fc3\u529f\u80fd\u548c\u5df2\u77e5bug\u8fd8\u6709\u5f88\u591a\uff0c\u4f5c\u8005\u5e94\u8be5\u6ca1\u6709\u591a\u4f59\u7684\u7cbe\u529b\u5904\u7406\u8fd9\u79cd\u4e0d\u662f\u95ee\u9898\u7684\u95ee\u9898\u3002",
+    "comment_url": "https://github.com/kingToolbox/WindTerm/issues/2089#issuecomment-1903630345",
+    "issue_url": "https://github.com/kingToolbox/WindTerm/issues/2089",
+    "user": "GodRuiAn",
+    "created_at": "2024-01-22T09:55:00Z",
+    "repo_url": "https://github.com/kingToolbox/WindTerm"
+  },
+  {
+    "type": "Q",
+    "category": "Modal Verbs",
+    "body": "Can you fix your code according to this ?\r\n![image](https://github.com/user-attachments/assets/76562c76-6761-47f1-a41f-10db7f8d7f74)\r\n",
+    "comment_url": "https://github.com/agnilondapakou/helloWorld/pull/268#issuecomment-2445460110",
+    "issue_url": "https://github.com/agnilondapakou/helloWorld/pull/268",
+    "user": "agnilondapakou",
+    "created_at": "2024-10-29T22:43:59Z",
+    "repo_url": "https://github.com/agnilondapakou/helloWorld"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "This pull request has been automatically marked as abandoned because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.",
+    "comment_url": "https://github.com/TheAlgorithms/C/pull/1434#issuecomment-2484456996",
+    "issue_url": "https://github.com/TheAlgorithms/C/pull/1434",
+    "user": "github-actions[bot]",
+    "created_at": "2024-11-19T00:29:32Z",
+    "repo_url": "https://github.com/TheAlgorithms/C"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "@alubbe To answer your questions:\r\n\r\n1. That's always the plan. We welcome community contributions and it's being done piece by piece. Yes, FFI-based ngx.print/ngx.say/cosockets are always on the roadmap.\r\n2. We only retire CFunction-based impl that has FFI equivalents in lua-resty-core. Those remain will still receive both bug fixes and new features as always.\r\n3. Yes, definitely. And also in proper `ngx.blah` Lua modules like `ngx.re` and `ngx.semaphore` instead of inserting into the global giant `ngx` table.",
+    "comment_url": "https://github.com/openresty/lua-nginx-module/issues/949#issuecomment-271403080",
+    "issue_url": "https://github.com/openresty/lua-nginx-module/issues/949",
+    "user": "agentzh",
+    "created_at": "2017-01-09T20:48:32Z",
+    "repo_url": "https://github.com/openresty/lua-nginx-module"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "I would like this as well. Vision of going around 6 machines \\* 8 repos just to ignore .pyc, .class and bin/ makes current method of ignoring files pretty-much unusable for me.\n",
+    "comment_url": "https://github.com/syncthing/syncthing/issues/837#issuecomment-58874100",
+    "issue_url": "https://github.com/syncthing/syncthing/issues/837",
+    "user": "kozec",
+    "created_at": "2014-10-13T10:35:54Z",
+    "repo_url": "https://github.com/syncthing/syncthing"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "I will update once I actually got the credit. It should be soon. ",
+    "comment_url": "https://github.com/dodyg/practical-aspnetcore/issues/324#issuecomment-972800322",
+    "issue_url": "https://github.com/dodyg/practical-aspnetcore/issues/324",
+    "user": "dodyg",
+    "created_at": "2021-11-18T11:59:32Z",
+    "repo_url": "https://github.com/dodyg/practical-aspnetcore"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "Please use English to describe your issue and provide the OS you are using.",
+    "comment_url": "https://github.com/redis/redis/issues/11663#issuecomment-1367180783",
+    "issue_url": "https://github.com/redis/redis/issues/11663",
+    "user": "sundb",
+    "created_at": "2022-12-29T09:20:04Z",
+    "repo_url": "https://github.com/redis/redis"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "Also seeing this issue. I tried it on 0.7.7 and 1.0.0-beta.2.rc.2.\n",
+    "comment_url": "https://github.com/Leaflet/Leaflet/issues/4125#issuecomment-183601349",
+    "issue_url": "https://github.com/Leaflet/Leaflet/issues/4125",
+    "user": "volkanunsal",
+    "created_at": "2016-02-13T06:09:16Z",
+    "repo_url": "https://github.com/Leaflet/Leaflet"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "I don't know arut bumped the nginx compatible build # a few days ago: https://github.com/arut/nginx-rtmp-module/commit/f62a0838064baf089ad9fe3c8f6f2ffe0775afb2\n",
+    "comment_url": "https://github.com/arut/nginx-rtmp-module/issues/605#issuecomment-90355408",
+    "issue_url": "https://github.com/arut/nginx-rtmp-module/issues/605",
+    "user": "jordanbaucke",
+    "created_at": "2015-04-07T04:35:52Z",
+    "repo_url": "https://github.com/arut/nginx-rtmp-module"
+  },
+  {
+    "type": "Q",
+    "category": "Modal Verbs",
+    "body": "Hi guys, I'm facing the same issue. Do you have any news on this?\r\n\r\nCan I help with something?",
+    "comment_url": "https://github.com/oracle/graal/issues/5134#issuecomment-1292654387",
+    "issue_url": "https://github.com/oracle/graal/issues/5134",
+    "user": "Dam14n",
+    "created_at": "2022-10-26T21:08:09Z",
+    "repo_url": "https://github.com/oracle/graal"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "Our application center has been reconstructed, that is, before 0.4.4 applications in 0.4.4 and later versions will appear incompatible problems, we are also actively adapting, we are sorry for the inconvenience caused to you, if necessary, we can assist you to solve the problem.",
+    "comment_url": "https://github.com/IceWhaleTech/CasaOS/issues/1377#issuecomment-1704573192",
+    "issue_url": "https://github.com/IceWhaleTech/CasaOS/issues/1377",
+    "user": "LinkLeong",
+    "created_at": "2023-09-04T03:54:44Z",
+    "repo_url": "https://github.com/IceWhaleTech/CasaOS"
+  },
+  {
+    "type": "Q",
+    "category": "Interrogatives",
+    "body": "--exclude works for me\r\n\r\n```\r\n$ rclone mount /tmp/big /tmp/mnt/\r\n$ ls /tmp/mnt/\r\n100M  1G    directory  new-file   new-file3  new-file5    potato3.txt\r\n120M  200M  hello.txt  new-file2  new-file4  potato2.txt  potato.txt\r\n$ rclone mount --exclude '*new*' /tmp/big /tmp/mnt/\r\n$ ls /tmp/mnt/\r\n100M  1G    directory  potato2.txt  potato.txt\r\n120M  200M  hello.txt  potato3.txt\r\n```\r\n\r\nWhat are you trying?",
+    "comment_url": "https://github.com/rclone/rclone/issues/2109#issuecomment-370573499",
+    "issue_url": "https://github.com/rclone/rclone/issues/2109",
+    "user": "ncw",
+    "created_at": "2018-03-05T21:32:34Z",
+    "repo_url": "https://github.com/rclone/rclone"
+  },
+  {
+    "type": "Q",
+    "category": "Modal Verbs",
+    "body": "Maybe crontab syntax may help here?\r\n\r\n=> https://crontab.guru/#0_0_1_6,7_*",
+    "comment_url": "https://github.com/firefly-iii/firefly-iii/issues/7529#issuecomment-1614441764",
+    "issue_url": "https://github.com/firefly-iii/firefly-iii/issues/7529",
+    "user": "devfaz",
+    "created_at": "2023-06-30T10:12:13Z",
+    "repo_url": "https://github.com/firefly-iii/firefly-iii"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "> I'm on Linux Mint 21.3 / 6.5.0-1027-oem kernel / 1920x1080 resolution. UI scale is set to 100%.\r\n\r\nI test DevToys on Mint 21.3 too, along with Ubuntu. Also 1920x1080 resolution and also UI scale set to 100%. I do not have this issue. This is odd :-/",
+    "comment_url": "https://github.com/DevToys-app/DevToys/issues/1190#issuecomment-2282300379",
+    "issue_url": "https://github.com/DevToys-app/DevToys/issues/1190",
+    "user": "veler",
+    "created_at": "2024-08-10T22:28:37Z",
+    "repo_url": "https://github.com/DevToys-app/DevToys"
+  },
+  {
+    "type": "Q",
+    "category": "Modal Verbs",
+    "body": "I think that HTTP(S?) API will be very useful. For example, it will be possible to create not only a mobile app, but also a web client, etc.\n",
+    "comment_url": "https://github.com/quasar/Quasar/issues/445#issuecomment-230462608",
+    "issue_url": "https://github.com/quasar/Quasar/issues/445",
+    "user": "GoltikRee",
+    "created_at": "2016-07-05T12:19:33Z",
+    "repo_url": "https://github.com/quasar/Quasar"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "Might need an extra option \r\n\r\n**Audio Track Naming:**\r\n[ ] Passthru from Source\r\n\r\n**Audio Automatic Naming Behaviour:**\r\n- Unnamed Tracks\r\n- All\r\n- None\r\n\r\n\r\nAs an added benefit, this allows \"None at all\". which also gives a workaround for wonky dlna servers :)",
+    "comment_url": "https://github.com/HandBrake/HandBrake/issues/2593#issuecomment-578977061",
+    "issue_url": "https://github.com/HandBrake/HandBrake/issues/2593",
+    "user": "sr55",
+    "created_at": "2020-01-27T22:05:16Z",
+    "repo_url": "https://github.com/HandBrake/HandBrake"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "I'm also experiencing this with 1.7.0",
+    "comment_url": "https://github.com/sirupsen/logrus/pull/667#issuecomment-709971978",
+    "issue_url": "https://github.com/sirupsen/logrus/pull/667",
+    "user": "sjurtf",
+    "created_at": "2020-10-16T10:46:52Z",
+    "repo_url": "https://github.com/sirupsen/logrus"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "\u597d\u7684\uff0c\u8c22\u8c22\u3002\u4e0d\u77e5\u9053\u6709\u6ca1\u6709\u53ef\u4ee5\u63a8\u8350\u7684\u9879\u76ee\u770b\u770b\uff0c\u6216\u8005\u7c7b\u4f3c\u4ee3\u7801\u3002\r\n\r\n\u53e6\u5916\uff0c\u4e8b\u52a1\u7ba1\u7406\u73b0\u5728\u91c7\u7528\u4e86\u6ce8\u89e3\u7684\u65b9\u5f0f\u3002",
+    "comment_url": "https://github.com/linlinjava/litemall/issues/133#issuecomment-469218768",
+    "issue_url": "https://github.com/linlinjava/litemall/issues/133",
+    "user": "linlinjava",
+    "created_at": "2019-03-04T11:26:33Z",
+    "repo_url": "https://github.com/linlinjava/litemall"
+  },
+  {
+    "type": "Answer",
+    "category": "",
+    "body": "I've been careful of these types of extensions because of the various risc ports. I won't have time to do some in-depth research for a couple weeks but if you or someone wants to propose something portable that'd be super",
+    "comment_url": "https://github.com/memcached/memcached/pull/927#issuecomment-1231240782",
+    "issue_url": "https://github.com/memcached/memcached/pull/927",
+    "user": "dormando",
+    "created_at": "2022-08-30T07:09:26Z",
+    "repo_url": "https://github.com/memcached/memcached"
+  }
+]
