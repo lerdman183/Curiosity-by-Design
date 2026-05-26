@@ -31,12 +31,9 @@ tmp_trainer/
 wandb/
 
 # Large model/training output folders
-Models/content/
-Models/model.safetensors
-Models/results_scratch.zip
+Models/
 Code/RA-2/results/
 Code/RA-2/path/
 
 # Large zenodo model files
-zenodo/checkpoint-8424.zip
-zenodo/gemma3-1b-it-ft-new-data/
+zenodo/
