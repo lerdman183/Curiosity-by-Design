@@ -43,3 +43,6 @@ Code/RA-2/path/
 
 # Large zenodo model files
 zenodo/
+
+# Personal billing / financial docs
+Billing/
