@@ -2,6 +2,12 @@
 .DS_Store
 .ipynb_checkpoints/
 
+# Secrets / env files
+.env
+.env.*
+**/.env
+**/.env.*
+
 # Dependencies
 node_modules/
 **/node_modules/
