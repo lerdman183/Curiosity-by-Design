@@ -35,9 +35,11 @@ def compute_metrics(pred):
 
 # Main
 os.environ["WANDB_DISABLED"] = "true"
-dataset_path = "/content/coding_prompts_dataset.json"
 
 # Load dataset
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+dataset_path = os.path.join(BASE_DIR, "..", "..", "Datasets", "classifier_train_dataset.json")
+
 with open(dataset_path, "r", encoding="utf-8") as f:
     data = json.load(f)
 

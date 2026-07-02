@@ -1,4 +1,5 @@
 import json
+import os
 import torch
 from torch.utils.data import Dataset as TorchDataset
 from transformers import (
@@ -26,8 +27,8 @@ def load_and_preprocess(json_filename):
             })
     return examples
 
-
-json_filename = "combined_clarify_questions.json"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+json_filename = os.path.join(BASE_DIR, "..", "..", "Datasets", "clarification_module_synth_dataset.json")
 text_examples = load_and_preprocess(json_filename)
 
 class TextDataset(TorchDataset):
