@@ -96,19 +96,20 @@ train_dataset = TextDataset(text_examples, tokenizer, max_length=512)
 # -----------------------------
 # 3. WandB init (unchanged)
 # -----------------------------
-wandb.init(
-    project="gemma-finetune",
-    name="gemma3-1b-it-singleGPU-cc",
-    config={
-        "model": model_checkpoint,
-        "dataset": json_filename,
-        "epochs": 3,
-        "seq_len": 512,
-        "batch_per_device": 1,
-        "grad_accum": 2,
-        "learning_rate": 5e-5,
-    },
-)
+if __name__ == "__main__": # only initialize wandb when running as main script
+    wandb.init(
+        project="gemma-finetune",
+        name="gemma3-1b-it-singleGPU-cc",
+        config={
+            "model": model_checkpoint,
+            "dataset": json_filename,
+            "epochs": 3,
+            "seq_len": 512,
+            "batch_per_device": 1,
+            "grad_accum": 2,
+            "learning_rate": 5e-5,
+        },
+    )
 
 # -----------------------------
 # 4. Model + LoRA on single GPU
@@ -118,7 +119,7 @@ torch.cuda.set_device(0)
 
 model = AutoModelForCausalLM.from_pretrained(
     model_checkpoint,
-    torch_dtype=torch.float16,
+    dtype=torch.float16,
     device_map={"": 0},  # everything on cuda:0
     attn_implementation="eager",   # explicit eager attention
     use_cache=False,               # required for checkpointing
@@ -165,16 +166,17 @@ training_args = TrainingArguments(
     dataloader_num_workers=4,
 )
 
-trainer = Trainer(
-    model=model,
-    args=training_args,
-    train_dataset=train_dataset,
-    data_collator=data_collator,
-)
+if __name__ == "__main__":
+    trainer = Trainer(
+        model=model,
+        args=training_args,
+        train_dataset=train_dataset,
+        data_collator=data_collator,
+    )
 
-# -----------------------------
-# 6. Train & save
-# -----------------------------
-trainer.train()
-trainer.save_model(training_args.output_dir)
-tokenizer.save_pretrained(training_args.output_dir)
+    # -----------------------------
+    # 6. Train & save
+    # -----------------------------
+    trainer.train()
+    trainer.save_model(training_args.output_dir)
+    tokenizer.save_pretrained(training_args.output_dir)
