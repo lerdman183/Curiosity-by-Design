@@ -166,6 +166,7 @@ training_args = TrainingArguments(
     dataloader_num_workers=4,
 )
 
+# Don't start training if the script is run by a worker
 if __name__ == "__main__":
     trainer = Trainer(
         model=model,
