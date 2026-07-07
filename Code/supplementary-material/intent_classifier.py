@@ -2,14 +2,21 @@ import os
 import json
 import torch
 from torch.utils.data import Dataset
-from transformers import DistilBertTokenizer, DistilBertForSequenceClassification, Trainer, TrainingArguments
+from transformers import (
+    AutoTokenizer, 
+    AutoModelForSequenceClassification, 
+    Trainer, 
+    TrainingArguments,
+    DataCollatorWithPadding,
+    EarlyStoppingCallback
+)
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 
 # Custom Dataset
 class ClarificationDataset(Dataset):
-    def __init__(self, texts, labels, tokenizer, max_length=128):
-        self.encodings = tokenizer(texts, truncation=True, padding=True, max_length=max_length)
+    def __init__(self, texts, labels, tokenizer, max_length=256):
+        self.encodings = tokenizer(texts, truncation=True, max_length=max_length)
         self.labels = labels
 
     def __getitem__(self, idx):
@@ -33,8 +40,8 @@ def compute_metrics(pred):
         "f1": f1
     }
 
-# Main
-os.environ["WANDB_DISABLED"] = "true"
+# Set project name for wandb
+os.environ["WANDB_PROJECT"] = "Curiosity-By-Design"
 
 # Load dataset
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -54,22 +61,47 @@ train_texts, val_texts, train_labels, val_labels = train_test_split(
     texts, labels, test_size=0.2, random_state=42, stratify=labels
 )
 
-tokenizer = DistilBertTokenizer.from_pretrained("distilbert-base-uncased")
-model = DistilBertForSequenceClassification.from_pretrained("distilbert-base-uncased", num_labels=4)
+#TODO: Consider using a larger model like "microsoft/deberta-v3-large" for better performance, but be aware of increased resource requirements.
+MODEL_NAME = "microsoft/deberta-v3-base"
+
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, use_fast=False) # Using use_fast=False to avoid potential issues with tokenization
+model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME, num_labels=4)
 
 train_dataset = ClarificationDataset(train_texts, train_labels, tokenizer)
 val_dataset = ClarificationDataset(val_texts, val_labels, tokenizer)
 
+# Data collator for dynamic padding
+data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
+
+# Run on GPU if available
+assert torch.cuda.is_available(), "CUDA is required for this script"
+
 training_args = TrainingArguments(
     output_dir="./results_scratch",
-    num_train_epochs=3,
-    per_device_train_batch_size=8,
-    per_device_eval_batch_size=8,
+
+    num_train_epochs=10,
+    weight_decay=0.01,
+
+    per_device_train_batch_size=16,
+    per_device_eval_batch_size=16,
+
     eval_strategy="epoch",
     save_strategy="epoch",
+    save_total_limit=2,
+
+    learning_rate=2e-5,
+
     logging_dir="./logs_scratch",
-    logging_steps=10,
-    report_to=[],
+    logging_steps=20,
+
+    load_best_model_at_end=True,
+    greater_is_better=True,
+    metric_for_best_model="f1",
+    seed=42,
+    bf16=True,  # Enable mixed precision training for faster training and lower memory usage
+
+    report_to="wandb",
+    run_name="intent_classifier_deberta_v3_base"
 )
 
 trainer = Trainer(
@@ -77,7 +109,9 @@ trainer = Trainer(
     args=training_args,
     train_dataset=train_dataset,
     eval_dataset=val_dataset,
-    compute_metrics=compute_metrics
+    data_collator=data_collator,
+    compute_metrics=compute_metrics,
+    callbacks=[EarlyStoppingCallback(early_stopping_patience=3)]
 )
 
 trainer.train()

@@ -98,7 +98,7 @@ train_dataset = TextDataset(text_examples, tokenizer, max_length=512)
 # -----------------------------
 if __name__ == "__main__": # only initialize wandb when running as main script
     wandb.init(
-        project="gemma-finetune",
+        project="Curiosity-By-Design",
         name="gemma3-1b-it-singleGPU-cc",
         config={
             "model": model_checkpoint,
