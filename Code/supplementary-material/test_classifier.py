@@ -1,13 +1,13 @@
 import torch
 import time
-from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
 # 1. Specify your checkpoint directory
-checkpoint_dir = "/content/checkpoint-8424"
+checkpoint_dir = "/content/checkpoint-1872"
 
 # 2. Load tokenizer and model
-tokenizer = DistilBertTokenizer.from_pretrained(checkpoint_dir)
-model = DistilBertForSequenceClassification.from_pretrained(checkpoint_dir)
+tokenizer = AutoTokenizer.from_pretrained(checkpoint_dir)
+model = AutoModelForSequenceClassification.from_pretrained(checkpoint_dir)
 model.eval()
 
 # 3. (Optional) Move to GPU if available
@@ -15,7 +15,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
 
 # 4. Define an inference function with timing
-def classify_requests(request_texts, batch_size=8, max_length=128):
+def classify_requests(request_texts, batch_size=16, max_length=256):
     """
     request_texts: List[str] of user requests
     Returns: Tuple of (results, per_query_times, avg_time)
