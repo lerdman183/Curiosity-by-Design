@@ -12,6 +12,8 @@ module purge
 module load python
 module load cuda
 
+pip install torch torchvision torchaudio transformers peft datasets scikit-learn wandb huggingface_hub jupyter pandas --index-url https://download.pytorch.org/whl/cu128
+
 source ~/venv/bin/activate
 
 cd ~/Curiosity-by-Design
