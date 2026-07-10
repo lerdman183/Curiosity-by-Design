@@ -3,7 +3,7 @@ import time
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
 # 1. Specify your checkpoint directory
-checkpoint_dir = "/content/checkpoint-1872"
+checkpoint_dir = "./results_scratch/checkpoint-1872"
 
 # 2. Load tokenizer and model
 tokenizer = AutoTokenizer.from_pretrained(checkpoint_dir)

@@ -100,6 +100,7 @@ if __name__ == "__main__": # only initialize wandb when running as main script
     wandb.init(
         project="Curiosity-By-Design",
         name="gemma3-1b-it-singleGPU-cc",
+        mode="offline", # set to "offline" for running on cluster
         config={
             "model": model_checkpoint,
             "dataset": json_filename,
