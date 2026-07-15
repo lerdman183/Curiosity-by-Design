@@ -164,7 +164,7 @@ training_args = TrainingArguments(
     gradient_checkpointing=True,
     report_to="wandb",
     run_name="gemma3-1b-it-singleGPU",
-    dataloader_num_workers=4,
+    dataloader_num_workers=2,
 )
 
 # Don't start training if the script is run by a worker
