@@ -9,10 +9,18 @@
 
 module purge
 
+module load python
+
+virtualenv --no-download $SLURM_TMPDIR/ENV
+
 module load python gcc arrow/21.0.0
 
-source ~/venv/bin/activate
+source $SLURM_TMPDIR/ENV/bin/activate
 
-cd ~/Curiosity-by-Design
+pip install --upgrade pip --no-index
 
-python Code/supplementary-material/clarification_module.py
+pip install --no-index torch torchvision torchaudio transformers peft datasets scikit-learn wandb huggingface_hub jupyter pandas
+
+echo "Done installing virtualenv!"
+
+srun python Code/supplementary-material/clarification_module.py
