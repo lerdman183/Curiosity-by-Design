@@ -19,17 +19,7 @@ source $SLURM_TMPDIR/ENV/bin/activate
 
 pip install --upgrade pip --no-index
 
-pip install --no-index torch torchvision torchaudio transformers peft datasets scikit-learn wandb huggingface_hub jupyter pandas
-
-python -c "import torch; print(torch.__file__)"
-
-python -c "import os, torch; print(os.path.join(os.path.dirname(torch.__file__), 'lib'))"
-
-ls -l $(python -c "import os, torch; print(os.path.join(os.path.dirname(torch.__file__), 'lib'))")
-
-python -c "import torch; print(torch.__version__); print(torch.__file__)"
-
-pip show torch torchaudio
+pip install --no-index torch transformers peft datasets wandb huggingface_hub
 
 echo "Done installing virtualenv!"
 
