@@ -152,7 +152,6 @@ data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm=False)
 
 training_args = TrainingArguments(
     output_dir="./gemma3-1b-it-ft-new-data",
-    overwrite_output_dir=True,
     per_device_train_batch_size=1,      # batch size = 1
     gradient_accumulation_steps=2,      # effective batch = 2
     num_train_epochs=3,
