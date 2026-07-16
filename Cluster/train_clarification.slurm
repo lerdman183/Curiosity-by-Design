@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=clarify-gemma
 #SBATCH --gres=gpu:h100:1
-#SBATCH --cpus-per-task=2
+#SBATCH --cpus-per-task=1
 #SBATCH --mem=18000M
 #SBATCH --time=12:00:00
 #SBATCH --output=logs/%x-%j.out
