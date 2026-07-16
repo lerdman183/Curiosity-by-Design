@@ -21,24 +21,15 @@ pip install --upgrade pip --no-index
 
 pip install --no-index torch torchvision torchaudio transformers peft datasets scikit-learn wandb huggingface_hub jupyter pandas
 
-echo "Python:"
-which python
+python -c "import torch; print(torch.__file__)"
 
-echo
-echo "Pip:"
-pip --version
+python -c "import os, torch; print(os.path.join(os.path.dirname(torch.__file__), 'lib'))"
 
-echo
-echo "Torch:"
-python -c "import torch; print(torch.__version__)"
+ls -l $(python -c "import os, torch; print(os.path.join(os.path.dirname(torch.__file__), 'lib'))")
 
-echo
-echo "Torchaudio:"
-python -c "import torchaudio; print(torchaudio.__version__)"
+python -c "import torch; print(torch.__version__); print(torch.__file__)"
 
-echo
-echo "Shared libraries:"
-ldd $VIRTUAL_ENV/lib/python3.11/site-packages/torchaudio/lib/libtorchaudio.so
+pip show torch torchaudio
 
 echo "Done installing virtualenv!"
 
