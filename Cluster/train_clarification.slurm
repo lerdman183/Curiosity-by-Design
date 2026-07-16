@@ -21,6 +21,25 @@ pip install --upgrade pip --no-index
 
 pip install --no-index torch torchvision torchaudio transformers peft datasets scikit-learn wandb huggingface_hub jupyter pandas
 
+echo "Python:"
+which python
+
+echo
+echo "Pip:"
+pip --version
+
+echo
+echo "Torch:"
+python -c "import torch; print(torch.__version__)"
+
+echo
+echo "Torchaudio:"
+python -c "import torchaudio; print(torchaudio.__version__)"
+
+echo
+echo "Shared libraries:"
+ldd $VIRTUAL_ENV/lib/python3.11/site-packages/torchaudio/lib/libtorchaudio.so
+
 echo "Done installing virtualenv!"
 
 srun python Code/supplementary-material/clarification_module.py
