@@ -5,9 +5,11 @@ from torch.utils.data import Dataset as TorchDataset
 from transformers import (
     AutoTokenizer,
     AutoModelForCausalLM,
+    EarlyStoppingCallback,
     Trainer,
     TrainingArguments,
-    DataCollatorForLanguageModeling,
+    DefaultDataCollator,
+    BitsAndBytesConfig,
 )
 from peft import LoraConfig, get_peft_model, TaskType
 import wandb
@@ -87,11 +89,17 @@ class TextDataset(TorchDataset):
         }
 
 
-model_checkpoint = "google/gemma-3-1b-it"
+model_checkpoint = "meta-llama/Llama-3.1-8B-Instruct"
 tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
 tokenizer.pad_token = tokenizer.eos_token
 
 train_dataset = TextDataset(text_examples, tokenizer, max_length=512)
+
+# Ensure these numbers match those in ds_config.json
+BATCH_SIZE = 1
+GRAD_ACCUM = 16
+LR = 5e-5
+EPOCHS = 5
 
 # -----------------------------
 # 3. WandB init (unchanged)
@@ -99,31 +107,31 @@ train_dataset = TextDataset(text_examples, tokenizer, max_length=512)
 if __name__ == "__main__": # only initialize wandb when running as main script
     wandb.init(
         project="Curiosity-By-Design",
-        name="gemma3-1b-it-singleGPU-cc",
+        name="llama3.1-8B-ft-clarification",
         mode="offline", # set to "offline" for running on cluster
         config={
             "model": model_checkpoint,
             "dataset": json_filename,
-            "epochs": 3,
+            "epochs": EPOCHS,
             "seq_len": 512,
-            "batch_per_device": 1,
-            "grad_accum": 2,
-            "learning_rate": 5e-5,
+            "batch_per_device": BATCH_SIZE,
+            "grad_accum": GRAD_ACCUM,
+            "effective_batch_size": BATCH_SIZE * GRAD_ACCUM,
+            "learning_rate": LR,
         },
     )
 
 # -----------------------------
-# 4. Model + LoRA on single GPU
+# 4. Model + QLoRA on multiple GPUs 
 # -----------------------------
 assert torch.cuda.is_available(), "CUDA is required for this script"
-torch.cuda.set_device(0)
 
-model = AutoModelForCausalLM.from_pretrained(
-    model_checkpoint,
-    dtype=torch.float16,
-    device_map={"": 0},  # everything on cuda:0
-    attn_implementation="eager",   # explicit eager attention
-    use_cache=False,               # required for checkpointing
+# Set up QLoRA configuration
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_compute_dtype=torch.bfloat16,
+    #bnb_4bit_use_double_quant=True,
 )
 
 # Attach LoRA adapter
@@ -133,7 +141,15 @@ lora_config = LoraConfig(
     r=8,
     lora_alpha=32,
     lora_dropout=0.1,
-    target_modules=["q_proj", "k_proj"],
+    target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],  # Adjusted for LLaMA-3
+)
+
+model = AutoModelForCausalLM.from_pretrained(
+    model_checkpoint,
+    quantization_config=bnb_config,
+    torch_dtype=torch.bfloat16,
+    attn_implementation="eager",   # explicit eager attention
+    use_cache=False,               # required for checkpointing
 )
 
 # enable gradient checkpointing first
@@ -142,28 +158,26 @@ model.gradient_checkpointing_enable()
 model.enable_input_require_grads()
 model = get_peft_model(model, lora_config)
 
-# Enable gradient checkpointing for activations
-#model.gradient_checkpointing_enable()
-
 # -----------------------------
 # 5. Trainer
 # -----------------------------
-data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm=False)
+data_collator = DefaultDataCollator()
 
 training_args = TrainingArguments(
-    output_dir="./gemma3-1b-it-ft-new-data",
-    per_device_train_batch_size=1,      # batch size = 1
-    gradient_accumulation_steps=2,      # effective batch = 2
-    num_train_epochs=3,
-    learning_rate=5e-5,
+    output_dir="./llama3.1-8B-ft-clarification",
+    per_device_train_batch_size=BATCH_SIZE,
+    gradient_accumulation_steps=GRAD_ACCUM,
+    num_train_epochs=EPOCHS,
+    learning_rate=LR,
     logging_steps=10,
     save_strategy="epoch",
     save_total_limit=3,
-    fp16=True,                          # mixed precision
+    bf16=True,                          # mixed precision
     gradient_checkpointing=True,
     report_to="wandb",
-    run_name="gemma3-1b-it-singleGPU",
-    dataloader_num_workers=1,
+    run_name="llama3.1-8B-ft-clarification",
+    dataloader_num_workers=2,
+    deepspeed="./ds_config.json",  # Use DeepSpeed for parallel training
 )
 
 # Don't start training if the script is run by a worker
@@ -173,6 +187,7 @@ if __name__ == "__main__":
         args=training_args,
         train_dataset=train_dataset,
         data_collator=data_collator,
+        callbacks=[EarlyStoppingCallback(early_stopping_patience=2)]
     )
 
     # -----------------------------

@@ -40,6 +40,7 @@ wandb/
 Models/
 Code/RA-2/results/
 Code/RA-2/path/
+gemma3-1b-it-ft-new-data/
 
 # Large zenodo model files
 zenodo/
