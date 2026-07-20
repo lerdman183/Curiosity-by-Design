@@ -4,7 +4,7 @@
 #SBATCH --nodes 2
 #SBATCH --ntasks-per-node=1
 #SBATCH --gres=gpu:h100:1
-#SBATCH --cpus-per-task=2
+#SBATCH --cpus-per-task=1
 #SBATCH --mem=18000M
 #SBATCH --time=12:00:00
 #SBATCH --output=logs/%x-%j.out
@@ -17,6 +17,6 @@ srun -N $SLURM_NNODES -n $SLURM_NNODES Cluster/config_env.sh
 
 export HEAD_NODE=$(hostname) # store head node's address
 
-module load cuda/11.4
+module load cuda
 
 srun Cluster/launch_training_deepspeed.sh
