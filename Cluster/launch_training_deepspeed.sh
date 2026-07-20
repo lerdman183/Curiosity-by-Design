@@ -3,8 +3,9 @@
 
 source $SLURM_TMPDIR/ENV/bin/activate
 
-ls $SLURM_TMPDIR/ENV/lib/python3.11/site-packages | grep typing
-ls $SLURM_TMPDIR/ENV/lib/python3.11/site-packages | grep torch
+echo "Installing typing_extensions =================="
+pip install --no-index typing_extensions
+pip install --no-index typing-extensions
 
 export NCCL_ASYNC_ERROR_HANDLING=1
 
