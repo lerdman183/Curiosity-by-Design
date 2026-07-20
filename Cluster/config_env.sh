@@ -17,19 +17,4 @@ pip install --no-index typing_extensions
 
 pip install --no-index torch transformers peft datasets wandb huggingface_hub deepspeed
 
-echo "Python:"
-which python
-
-echo "Pip:"
-which pip
-
-echo "Torchrun:"
-which torchrun
-
-python -m pip show typing_extensions
-python -m pip show torch
-
-python -c "import typing_extensions; print('typing_extensions OK')"
-python -c "import torch; print(torch.__version__)"
-
 echo "Done installing virtualenv!"

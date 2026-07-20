@@ -1,6 +1,6 @@
 #!/bin/bash
 # Code adopted from https://docs.alliancecan.ca/wiki/Deepspeed
-#SBATCH --job-name=clarify-gemma
+#SBATCH --job-name=clarify-llama
 #SBATCH --nodes 2
 #SBATCH --ntasks-per-node=1
 #SBATCH --gres=gpu:h100:1
