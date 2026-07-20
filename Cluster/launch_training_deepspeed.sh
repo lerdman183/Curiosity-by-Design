@@ -12,4 +12,5 @@ torchrun \
 --nproc_per_node 2 \ 
 --rdzv_backend c10d \
 --rdzv_endpoint "$HEAD_NODE" \
-Code/supplementary-material/clarification_module.py --deepspeed_config="./ds_config.json"
+Code/supplementary-material/clarification_module.py \
+--deepspeed_config="./ds_config.json"

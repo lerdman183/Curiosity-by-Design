@@ -5,7 +5,7 @@ import torch.nn.functional as F
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 # --- Configuration ---
-BASE_MODEL = "google/gemma-3-1b-it"
+BASE_MODEL = "meta-llama/Llama-3.1-8B-Instruct"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 # --- Function to load model and tokenizer ---
@@ -255,7 +255,7 @@ if __name__ == "__main__":
     print(f"Total processing time: {sum(response_times):.4f} seconds")
 
     # Save results to JSON
-    output_file = "results_gemma3-1b-it-raw-11_with_timing.json"
+    output_file = "results_llama3.1-8B-raw-11_with_timing.json"
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
     print(f"\nSaved {len(results)} entries to {output_file}")
