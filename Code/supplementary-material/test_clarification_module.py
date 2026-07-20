@@ -4,8 +4,8 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 from peft import PeftModel
 
 # 1. Configuration
-BASE_MODEL = "google/gemma-3-1b-it"
-FINE_TUNED_DIR = "/content/content/gemma3-1b-it-ft-new-data"
+BASE_MODEL = "meta-llama/Llama-3.1-8B-Instruct" #TODO: Update to 3.3-70B-Instruct if needed
+FINE_TUNED_DIR = "../../llama3.1-8B-ft-clarification"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 # 2. Load tokenizer + model + LoRA adapter
