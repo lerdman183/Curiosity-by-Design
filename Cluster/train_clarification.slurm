@@ -11,7 +11,7 @@
 
 # Before submitting this file, run the following lines in the command prompt to set up the virtual environment and install packages:
 # ===============================
-# cd projects/def-lutellie/Curiosity-by-Design
+# cd ~/projects/def-lutellie/Curiosity-by-Design
 # module purge
 # module load python gcc arrow/21.0.0 cuda
 # virtualenv --no-download venv
@@ -24,7 +24,7 @@
 mkdir -p /scratch/Curiosity-by-Design/logs
 mkdir -p /scratch/Curiosity-by-Design/llama3.1-8B-ft-clarification
 
-cd projects/def-lutellie/Curiosity-by-Design
+cd ~/projects/def-lutellie/Curiosity-by-Design
 
 export HEAD_NODE=$(hostname)
 export MASTER_PORT=40000
