@@ -164,7 +164,7 @@ model = get_peft_model(model, lora_config)
 data_collator = DefaultDataCollator()
 
 training_args = TrainingArguments(
-    output_dir="./llama3.1-8B-ft-clarification",
+    output_dir="/scratch/Curiosity-by-Design/llama3.1-8B-ft-clarification",
     per_device_train_batch_size=BATCH_SIZE,
     gradient_accumulation_steps=GRAD_ACCUM,
     num_train_epochs=EPOCHS,
