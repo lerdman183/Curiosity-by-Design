@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=clarify-llama
 #SBATCH --nodes 2
-#SBATCH --ntasks-per-node=2
+#SBATCH --ntasks-per-node=1
 #SBATCH --gres=gpu:h100:2
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=64000M
@@ -22,6 +22,7 @@
 
 cd ~/Curiosity-by-Design
 
-export HEAD_NODE=$(hostname) # store head node's address
+export HEAD_NODE=$(hostname)
+export MASTER_PORT=40000
 
-srun Cluster/launch_training_deepspeed.sh
+srun --ntasks=$SLURM_NNODES Cluster/launch_training_deepspeed.sh

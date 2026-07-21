@@ -20,6 +20,6 @@ torchrun \
 --nproc_per_node=2 \
 --rdzv_backend=c10d \
 --rdzv_id=$SLURM_JOB_ID \
---rdzv_endpoint="$HEAD_NODE" \
+--rdzv_endpoint="$HEAD_NODE:$MASTER_PORT" \
 Code/supplementary-material/clarification_module.py \
 --deepspeed_config="./ds_config.json"
