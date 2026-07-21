@@ -21,8 +21,8 @@
 # ===============================
 
 # Set up output directories
-mkdir -p /scratch/Curiosity-by-Design/logs
-mkdir -p /scratch/Curiosity-by-Design/llama3.1-8B-ft-clarification
+mkdir -p ~/scratch/Curiosity-by-Design/logs
+mkdir -p ~/scratch/Curiosity-by-Design/llama3.1-8B-ft-clarification
 
 cd ~/projects/def-lutellie/Curiosity-by-Design
 
