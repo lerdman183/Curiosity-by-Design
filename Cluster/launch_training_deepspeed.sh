@@ -4,7 +4,9 @@
 module purge
 module load python gcc arrow/21.0.0 cuda
 
-source ~/Curiosity-by-Design/venv/bin/activate
+cd ~/Curiosity-by-Design
+
+source venv/bin/activate
 
 export NCCL_ASYNC_ERROR_HANDLING=1
 # Force NCCL to use the correct network interface if needed (Alliance cluster standard)
