@@ -8,7 +8,7 @@ cd ~/projects/def-lutellie/Curiosity-by-Design
 
 source venv/bin/activate
 
-export NCCL_ASYNC_ERROR_HANDLING=1
+export TORCH_NCCL_ASYNC_ERROR_HANDLING=1
 # Force NCCL to use the correct network interface if needed (Alliance cluster standard)
 export NCCL_IB_DISABLE=0
 

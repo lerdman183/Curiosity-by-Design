@@ -147,7 +147,7 @@ lora_config = LoraConfig(
 model = AutoModelForCausalLM.from_pretrained(
     model_checkpoint,
     quantization_config=bnb_config,
-    torch_dtype=torch.bfloat16,
+    dtype=torch.bfloat16,
     attn_implementation="eager",   # explicit eager attention
     use_cache=False,               # required for checkpointing
 )
