@@ -163,6 +163,7 @@ model = get_peft_model(model, lora_config)
 # -----------------------------
 data_collator = DefaultDataCollator()
 
+DS_CONFIG_PATH = os.path.join(BASE_DIR, "..", "..", "Cluster", "ds_config.json")
 training_args = TrainingArguments(
     output_dir="/scratch/Curiosity-by-Design/llama3.1-8B-ft-clarification",
     per_device_train_batch_size=BATCH_SIZE,
@@ -177,7 +178,7 @@ training_args = TrainingArguments(
     report_to="wandb",
     run_name="llama3.1-8B-ft-clarification",
     dataloader_num_workers=2,
-    deepspeed="../../Cluster/ds_config.json",  # Use DeepSpeed for parallel training
+    deepspeed=DS_CONFIG_PATH,  # Use DeepSpeed for parallel training
 )
 
 # Don't start training if the script is run by a worker
