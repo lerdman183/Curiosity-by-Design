@@ -5,7 +5,6 @@ from torch.utils.data import Dataset as TorchDataset
 from transformers import (
     AutoTokenizer,
     AutoModelForCausalLM,
-    EarlyStoppingCallback,
     Trainer,
     TrainingArguments,
     DefaultDataCollator,
@@ -188,7 +187,6 @@ if __name__ == "__main__":
         args=training_args,
         train_dataset=train_dataset,
         data_collator=data_collator,
-        callbacks=[EarlyStoppingCallback(early_stopping_patience=2)]
     )
 
     # -----------------------------
