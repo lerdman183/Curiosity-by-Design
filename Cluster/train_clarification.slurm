@@ -6,11 +6,15 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=64000M
 #SBATCH --time=12:00:00
-#SBATCH --output=scratch/Curiosity-by-Design/logs/%x-%j.out
-#SBATCH --error=scratch/Curiosity-by-Design/logs/%x-%j.err
+#SBATCH --output=/home/scratch/Curiosity-by-Design/logs/%x-%j.out
+#SBATCH --error=/home/scratch/Curiosity-by-Design/logs/%x-%j.err
 
-# Before submitting this file, run the following lines in the command prompt to set up the virtual environment and install packages:
+# Before submitting this file, run the following lines in the command prompt to set up the directories, virtual environment and install packages:
 # ===============================
+# Set up output directories
+# mkdir -p ~/scratch/Curiosity-by-Design/logs
+# mkdir -p ~/scratch/Curiosity-by-Design/llama3.1-8B-ft-clarification
+
 # cd ~/projects/def-lutellie/Curiosity-by-Design
 # module purge
 # module load python gcc arrow/21.0.0 cuda
@@ -20,9 +24,7 @@
 # pip install --no-index torch transformers peft datasets wandb huggingface_hub deepspeed typing_extensions bitsandbytes
 # ===============================
 
-# Set up output directories
-mkdir -p ~/scratch/Curiosity-by-Design/logs
-mkdir -p ~/scratch/Curiosity-by-Design/llama3.1-8B-ft-clarification
+
 
 cd ~/projects/def-lutellie/Curiosity-by-Design
 
