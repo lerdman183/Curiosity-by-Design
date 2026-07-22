@@ -104,7 +104,7 @@ EPOCHS = 5
 # -----------------------------
 # 3. WandB init (unchanged)
 # -----------------------------
-if __name__ == "__main__": # only initialize wandb when running as main script
+if __name__ == "__main__" and int(os.environ.get("RANK", "0")) == 0: # only initialize wandb when running as main script on the rank 0
     wandb.init(
         project="Curiosity-By-Design",
         name="llama3.1-8B-ft-clarification",
