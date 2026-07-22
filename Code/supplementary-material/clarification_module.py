@@ -177,7 +177,7 @@ training_args = TrainingArguments(
     report_to="wandb",
     run_name="llama3.1-8B-ft-clarification",
     dataloader_num_workers=2,
-    deepspeed="./ds_config.json",  # Use DeepSpeed for parallel training
+    deepspeed="../../Cluster/ds_config.json",  # Use DeepSpeed for parallel training
 )
 
 # Don't start training if the script is run by a worker

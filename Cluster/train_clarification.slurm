@@ -11,9 +11,9 @@
 
 # Before submitting this file, run the following lines in the command prompt to set up the directories, virtual environment and install packages:
 # ===============================
-# Set up output directories
-# mkdir -p ~/scratch/Curiosity-by-Design/logs
-# mkdir -p ~/scratch/Curiosity-by-Design/llama3.1-8B-ft-clarification
+# Set up output directories (replace lerdman with your username)
+# mkdir -p ~/scratch/lerdman/Curiosity-by-Design/logs
+# mkdir -p ~/scratch/lerdman/Curiosity-by-Design/llama3.1-8B-ft-clarification
 
 # cd ~/projects/def-lutellie/Curiosity-by-Design
 # module purge
