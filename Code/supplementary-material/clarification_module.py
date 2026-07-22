@@ -165,7 +165,7 @@ data_collator = DefaultDataCollator()
 
 DS_CONFIG_PATH = os.path.join(BASE_DIR, "..", "..", "Cluster", "ds_config.json")
 training_args = TrainingArguments(
-    output_dir="/scratch/Curiosity-by-Design/llama3.1-8B-ft-clarification",
+    output_dir=os.path.join(os.environ["SCRATCH"], "Curiosity-by-Design", "llama3.1-8B-ft-clarification"),
     per_device_train_batch_size=BATCH_SIZE,
     gradient_accumulation_steps=GRAD_ACCUM,
     num_train_epochs=EPOCHS,
