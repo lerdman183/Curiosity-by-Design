@@ -177,7 +177,7 @@ training_args = TrainingArguments(
     gradient_checkpointing=True,
     report_to="wandb",
     run_name="llama3.1-8B-ft-clarification",
-    dataloader_num_workers=2,
+    dataloader_num_workers=1,
     deepspeed=DS_CONFIG_PATH,  # Use DeepSpeed for parallel training
 )
 
