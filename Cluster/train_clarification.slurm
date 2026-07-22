@@ -6,8 +6,8 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=64000M
 #SBATCH --time=12:00:00
-#SBATCH --output=/home/scratch/Curiosity-by-Design/logs/%x-%j.out
-#SBATCH --error=/home/scratch/Curiosity-by-Design/logs/%x-%j.err
+#SBATCH --output=/scratch/%u/Curiosity-by-Design/logs/%x-%j.out
+#SBATCH --error=/scratch/%u/Curiosity-by-Design/logs/%x-%j.err
 
 # Before submitting this file, run the following lines in the command prompt to set up the directories, virtual environment and install packages:
 # ===============================
