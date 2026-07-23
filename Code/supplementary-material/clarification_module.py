@@ -151,9 +151,6 @@ model = AutoModelForCausalLM.from_pretrained(
     use_cache=False,               # required for checkpointing
 )
 
-# enable gradient checkpointing first
-model.gradient_checkpointing_enable()
-
 model.enable_input_require_grads()
 model = get_peft_model(model, lora_config)
 
@@ -174,6 +171,7 @@ training_args = TrainingArguments(
     save_total_limit=3,
     bf16=True,                          # mixed precision
     gradient_checkpointing=True,
+    gradient_checkpointing_kwargs={"use_reentrant": True}, # Needed for gradient checkpointing
     report_to="wandb",
     run_name="llama3.1-8B-ft-clarification",
     dataloader_num_workers=1,
