@@ -1,7 +1,7 @@
 import json
 import os
 import torch
-import glob
+from pathlib import Path
 from torch.utils.data import Dataset as TorchDataset
 from transformers import (
     AutoTokenizer,
@@ -192,10 +192,9 @@ if __name__ == "__main__":
     # 6. Train & save
     # -----------------------------
     # Resume from the last checkpoint if there is one
-    last_checkpoint = None
-    checkpoints = glob.glob(os.path.join(training_args.output_dir, "checkpoint-*"))
-    if checkpoints:
-        last_checkpoint = max(checkpoints, key=os.path.getmtime)
+    output_path = Path(training_args.output_dir)
+    checkpoints = list(output_path.glob("checkpoint-*")) if output_path.exists() else []
+    last_checkpoint = str(max(checkpoints, key=lambda p: p.stat().st_mtime)) if checkpoints else None
 
     trainer.train(resume_from_checkpoint=last_checkpoint)
     trainer.save_model(training_args.output_dir)
