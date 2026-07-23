@@ -1,6 +1,7 @@
 import json
 import os
 import torch
+import glob
 from torch.utils.data import Dataset as TorchDataset
 from transformers import (
     AutoTokenizer,
@@ -190,6 +191,12 @@ if __name__ == "__main__":
     # -----------------------------
     # 6. Train & save
     # -----------------------------
-    trainer.train()
+    # Resume from the last checkpoint if there is one
+    last_checkpoint = None
+    checkpoints = glob.glob(os.path.join(training_args.output_dir, "checkpoint-*"))
+    if checkpoints:
+        last_checkpoint = max(checkpoints, key=os.path.getmtime)
+
+    trainer.train(resume_from_checkpoint=last_checkpoint)
     trainer.save_model(training_args.output_dir)
     tokenizer.save_pretrained(training_args.output_dir)

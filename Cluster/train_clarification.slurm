@@ -5,7 +5,7 @@
 #SBATCH --gres=gpu:h100:2
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=64000M
-#SBATCH --time=12:00:00
+#SBATCH --time=48:00:00
 #SBATCH --output=/scratch/%u/Curiosity-by-Design/logs/%x-%j.out
 #SBATCH --error=/scratch/%u/Curiosity-by-Design/logs/%x-%j.err
 
@@ -21,7 +21,7 @@
 # virtualenv --no-download venv
 # source venv/bin/activate
 # pip install --upgrade pip --no-index
-# pip install --no-index torch transformers peft datasets wandb huggingface_hub deepspeed typing_extensions bitsandbytes
+# pip install --no-index torch transformers peft datasets wandb huggingface_hub deepspeed typing_extensions bitsandbytes glob
 # ===============================
 
 
