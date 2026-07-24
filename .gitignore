@@ -41,6 +41,8 @@ Models/
 Code/RA-2/results/
 Code/RA-2/path/
 gemma3-1b-it-ft-new-data/
+llama3.1-8B-ft-clarification/
+llama3.3-70B-ft-clarification/
 
 # Large zenodo model files
 zenodo/
