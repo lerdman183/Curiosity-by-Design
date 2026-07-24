@@ -5,7 +5,7 @@
 #SBATCH --gres=gpu:h100:2
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=64000M
-#SBATCH --time=48:00:00
+#SBATCH --time=7-00:00:00
 #SBATCH --output=/scratch/%u/Curiosity-by-Design/logs/%x-%j.out
 #SBATCH --error=/scratch/%u/Curiosity-by-Design/logs/%x-%j.err
 
