@@ -15,8 +15,6 @@ export NCCL_IB_DISABLE=0
 echo "r$SLURM_NODEID master: $HEAD_NODE"
 echo "r$SLURM_NODEID Launching python script"
 
-export NCCL_DEBUG=INFO
-
 torchrun \
 --nnodes=$SLURM_NNODES \
 --nproc_per_node=2 \

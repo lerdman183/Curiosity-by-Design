@@ -13,7 +13,7 @@
 # ===============================
 # Set up output directories (replace lerdman with your username, only have to do once)
 # mkdir -p ~/scratch/lerdman/Curiosity-by-Design/logs
-# mkdir -p ~/scratch/lerdman/Curiosity-by-Design/llama3.1-8B-ft-clarification
+# mkdir -p ~/scratch/lerdman/Curiosity-by-Design/llama3.3-70B-ft-clarification
 #
 # cd ~/projects/def-lutellie/Curiosity-by-Design
 # module purge

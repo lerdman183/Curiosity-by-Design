@@ -89,7 +89,7 @@ class TextDataset(TorchDataset):
         }
 
 
-model_checkpoint = "meta-llama/Llama-3.1-8B-Instruct"
+model_checkpoint = "meta-llama/Llama-3.3-70B-Instruct"
 tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
 tokenizer.pad_token = tokenizer.eos_token
 
@@ -107,7 +107,7 @@ EPOCHS = 5
 if __name__ == "__main__" and int(os.environ.get("RANK", "0")) == 0: # only initialize wandb when running as main script on the rank 0
     wandb.init(
         project="Curiosity-By-Design",
-        name="llama3.1-8B-ft-clarification",
+        name="llama3.3-70B-ft-clarification",
         mode="offline", # set to "offline" for running on cluster
         config={
             "model": model_checkpoint,
@@ -162,7 +162,7 @@ data_collator = DefaultDataCollator()
 
 DS_CONFIG_PATH = os.path.join(BASE_DIR, "..", "..", "Cluster", "ds_config.json")
 training_args = TrainingArguments(
-    output_dir=os.path.join(os.environ["SCRATCH"], "Curiosity-by-Design", "llama3.1-8B-ft-clarification"),
+    output_dir=os.path.join(os.environ["SCRATCH"], "Curiosity-by-Design", "llama3.3-70B-ft-clarification"),
     per_device_train_batch_size=BATCH_SIZE,
     gradient_accumulation_steps=GRAD_ACCUM,
     num_train_epochs=EPOCHS,
@@ -174,7 +174,7 @@ training_args = TrainingArguments(
     gradient_checkpointing=True,
     gradient_checkpointing_kwargs={"use_reentrant": True}, # Needed for gradient checkpointing
     report_to="wandb",
-    run_name="llama3.1-8B-ft-clarification",
+    run_name="llama3.3-70B-ft-clarification",
     dataloader_num_workers=1,
     deepspeed=DS_CONFIG_PATH,  # Use DeepSpeed for parallel training
 )
