@@ -15,10 +15,6 @@
 # mkdir -p ~/scratch/lerdman/Curiosity-by-Design/logs
 # mkdir -p ~/scratch/lerdman/Curiosity-by-Design/llama3.3-70B-ft-clarification
 #
-# Set up where huggingface writes/reads
-# export HF_HOME=~/scratch/Curiosity-by-Design/hf_cache
-# mkdir -p $HF_HOME
-#
 # cd ~/projects/def-lutellie/Curiosity-by-Design
 # module purge
 # module load python gcc arrow/21.0.0 cuda

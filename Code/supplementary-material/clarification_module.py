@@ -88,9 +88,11 @@ class TextDataset(TorchDataset):
             "labels": labels,
         }
 
+# Switch the cache directory to scratch as to not exceed quota in the home directory
+CACHE_DIR = os.path.join(os.environ["SCRATCH"], "Curiosity-by-Design", "hf_cache")
 
 model_checkpoint = "meta-llama/Llama-3.3-70B-Instruct"
-tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
+tokenizer = AutoTokenizer.from_pretrained(model_checkpoint, cache_dir=CACHE_DIR)
 tokenizer.pad_token = tokenizer.eos_token
 
 train_dataset = TextDataset(text_examples, tokenizer, max_length=512)
@@ -146,6 +148,7 @@ lora_config = LoraConfig(
 
 model = AutoModelForCausalLM.from_pretrained(
     model_checkpoint,
+    cache_dir=CACHE_DIR,
     quantization_config=bnb_config,
     dtype=torch.bfloat16,
     attn_implementation="eager",   # explicit eager attention
