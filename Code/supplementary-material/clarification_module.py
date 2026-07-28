@@ -146,6 +146,9 @@ lora_config = LoraConfig(
     target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],  # Adjusted for LLaMA-3
 )
 
+# Use the local rank to map processes across multiple GPUs
+local_rank = int(os.environ.get("LOCAL_RANK", 0))
+
 model = AutoModelForCausalLM.from_pretrained(
     model_checkpoint,
     cache_dir=CACHE_DIR,
@@ -153,6 +156,7 @@ model = AutoModelForCausalLM.from_pretrained(
     dtype=torch.bfloat16,
     attn_implementation="eager",   # explicit eager attention
     use_cache=False,               # required for checkpointing
+    device_map={"": local_rank},
 )
 
 model.enable_input_require_grads()
