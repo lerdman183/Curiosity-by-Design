@@ -23,6 +23,8 @@
 # source venv/bin/activate
 # pip install --upgrade pip --no-index
 # pip install --no-index torch transformers peft datasets wandb huggingface_hub deepspeed typing_extensions bitsandbytes pathlib
+# hf auth login
+# wandb login
 # ===============================
 
 
