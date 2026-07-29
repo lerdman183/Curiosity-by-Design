@@ -83,9 +83,8 @@ class TextDataset(TorchDataset):
         input_ids = full_ids
         attention_mask = torch.ones_like(input_ids)
 
-        # Create labels that mask out the prompt portion
         labels = input_ids.clone()
-        labels[: prompt_tok.input_ids.size(0) ] = -100   # no loss on prompt
+        labels[: prompt_only_ids.size(0)] = -100   # no loss on prompt/user turn
 
         # Pad/truncate to max_length
         if input_ids.size(0) > self.max_length:
