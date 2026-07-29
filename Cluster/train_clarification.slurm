@@ -13,7 +13,7 @@
 # ===============================
 # Set up output directories (replace lerdman with your username, only have to do once)
 # mkdir -p ~/scratch/lerdman/Curiosity-by-Design/logs
-# mkdir -p ~/scratch/lerdman/Curiosity-by-Design/llama3.3-70B-ft-clarification
+# mkdir -p ~/scratch/lerdman/Curiosity-by-Design/llama3.3-70B-ft-clarification/gerrit-data-training
 # mkdir -p ~/scratch/lerdman/Curiosity-by-Design/hf_cache
 #
 # cd ~/projects/def-lutellie/Curiosity-by-Design
@@ -22,12 +22,10 @@
 # virtualenv --no-download venv
 # source venv/bin/activate
 # pip install --upgrade pip --no-index
-# pip install --no-index torch transformers peft datasets wandb huggingface_hub deepspeed typing_extensions bitsandbytes pathlib
+# pip install --no-index torch transformers peft datasets wandb huggingface_hub deepspeed typing_extensions bitsandbytes pathlib sklearn math
 # hf auth login
 # wandb login
 # ===============================
-
-
 
 cd ~/projects/def-lutellie/Curiosity-by-Design
 
