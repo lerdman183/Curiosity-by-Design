@@ -204,7 +204,7 @@ class PerplexityLoggingCallback(TrainerCallback):
 
 DS_CONFIG_PATH = os.path.join(BASE_DIR, "..", "..", "Cluster", "ds_config.json")
 training_args = TrainingArguments(
-    output_dir=os.path.join(os.environ["SCRATCH"], "Curiosity-by-Design", "llama3.3-70B-ft-clarification", "gerrit-data-training"),
+    output_dir=os.path.join(os.environ["SCRATCH"], "Curiosity-by-Design", "llama3.3-70B-ft-clarification-gerrit"),
 
     per_device_train_batch_size=BATCH_SIZE,
     per_device_eval_batch_size=BATCH_SIZE,
