@@ -56,35 +56,42 @@ class TextDataset(TorchDataset):
         prompt_text = ex["input"].strip()
         answer_text = ex["output"].strip()
 
-        # Append EOS so model learns to end generation
-        prompt = prompt_text + self.tokenizer.eos_token
-        answer = answer_text + self.tokenizer.eos_token
+        # Build the chat-formatted conversation for llama 3
+        messages = [
+            {"role": "user", "content": prompt_text},
+            {"role": "assistant", "content": answer_text},
+        ]
 
-        # Tokenize prompt and answer separately
-        prompt_tok = self.tokenizer(
-            prompt,
-            add_special_tokens=False,
-            return_tensors="pt"
-        )
-        answer_tok = self.tokenizer(
-            answer,
-            add_special_tokens=False,
-            return_tensors="pt"
-        )
+        # Full sequence: user turn + assistant turn, with proper special tokens
+        full_ids = self.tokenizer.apply_chat_template(
+            messages,
+            tokenize=True,
+            add_generation_prompt=False,
+            return_tensors="pt",
+        )[0]
 
-        # Concatenate prompt + answer
-        input_ids = torch.cat([prompt_tok.input_ids[0], answer_tok.input_ids[0]], dim=0)
-        attention_mask = torch.cat([prompt_tok.attention_mask[0], answer_tok.attention_mask[0]], dim=0)
+        # Prompt-only sequence (user turn + the header that cues the assistant
+        # to respond) -- used only to find the boundary for masking, never fed
+        # to the model on its own here
+        prompt_only_ids = self.tokenizer.apply_chat_template(
+            [messages[0]],
+            tokenize=True,
+            add_generation_prompt=True,
+            return_tensors="pt",
+        )[0]
+
+        input_ids = full_ids
+        attention_mask = torch.ones_like(input_ids)
 
         # Create labels that mask out the prompt portion
         labels = input_ids.clone()
-        labels[: prompt_tok.input_ids.size(1) ] = -100   # no loss on prompt
+        labels[: prompt_tok.input_ids.size(0) ] = -100   # no loss on prompt
 
         # Pad/truncate to max_length
         if input_ids.size(0) > self.max_length:
-            input_ids = input_ids[-self.max_length :]
-            attention_mask = attention_mask[-self.max_length :]
-            labels = labels[-self.max_length :]
+            input_ids = input_ids[-self.max_length:]
+            attention_mask = attention_mask[-self.max_length:]
+            labels = labels[-self.max_length:]
         else:
             pad_len = self.max_length - input_ids.size(0)
             input_ids = torch.cat([input_ids, torch.full((pad_len,), self.tokenizer.pad_token_id, dtype=torch.long)], dim=0)
