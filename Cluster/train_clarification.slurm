@@ -12,11 +12,11 @@
 # Before submitting this file, run the following lines in the command prompt to set up the directories, virtual environment and install packages:
 # ===============================
 # Set up output directories (replace lerdman with your username, only have to do once)
-# mkdir -p ~/scratch/lerdman/Curiosity-by-Design/logs
-# mkdir -p ~/scratch/lerdman/Curiosity-by-Design/llama3.3-70B-ft-clarification-gerrit
-# mkdir -p ~/scratch/lerdman/Curiosity-by-Design/hf_cache
+# mkdir scratch/lerdman/Curiosity-by-Design/logs
+# mkdir scratch/lerdman/Curiosity-by-Design/llama3.3-70B-ft-clarification-gerrit
+# mkdir scratch/lerdman/Curiosity-by-Design/hf_cache
 #
-# cd ~/projects/def-lutellie/Curiosity-by-Design
+# cd project/def-lutellie/lerdman/Curiosity-by-Design
 # module purge
 # module load python gcc arrow/21.0.0 cuda
 # virtualenv --no-download venv
@@ -27,7 +27,7 @@
 # wandb login
 # ===============================
 
-cd ~/projects/def-lutellie/Curiosity-by-Design
+cd ~/project/def-lutellie/lerdman/Curiosity-by-Design
 
 export HEAD_NODE=$(hostname)
 export MASTER_PORT=40000
