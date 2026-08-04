@@ -17,7 +17,7 @@ echo "r$SLURM_NODEID Launching python script"
 
 torchrun \
 --nnodes=$SLURM_NNODES \
---nproc_per_node=2 \
+--nproc_per_node=4 \
 --rdzv_backend=c10d \
 --rdzv_id=$SLURM_JOB_ID \
 --rdzv_endpoint="$HEAD_NODE:$MASTER_PORT" \
