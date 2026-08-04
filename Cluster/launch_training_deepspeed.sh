@@ -4,7 +4,7 @@
 module purge
 module load python gcc arrow/21.0.0 cuda
 
-cd ~/project/def-lutellie/lerdman/Curiosity-by-Design
+cd ~/projects/def-lutellie/Curiosity-by-Design
 
 source venv/bin/activate
 
