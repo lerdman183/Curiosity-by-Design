@@ -15,6 +15,9 @@
 # mkdir -p ~/scratch/lerdman/Curiosity-by-Design/logs
 # mkdir -p ~/scratch/lerdman/Curiosity-by-Design/llama3.3-70B-ft-clarification-gerrit
 # mkdir -p ~/scratch/lerdman/Curiosity-by-Design/hf_cache
+# mkdir -p ~/projects/def-lutellie
+# cd ~/projects/def-lutellie
+# git clone https://github.com/lerdman183/Curiosity-by-Design.git
 #
 # cd ~/projects/def-lutellie/Curiosity-by-Design
 # module purge
@@ -27,7 +30,7 @@
 # wandb login
 # ===============================
 
-cd ~/projects/def-lutellie/Curiosity-by-Design
+cd ~/projects/def-lutellie/lerdman/Curiosity-by-Design
 
 export HEAD_NODE=$(hostname)
 export MASTER_PORT=40000
