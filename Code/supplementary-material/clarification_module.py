@@ -56,35 +56,29 @@ class TextDataset(TorchDataset):
         prompt_text = ex["input"].strip()
         answer_text = ex["output"].strip()
 
-        # Build the chat-formatted conversation for llama 3
         messages = [
             {"role": "user", "content": prompt_text},
             {"role": "assistant", "content": answer_text},
         ]
 
-        # Full sequence: user turn + assistant turn, with proper special tokens
-        full_ids = self.tokenizer.apply_chat_template(
+        # Get plain python lists of token ids (no tensor conversion here)
+        full_ids_list = self.tokenizer.apply_chat_template(
             messages,
             tokenize=True,
             add_generation_prompt=False,
-            return_tensors="pt",
-        )[0]
-
-        # Prompt-only sequence (user turn + the header that cues the assistant
-        # to respond) -- used only to find the boundary for masking, never fed
-        # to the model on its own here
-        prompt_only_ids = self.tokenizer.apply_chat_template(
+        )
+        prompt_only_ids_list = self.tokenizer.apply_chat_template(
             [messages[0]],
             tokenize=True,
             add_generation_prompt=True,
-            return_tensors="pt",
-        )[0]
+        )
 
-        input_ids = full_ids
+        # Convert to tensors ourselves — avoids the return_tensors="pt" bug
+        input_ids = torch.tensor(full_ids_list, dtype=torch.long)
         attention_mask = torch.ones_like(input_ids)
 
         labels = input_ids.clone()
-        labels[: prompt_only_ids.size(0)] = -100   # no loss on prompt/user turn
+        labels[: len(prompt_only_ids_list)] = -100
 
         # Pad/truncate to max_length
         if input_ids.size(0) > self.max_length:
