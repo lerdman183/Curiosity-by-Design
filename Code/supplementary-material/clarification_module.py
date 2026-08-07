@@ -61,19 +61,23 @@ class TextDataset(TorchDataset):
             {"role": "assistant", "content": answer_text},
         ]
 
-        # Get plain python lists of token ids (no tensor conversion here)
-        full_ids_list = self.tokenizer.apply_chat_template(
-            messages,
-            tokenize=True,
-            add_generation_prompt=False,
-        )
-        prompt_only_ids_list = self.tokenizer.apply_chat_template(
-            [messages[0]],
-            tokenize=True,
-            add_generation_prompt=True,
+        # Render the chat template as plain text first
+        full_text = self.tokenizer.apply_chat_template(
+        messages,
+        tokenize=False,
+        add_generation_prompt=False,
         )
 
-        # Convert to tensors ourselves — avoids the return_tensors="pt" bug
+        prompt_only_text = self.tokenizer.apply_chat_template(
+        [messages[0]],
+        tokenize=False,
+        add_generation_prompt=True,
+        )
+
+        # Now tokenize the rendered text ourselves
+        full_ids_list = self.tokenizer(full_text, add_special_tokens=False)["input_ids"]
+        prompt_only_ids_list = self.tokenizer(prompt_only_text, add_special_tokens=False)["input_ids"]
+
         input_ids = torch.tensor(full_ids_list, dtype=torch.long)
         attention_mask = torch.ones_like(input_ids)
 
