@@ -9,10 +9,6 @@
 
 # Before running this file, run the following lines in the terminal to set up the directories, virtual environment and install packages:
 # ===========================================================================
-# mkdir -p ~/scratch/lerdman/Curiosity-by-Design/logs
-# mkdir -p ~/scratch/lerdman/Curiosity-by-Design/llama3.3-70B-ft-clarification-gerrit
-# mkdir -p ~/scratch/lerdman/Curiosity-by-Design/hf_cache
-#
 # cd ~/projects/def-lutellie/Curiosity-by-Design
 # module purge
 # module load python gcc arrow/21.0.0 cuda
