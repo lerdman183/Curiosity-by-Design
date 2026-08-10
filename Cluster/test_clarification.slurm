@@ -21,4 +21,4 @@
 
 cd ~/projects/def-lutellie/Curiosity-by-Design
 
-python Cluster/test_clarification.py
+python Code/supplementary-material/test_clarification_module.py
