@@ -65,12 +65,19 @@ def generate_response(model, tokenizer, prompt, max_new_tokens=64):
     # Chat-template formatting, matching the updated TextDataset: the
     # model was trained on this structure, so eval has to use it too
     messages = [{"role": "user", "content": prompt.strip()}]
-    input_ids = tokenizer.apply_chat_template(
+
+    prompt_text = tokenizer.apply_chat_template(
         messages,
         add_generation_prompt=True,
-        tokenize=True,
+        tokenize=False,
+    )
+    
+    input_ids = tokenizer(
+        prompt_text,
+        add_special_tokens=False,
         return_tensors="pt",
-    ).to("cuda")
+    )["input_ids"].to("cuda")
+
     attention_mask = torch.ones_like(input_ids)
 
     with torch.inference_mode():
@@ -153,9 +160,9 @@ if __name__ == "__main__":
     torch.cuda.empty_cache()
 
     # Generate and evaluate responses from fine tuned model
-    print("\nLoading untrained (base) model...")
+    print("\nLoading fine-tuned model...")
     finetuned_model = load_finetuned_model()
-    ft_count, ft_total, ft_results = evaluate(base_model, tokenizer, eval_examples, "Untrained baseline")
+    ft_count, ft_total, ft_results = evaluate(finetuned_model, tokenizer, eval_examples, "Fine-tuned")
     del finetuned_model
     torch.cuda.empty_cache()
 
