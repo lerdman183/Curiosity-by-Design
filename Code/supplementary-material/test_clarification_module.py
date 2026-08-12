@@ -47,7 +47,7 @@ def load_base_model():
         quantization_config=bnb_config(),
         dtype=torch.bfloat16,
         attn_implementation="eager",
-        device_map="auto",
+        device_map={"": 0},   # force everything onto GPU 0, no auto offload
     )
     model.eval()
     return model
