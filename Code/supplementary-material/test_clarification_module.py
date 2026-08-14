@@ -12,6 +12,7 @@ from peft import PeftModel
 # 1. Configuration
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CACHE_DIR = os.path.join(os.environ["SCRATCH"], "Curiosity-by-Design", "hf_cache")
+RESULTS_DIR = os.path.join(os.environ["SCRATCH"], "Curiosity-by-Design", "results")
 FINE_TUNED_DIR = os.path.join(os.environ["SCRATCH"], "Curiosity-by-Design", "llama3.3-70B-ft-clarification-gerrit")
 EVAL_SPLIT_PATH = os.path.join(BASE_DIR, "..", "..", "Datasets", "clarification_module_eval_split.json")
  
@@ -172,7 +173,7 @@ if __name__ == "__main__":
     print(f"Baseline:   {base_count}/{base_total} ({100 * base_count / base_total:.2f}%)")
     print(f"Fine-tuned: {ft_count}/{ft_total} ({100 * ft_count / ft_total:.2f}%)")
 
-    with open(os.path.join(BASE_DIR, "clarification_module_eval_results.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(RESULTS_DIR, "clarification_module_eval_results_2.json"), "w", encoding="utf-8") as f:
         json.dump({
             "baseline": base_results,
             "finetuned": ft_results,
@@ -183,4 +184,4 @@ if __name__ == "__main__":
             },
         }, f, ensure_ascii=False, indent=2)
  
-    print(f"\nSaved full results to clarification_module_eval_results.json")
+    print(f"\nSaved full results to clarification_module_eval_results_2.json")
