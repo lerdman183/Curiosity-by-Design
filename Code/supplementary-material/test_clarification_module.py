@@ -110,6 +110,8 @@ def is_clarifying_question(response_text, source_prompt):
     text = response_text.strip()
     if not text.endswith("?"):
         return False
+    else:
+        return True
 
     # # pattern: letter or underscore followed by 2 or more letters, numbers, or underscores
     # prompt_tokens = set(re.findall(r"[A-Za-z_][A-Za-z0-9_]{2,}", source_prompt))

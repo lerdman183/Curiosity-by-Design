@@ -1,13 +1,31 @@
+# Acknowlegements
+This project uses Meta Llama 3.3 70B Instruct as the base model for the clarification question generation system. We gratefully acknowledge Meta for developing and releasing the Llama family of large language models. The model was accessed through Hugging Face and used in accordance with the applicable Llama 3.3 Community License and usage policies.
+
+Base model: Meta Llama 3.3 70B Instruct
+Developer: Meta AI
+
+Use of this model is subject to the Llama 3.3 Community License and Meta's applicable usage policies.
+
+This project is not affiliated with, sponsored by, or endorsed by Meta.
+
+---
+
+This project uses DeBERTa-v3-base, developed by Microsoft, as part of the clarification question generation pipeline. We gratefully acknowledge the authors for developing the DeBERTa architecture and making the model publicly available.
+
+Model: Microsoft DeBERTa-v3-base
+License: MIT
+
+The DeBERTa-v3-base model is provided under the MIT License. This project is not affiliated with, sponsored by, or endorsed by Microsoft.
+
+
 # Curiosity by Design
 
 **An LLM-based coding assistant that asks clarification questions.**
 
 This project explores how a coding assistant can detect when a user's prompt is vague or under-specified, ask a clarification question, and then use the user's reply to produce a better final answer. It combines two trained models into a pipeline:
 
-1. **Intent Classifier** — a DistilBERT model that scores how ambiguous a prompt is, on a scale of 1 to 4.
-2. **Clarification Module** — a fine-tuned Gemma-3-1b-it model that asks a follow-up question when the prompt is flagged as ambiguous.
-
-A baseline Gemma-3-1b-it model then generates the final answer, enriched with the user's clarification.
+1. **Intent Classifier** — a deBERTa_v3_base model that scores how ambiguous a prompt is, on a scale of 1 to 4.
+2. **Clarification Module** — a fine-tuned Meta Llama-3.3-70B-Instruct model that asks a follow-up question when the prompt is flagged as ambiguous.
 
 ---
 
@@ -15,6 +33,7 @@ A baseline Gemma-3-1b-it model then generates the final answer, enriched with th
 
 | Folder | What it contains |
 |--------|------------------|
+| `Cluster/` | The job scripts used to run the training/testing scripts on a cluster. |
 | `Code/supplementary-material/` | The main pipeline: training scripts, testing scripts, and the end-to-end pipeline test. Start here. |
 | `Code/RA-2/` | Earlier prototype — scripts for mining GitHub PR comments, categorizing them, and an initial classifier experiment. |
 | `Code/revised-ra2-iclr/` | A revised version of the RA-2 work prepared for ICLR. |
@@ -22,26 +41,11 @@ A baseline Gemma-3-1b-it model then generates the final answer, enriched with th
 | `Datasets/` | Cleaned datasets used for training and evaluation (categorized PR comments, synthetic prompts, etc.). |
 | `Notebooks/` | Jupyter notebooks for data synthesis (`dataset-synth.ipynb`) and exploratory analysis (`research_project_2025.ipynb`). |
 | `Papers/` | Reference papers cited throughout the project. |
-| `User-Study/` | User study materials and (anonymized) participant responses for RQ1 and RQ2. |
-| `Models/` | Local landing folder for model weights. **Not tracked in git** — download from Zenodo (see below). |
-| `zenodo/` | Local landing folder for the published supplementary bundle. **Not tracked in git** — download from Zenodo (see below). |
 
 ---
 
-## Where to get the data and model weights
-
-The model checkpoints and large dataset bundles are hosted on Zenodo (too large for git):
-
-[Supplementary material on Zenodo](https://zenodo.org/records/15493099?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6ImYwYWQwZGFkLTUzMjMtNGU3Yi05YzYyLWVmNTIzNzM4ZTAyYiIsImRhdGEiOnt9LCJyYW5kb20iOiJhOTA4MWUzZDk4ZmY5Nzg3NmQxM2VkMjk1ZWNlNGRlZiJ9.D4SggWOEQOuXVDpy7FoPFUTFO4YZizCXeKDVywEbuRT6wJkadFKk9E_gOTlNGsxRY6QVfK94bott79KdCRy1JQ)
-
-You'll find:
-- `checkpoint-8424.zip` — Intent Classifier weights
-- `gemma3-1b-it-ft-new-data.zip` — Clarification Module weights
-- `clarification_module_synth_dataset.json` — synthetic dataset for the Clarification Module
-- `classifier_train_dataset.json` — labeled prompts for the Intent Classifier
-- `test_pipeline.csv` — end-to-end test cases
-
-After downloading, unzip the checkpoints into the `Models/` folder.
+## Results
+If reproductability is not required, recent results can be found under `Datasets/results/`. For older results/user tests, see `Code/Gemma-work/` and `Datasets/unused-old-data/` 
 
 ---
 
@@ -50,8 +54,8 @@ After downloading, unzip the checkpoints into the `Models/` folder.
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/JustHarsh/Curiosity-by-Design.git
-cd "Curiosity-by-Design"
+git clone https://github.com/lerdman183/Curiosity-by-Design.git
+cd Curiosity-by-Design
 ```
 
 ### 2. Set up a Python environment
@@ -59,18 +63,18 @@ cd "Curiosity-by-Design"
 A virtual environment keeps this project's dependencies separate from the rest of your system.
 
 ```bash
-python3 -m venv venv
-source venv/bin/activate          # on macOS / Linux
+python -m venv venv
+source venv/bin/activate           # on macOS / Linux
 # .\venv\Scripts\activate          # on Windows
 ```
 
 ### 3. Install dependencies
 
 ```bash
-pip install torch transformers peft datasets scikit-learn wandb huggingface_hub jupyter pandas
+pip install torch transformers peft bitandbytes wandb huggingface_hub scikit-learn pathlib sklearn
 ```
 
-> Exact versions are not pinned. If you need reproducibility, you'll want to capture working versions with `pip freeze > requirements.txt`.
+> Exact versions are not pinned.
 
 ### 4. Log in to Hugging Face and Weights & Biases
 
@@ -87,15 +91,13 @@ Get tokens from:
 
 **Do not commit these tokens.** Use environment variables or the interactive login above.
 
-### 5. Download the data and weights
-
-Visit the Zenodo link above, download the bundle, and unzip the checkpoints into `Models/`.
-
 ---
 
 ## Running the pipeline
 
-All training and testing scripts live under `Code/supplementary-material/`.
+All training and testing scripts live under `Code/supplementary-material/` and `Cluster/`.
+
+To train the Llama 3.3 70B Instruct model, access to a cluster is needed. Without cluster use, memory requirements will not be met
 
 ### Train the Intent Classifier
 
@@ -103,10 +105,12 @@ All training and testing scripts live under `Code/supplementary-material/`.
 python Code/supplementary-material/intent_classifier.py
 ```
 
-### Train the Clarification Module
+### Train the Clarification Module - NEED CLUSTER
+Follow pre-run steps commented in train_clarification.slurm
 
+To start the training run:
 ```bash
-python Code/supplementary-material/clarification_module.py
+sbatch Cluster/train_clarification.slurm
 ```
 
 ### Test the Intent Classifier
@@ -115,36 +119,25 @@ python Code/supplementary-material/clarification_module.py
 python Code/supplementary-material/test_classifier.py
 ```
 
-### Test the Clarification Module
+### Test the Clarification Module - NEED CLUSTER
+Follow pre-run steps commented in test_clarification.slurm
 
+To start the testing run:
 ```bash
-python Code/supplementary-material/test_clarification_module.py
+sbatch Cluster/test_clarification.slurm
 ```
-
-### Run the end-to-end pipeline test
-
-This combines the Intent Classifier, Clarification Module, and baseline Gemma-3-1b-it model on the prompts in `test_pipeline.csv`.
-
-```bash
-python Code/supplementary-material/test_pipeline.py
-```
-
----
-
-## User study
-
-The `User-Study/` folder contains the materials used for the two research questions:
-
-- **RQ1** — Are the clarification questions themselves useful? Annotators rate clarification questions from the Clarification Module against those from baseline Gemma-3-1b-it on Precision and Focus, Immediate Editability, and Contextual Fit.
-- **RQ2** — Does the full pipeline produce better final answers? Annotators rate full pipeline responses against the baseline on Precision and Focus, Contextual Fit, Answer Faithfulness, and Correctness.
-
-Sample annotation documents and anonymized participant responses are included.
 
 ---
 
 ## Hardware notes
 
-Fine-tuning Gemma-3-1b-it benefits from a GPU. The Clarification Module training uses LoRA (parameter-efficient fine-tuning), which keeps GPU memory requirements manageable, but a CUDA-capable GPU is still strongly recommended. Inference and the Intent Classifier are lighter and can run on CPU if you're patient.
+Fine-tuning the deBERTa-v3-base model requires a CUDA equipped GPU to run. The deBERTa-v3-large model could potentially be trained with larger GPU sizes or a LoRA/QLoRA adapter.
+
+Fine-tuning the Llama-3.3-70B-Instruct model requires the use of h100 GPUs on a cluster. If these are not used, memory requirements will not be met and the model will not be able to be loaded/trained properly. The cluster used in this project was Nibi, which was capable of allocating 4 h100 GPUs in the same cluster. If this is not possible, h100 GPUs may be split across multiple nodes, although this may take longer for the job to be scheduled, and the script will run slower. To change this so nodes can be used across multiple nodes, make changes in `Cluster/train_clarification.slurm` and `Cluster/launch_training_deepspeed.sh`. For example, for two h100s across two nodes change the #SBATCH --gres=gpu:h100:4 to #SBATCH --gres=gpu:h100:2, add #SBATCH --nodes=2, and change --nproc_per_node=4 to --nproc_per_node=2
+
+Testing the Llama-3.3-70B-Instruct model also requires the use of an h100 GPU to load the weights into memory. This also requires the use of a cluster, though only one h100 must be present in a given node.
+
+ This project made us of the alliancecan clusters. For more information, see https://docs.alliancecan.ca/wiki/Technical_documentation
 
 ---
 
@@ -152,17 +145,16 @@ Fine-tuning Gemma-3-1b-it benefits from a GPU. The Clarification Module training
 
 ```
 Curiosity by Design/
+├── Cluster/
 ├── Code/
+│   ├── Gemma-work/               <- earlier work with Gemma
 │   ├── supplementary-material/   <- start here
 │   ├── RA-2/                     <- earlier prototype
 │   ├── revised-ra2-iclr/         <- ICLR-revised version
 │   └── Leveraging .../           <- prior-work reproduction
 ├── Datasets/
 ├── Notebooks/
-├── Papers/
-├── User-Study/
-├── Models/   (gitignored — populate from Zenodo)
-└── zenodo/   (gitignored — populate from Zenodo)
+└── Papers/
 ```
 
 ---
@@ -170,6 +162,7 @@ Curiosity by Design/
 ## Troubleshooting
 
 - **`huggingface-cli: command not found`** — Install with `pip install huggingface_hub`.
-- **CUDA out of memory** — Lower the batch size in the training script, or run on CPU (slow).
-- **Missing model weights** — Download from Zenodo and unzip into `Models/`.
+- **CUDA out of memory** — Lower the batch size in the training script, or run on CPU (slow and only able to do for intent classifier)
 - **`ModuleNotFoundError`** — Make sure your virtual environment is activated and all dependencies are installed.
+
+For troubleshooting issues on a cluster, see `Cluster/cluster_common_problems.pdf`
