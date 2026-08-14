@@ -1,20 +1,20 @@
 #!/bin/bash
 #SBATCH --job-name=clarify-llama
-#SBATCH --nodes 2
+#SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --gres=gpu:h100:2
+#SBATCH --gres=gpu:h100:4
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=256000M
-#SBATCH --time=7-00:00:00
+#SBATCH --mem=128000M
+#SBATCH --time=4-00:00:00
 #SBATCH --output=/scratch/%u/Curiosity-by-Design/logs/%x-%j.out
 #SBATCH --error=/scratch/%u/Curiosity-by-Design/logs/%x-%j.err
 
 # Before submitting this file, run the following lines in the command prompt to set up the directories, virtual environment and install packages:
 # ===============================
 # Set up output directories (replace lerdman with your username, only have to do once)
-# mkdir -p ~/scratch/lerdman/Curiosity-by-Design/logs
-# mkdir -p ~/scratch/lerdman/Curiosity-by-Design/llama3.3-70B-ft-clarification
-# mkdir -p ~/scratch/lerdman/Curiosity-by-Design/hf_cache
+# mkdir -p ~/scratch/Curiosity-by-Design/logs
+# mkdir -p ~/scratch/Curiosity-by-Design/llama3.3-70B-ft-clarification-gerrit
+# mkdir -p ~/scratch/Curiosity-by-Design/hf_cache
 #
 # cd ~/projects/def-lutellie/Curiosity-by-Design
 # module purge
@@ -22,12 +22,10 @@
 # virtualenv --no-download venv
 # source venv/bin/activate
 # pip install --upgrade pip --no-index
-# pip install --no-index torch transformers peft datasets wandb huggingface_hub deepspeed typing_extensions bitsandbytes pathlib
+# pip install --no-index torch transformers peft datasets wandb huggingface_hub deepspeed typing_extensions bitsandbytes pathlib sklearn
 # hf auth login
 # wandb login
 # ===============================
-
-
 
 cd ~/projects/def-lutellie/Curiosity-by-Design
 

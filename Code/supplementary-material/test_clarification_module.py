@@ -1,103 +1,94 @@
 import json
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
+import os
+import re
+from transformers import (
+    AutoTokenizer, 
+    AutoModelForCausalLM,
+    BitsAndBytesConfig,
+)
 from peft import PeftModel
 
 # 1. Configuration
-BASE_MODEL = "meta-llama/Llama-3.1-8B-Instruct" #TODO: Update to 3.3-70B-Instruct if needed
-FINE_TUNED_DIR = "../../llama3.1-8B-ft-clarification" # MAKE SURE WEIGHTS WERE MOVED TO THIS FOLDER FROM THE CLUSTER
-DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CACHE_DIR = os.path.join(os.environ["SCRATCH"], "Curiosity-by-Design", "hf_cache")
+FINE_TUNED_DIR = os.path.join(os.environ["SCRATCH"], "Curiosity-by-Design", "llama3.3-70B-ft-clarification-gerrit")
+EVAL_SPLIT_PATH = os.path.join(BASE_DIR, "..", "..", "Datasets", "clarification_module_eval_split.json")
+ 
+BASE_MODEL = "meta-llama/Llama-3.3-70B-Instruct"
 
-# 2. Load tokenizer + model + LoRA adapter
-tokenizer = AutoTokenizer.from_pretrained(FINE_TUNED_DIR)
-tokenizer.pad_token = tokenizer.eos_token
+assert torch.cuda.is_available(), "CUDA is required for this script"
 
-base_model = AutoModelForCausalLM.from_pretrained(
-    BASE_MODEL,
-    torch_dtype=torch.float16 if DEVICE.startswith("cuda") else torch.float32,
-    device_map="auto" if DEVICE.startswith("cuda") else None,
-)
-model = PeftModel.from_pretrained(base_model, FINE_TUNED_DIR)
-model.to(DEVICE)
-model.eval()
+# 2. Load evaluation examples + tokenizer + base and ft model
+def load_eval_examples():
+    #Load the exact 30% slice saved by clarification_module.py
+    with open(EVAL_SPLIT_PATH, "r", encoding="utf-8") as f:
+        return json.load(f)
 
-test_data = [
-    {"prompt": "My code isn't working as expected.", "label": 4},
-    {"prompt": "<html>\n<head>\n    <title>My Page</title>\n</head>\n<body>\n    <h1>Welcome</h1>\n    <p>\n        <!-- TODO: Add more content -->\n", "label": 3},
-    {"prompt": "I'm not sure how to implement a feature.", "label": 4},
-    {"prompt": "class Animal:\n    def __init__(self, name):\n        self.name = name\n    # TODO: Create a method to make sound", "label": 3},
-    {"prompt": "I can't figure out how to connect to a database.", "label": 4},
-    {"prompt": "function fetchUserData(userId) {\n    // TODO: fetch user data from API\n    return userData;\n}\n\nlet data = fetchUserData(1);", "label": 3},
-    {"prompt": "class Vehicle:\n    def __init__(self, make, model):\n        self.make = make\n        # TODO: Add model attribute\n", "label": 3},
-    {"prompt": "#include <stdio.h>\n\nint main() {\n    int num = 10;\n    printf(\"The number is: %d\", num);\n    // TODO: Add more logic\n    return ;\n}", "label": 3},
-    {"prompt": "def calculate_area(radius):\n    area = 3.14 * radius ** 2\n    return area\n\n# TODO: handle negative radius", "label": 3},
-    {"prompt": "function calculateSum(arr) {\n    let sum = 0;\n    for (let i = 0; i < arr.length; i++) {\n        // TODO: Handle non‑numeric values\n    }\n    return sum;\n}", "label": 3},
-    {"prompt": "I'm having trouble with my project.", "label": 4},
-    {"prompt": "import numpy as np\n\ndef compute_matrix():\n    return np.array([[1, 2], [3, 4]])\n\ncompute_matrix(", "label": 3},
-    {"prompt": "def connect_to_db():\n    connection = None\n    # TODO: Establish database connection\n    return connection\n", "label": 3},
-    {"prompt": "def calculate_sum(a, b):\n    return a + b\n\nresult = calculate_sum(5, )", "label": 3},
-    {"prompt": "I don't understand why it's not functioning.", "label": 4},
-    {"prompt": "def send_email(to, subject, body):\n    import smtplib\n    server = smtplib.SMTP('smtp.example.com')\n    # TODO: implement email sending\n", "label": 3},
-    {"prompt": "I need help with my user interface.", "label": 4},
-    {"prompt": "def read_file(file_path):\n    with open(file_path, 'r') as file:\n        # TODO: Read and process file content\n", "label": 3},
-    {"prompt": "var myObject = {\n    name: 'ChatGPT',\n    // TODO: Add properties\n};\n\nconsole.log(myObject);", "label": 3},
-    {"prompt": "function fetchData(url) {\n    // TODO: Implement fetch logic\n    return;\n}\n\nfetchData('http://example.com')\n", "label": 3},
-    {"prompt": "const data = [1, 2, 3];\nconst result = data.map(num => num * 2;\nconsole.log(result);  // TODO: handle empty array", "label": 3},
-    {"prompt": "I have an issue with my API call.", "label": 4},
-    {"prompt": "I'm confused about a concept in programming.", "label": 4},
-    {"prompt": "public class Example {\n    private int value;\n\n    public Example(int value) {\n        this.value = value;\n    }\n}\n\n// TODO: Add getters", "label": 3},
-    {"prompt": "const numbers = [1, 2, 3, 4];\nconst doubled = numbers.map(num => num * 2);\nconsole.log(doub);  // Typo in variable name", "label": 3},
-    {"prompt": "var myArray = [];\n\nfunction addElement(element) {\n    myArray.push(element);\n    // TODO: handle duplicates\n}", "label": 3},
-    {"prompt": "public class Sample {\n    private int number;\n    \n    // TODO: Add constructor\n}\n\nSample s = new Sample();", "label": 3},
-    {"prompt": "There's an issue with my API integration.", "label": 4},
-    {"prompt": "I'm confused about data structures.", "label": 4},
-    {"prompt": "I need help with a function.", "label": 4},
-    {"prompt": "I'm stuck on a part of my code.", "label": 4},
-    {"prompt": "Can someone explain how to optimize my code?", "label": 4},
-    {"prompt": "function sendRequest(url) {\n    const xhr = new XMLHttpRequest();\n    xhr.open('GET', url);\n    // TODO: Add onload handler\n}", "label": 3},
-    {"prompt": "import numpy as np\n\ndef compute_mean(data):\n    return np.mean(data)\n\n# Missing data check\nprint(compute_mean())", "label": 3},
-    {"prompt": "I need guidance on a library.", "label": 4},
-    {"prompt": "I'm having trouble with my function.", "label": 4},
-    {"prompt": "def calculate_area(radius):\n    return 3.14 * radius ** 2\n\n# TODO: Handle negative radius\narea = calculate_area(-5)", "label": 3},
-    {"prompt": "from flask import Flask\n\napp = Flask(__name__)\n\n@app.route('/')\n# TODO: Add a view function\n\ndef main():\n    return 'Hello World'", "label": 3},
-    {"prompt": "class User:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\nuser = User('Alice', )  # TODO: specify age", "label": 3},
-    {"prompt": "while True:\n    print('Running...')\n    if not condition:\n        break  // TODO: Define condition", "label": 3},
-    {"prompt": "I need assistance with a function.", "label": 4},
-    {"prompt": "import requests\n\n# TODO: Ensure headers are set for API request\nresponse = requests.get('https://api.example.com/data')\nprint(response)", "label": 3},
-    {"prompt": "I'm facing issues with deploying my website.", "label": 4},
-    {"prompt": "I'm confused about this library.", "label": 4},
-    {"prompt": "I need assistance with debugging.", "label": 4},
-    {"prompt": "import pandas as pd\n\ndf = pd.read_csv('data.csv')\n\n# TODO: Clean data\nprint(df.head())", "label": 3},
-    {"prompt": "<html>\n<head>\n    <title>My Page</title>\n</head>\n<body>\n    <h1>Welcome to my page\n    <p>This is a paragraph.", "label": 3},
-    {"prompt": "I'm not sure how to structure my project.", "label": 4},
-    {"prompt": "function fetchData(url) {\n    // TODO: handle errors\n    let response = await fetch(url);\n    return response.json();\n}", "label": 3},
-    {"prompt": "My program isn't working as expected.", "label": 4},
-    {"prompt": "import numpy as np\n\ndata = np.array([1, 2, 3])\nprint(dat)\n# Missing function to process data", "label": 3},
-    {"prompt": "def calculate_area(radius):\n    return math.pi * radius ** 2\n\n# TODO: Handle negative radius values", "label": 3},
-    {"prompt": "I want to improve my code's performance.", "label": 4},
-    {"prompt": "I can't figure out how to integrate something.", "label": 4},
-]
+def load_tokenizer():
+    # Loaded from FINE_TUNED_DIR, not the base checkpoint
+    tok = AutoTokenizer.from_pretrained(FINE_TUNED_DIR)
+    tok.pad_token = tok.eos_token
+    return tok
 
-def generate_reasoning(prompt: str, label: int, max_new_tokens: int = 50):
-    instr = (
-        f"<start_of_turn>user\n"
-        f"{prompt}\n"
-        "<end_of_turn>\n"
-        "<start_of_turn>model\n"
+def bnb_config():
+    # Must use 4-bit quantization to load Llama3.3-70B onto one h100
+    return BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_compute_dtype=torch.bfloat16,
     )
 
-    tokens = tokenizer(instr, return_tensors="pt", padding=True)
-    tokens = {k: v.to(DEVICE) for k, v in tokens.items()}
+def load_base_model():
+    # Load the untrained model for comparison against the trained model
+    model = AutoModelForCausalLM.from_pretrained(
+        BASE_MODEL,
+        cache_dir=CACHE_DIR,
+        quantization_config=bnb_config(),
+        dtype=torch.bfloat16,
+        attn_implementation="eager",
+        device_map={"": 0},   # force everything onto GPU 0, no auto offload
+    )
+    model.eval()
+    return model
+
+def load_finetuned_model():
+    # Base checkpoint + the trained LoRA adapter
+    base = load_base_model()
+    model = PeftModel.from_pretrained(base, FINE_TUNED_DIR)
+    model.eval()
+    return model
+
+
+# 3. Generate responses and evaluate them
+def generate_response(model, tokenizer, prompt, max_new_tokens=64):
+    # Chat-template formatting, matching the updated TextDataset: the
+    # model was trained on this structure, so eval has to use it too
+    messages = [{"role": "user", "content": prompt.strip()}]
+
+    prompt_text = tokenizer.apply_chat_template(
+        messages,
+        add_generation_prompt=True,
+        tokenize=False,
+    )
+    
+    input_ids = tokenizer(
+        prompt_text,
+        add_special_tokens=False,
+        return_tensors="pt",
+    )["input_ids"].to("cuda")
+
+    attention_mask = torch.ones_like(input_ids)
 
     with torch.inference_mode():
-        outputs = model(input_ids=tokens["input_ids"], attention_mask=tokens["attention_mask"])
+        outputs = model(input_ids=input_ids, attention_mask=attention_mask)
         logits = outputs.logits
         if torch.isnan(logits).any() or torch.isinf(logits).any():
             raise RuntimeError("Model produced NaN or Inf in logits before generation.")
-
+ 
         out = model.generate(
-            input_ids=tokens["input_ids"],
-            attention_mask=tokens["attention_mask"],
+            input_ids=input_ids,
+            attention_mask=attention_mask,
             max_new_tokens=max_new_tokens,
             do_sample=True,
             temperature=0.7,
@@ -106,26 +97,88 @@ def generate_reasoning(prompt: str, label: int, max_new_tokens: int = 50):
             pad_token_id=tokenizer.pad_token_id,
             eos_token_id=tokenizer.eos_token_id,
         )
+ 
+    generated = out[0][input_ids.shape[1]:]
+    return tokenizer.decode(generated, skip_special_tokens=True).strip()
 
-    full_text = tokenizer.decode(out[0], skip_special_tokens=True)
-    return full_text.split("<start_of_turn>model\n")[-1].strip()
 
-# 5. Run and save
-if __name__ == "__main__":
+def is_clarifying_question(response_text, source_prompt):
+    """
+    A clarifying question if ends in '?' AND shares a token (variable/function/keyword name) with
+    the source prompt, so generic non-specific questions don't count.
+    """
+    text = response_text.strip()
+    if not text.endswith("?"):
+        return False
+
+    # # pattern: letter or underscore followed by 2 or more letters, numbers, or underscores
+    # prompt_tokens = set(re.findall(r"[A-Za-z_][A-Za-z0-9_]{2,}", source_prompt))
+    # question_tokens = set(re.findall(r"[A-Za-z_][A-Za-z0-9_]{2,}", text))
+    # # If 1 or more tokens are shared in both sets, this will return true
+    # return len(prompt_tokens & question_tokens) > 0
+
+def evaluate(model, tokenizer, eval_examples, label):
+    question_count = 0
     results = []
-    for ex in test_data:
-        reasoning = generate_reasoning(ex["prompt"], ex["label"])
+    for ex in eval_examples:
+        # Generate response and check if it is a clarifying question
+        response = generate_response(model, tokenizer, ex["input"])
+        is_question = is_clarifying_question(response, ex["input"])
+        question_count += int(is_question)
+
+        # Print input + output + if it is a question
         print("─" * 40)
-        print(f"Prompt:  {ex['prompt']}")
-        print(f"Label:   {ex['label']}")
-        print(f"Reason:  {reasoning}\n")
+        print(f"Prompt:   {ex['input']}")
+        print(f"Response: {response}")
+        print(f"Is clarifying question: {is_question}\n")
+
+        # Add the results to the list
         results.append({
-            "prompt": ex["prompt"],
-            #"label": ex["label"],
-            "response": reasoning
+            "prompt": ex["input"],
+            "response": response,
+            "is_clarifying_question": is_question,
         })
 
-    with open("results_finetune1.json", "w", encoding="utf-8") as f:
-        json.dump(results, f, ensure_ascii=False, indent=2)
+    # Record the length of examples used, the percentage of clarifying questions generated
+    total = len(eval_examples)
+    pct = 100 * question_count / total if total else 0.0
+    # Print that result and return
+    print(f"[{label}] {question_count}/{total} responses were clarifying questions ({pct:.1f}%)")
+    return question_count, total, results
 
-    print(f"Saved {len(results)} entries to results_finetune1.json")
+if __name__ == "__main__":
+    eval_examples = load_eval_examples()
+    print(f"Loaded {len(eval_examples)} evaluation examples from {EVAL_SPLIT_PATH}")
+
+    tokenizer = load_tokenizer()
+
+    # Generate and evaluate responses from baseline model
+    print("\nLoading untrained (base) model...")
+    base_model = load_base_model()
+    base_count, base_total, base_results = evaluate(base_model, tokenizer, eval_examples, "Untrained baseline")
+    del base_model
+    torch.cuda.empty_cache()
+
+    # Generate and evaluate responses from fine tuned model
+    print("\nLoading fine-tuned model...")
+    finetuned_model = load_finetuned_model()
+    ft_count, ft_total, ft_results = evaluate(finetuned_model, tokenizer, eval_examples, "Fine-tuned")
+    del finetuned_model
+    torch.cuda.empty_cache()
+
+    print("\n--- Summary ---")
+    print(f"Baseline:   {base_count}/{base_total} ({100 * base_count / base_total:.2f}%)")
+    print(f"Fine-tuned: {ft_count}/{ft_total} ({100 * ft_count / ft_total:.2f}%)")
+
+    with open(os.path.join(BASE_DIR, "clarification_module_eval_results.json"), "w", encoding="utf-8") as f:
+        json.dump({
+            "baseline": base_results,
+            "finetuned": ft_results,
+            "summary": {
+                "baseline_question_count": base_count,
+                "finetuned_question_count": ft_count,
+                "total": ft_total,
+            },
+        }, f, ensure_ascii=False, indent=2)
+ 
+    print(f"\nSaved full results to clarification_module_eval_results.json")
