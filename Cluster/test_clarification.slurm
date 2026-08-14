@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=test-clarify-llama
+#SBATCH --job-name=test-clarify-llama-2
 #SBATCH --gres=gpu:h100:1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=80000M

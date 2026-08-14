@@ -111,11 +111,11 @@ def is_clarifying_question(response_text, source_prompt):
     if not text.endswith("?"):
         return False
 
-    # pattern: letter or underscore followed by 2 or more letters, numbers, or underscores
-    prompt_tokens = set(re.findall(r"[A-Za-z_][A-Za-z0-9_]{2,}", source_prompt))
-    question_tokens = set(re.findall(r"[A-Za-z_][A-Za-z0-9_]{2,}", text))
-    # If 1 or more tokens are shared in both sets, this will return true
-    return len(prompt_tokens & question_tokens) > 0
+    # # pattern: letter or underscore followed by 2 or more letters, numbers, or underscores
+    # prompt_tokens = set(re.findall(r"[A-Za-z_][A-Za-z0-9_]{2,}", source_prompt))
+    # question_tokens = set(re.findall(r"[A-Za-z_][A-Za-z0-9_]{2,}", text))
+    # # If 1 or more tokens are shared in both sets, this will return true
+    # return len(prompt_tokens & question_tokens) > 0
 
 def evaluate(model, tokenizer, eval_examples, label):
     question_count = 0
