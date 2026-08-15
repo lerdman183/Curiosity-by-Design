@@ -34,4 +34,3 @@ checkpoint-*/
 **/checkpoint-*/
 tmp_trainer/
 **/tmp_trainer/
-wandb/

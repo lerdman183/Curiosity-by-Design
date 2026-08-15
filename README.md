@@ -39,13 +39,25 @@ This project explores how a coding assistant can detect when a user's prompt is 
 | `Code/revised-ra2-iclr/` | A revised version of the RA-2 work prepared for ICLR. |
 | `Code/Leveraging .../` | Reproduction of prior work on conversational data for ambiguous review suggestions. |
 | `Datasets/` | Cleaned datasets used for training and evaluation (categorized PR comments, synthetic prompts, etc.). |
+| `llama3.3-70B-ft-clarification-gerrit/` | Model weights for the fine-tuned clarification model. |
 | `Notebooks/` | Jupyter notebooks for data synthesis (`dataset-synth.ipynb`) and exploratory analysis (`research_project_2025.ipynb`). |
 | `Papers/` | Reference papers cited throughout the project. |
+| `wandb/` | wandb runs, both on the cluster and local. |
 
 ---
 
 ## Results
 If reproductability is not required, recent results can be found under `Datasets/results/`. For older results/user tests, see `Code/Gemma-work/` and `Datasets/unused-old-data/` 
+
+
+### Datasets/results/
+This folder contains results from the testing of the Llama-3.3-70B-Instruct model. 
+
+The .out files are the formatted files containing previews of each prompt/answer and whether the answer is a clarification question. At the bottom of this file is the summarized results.
+
+The .json files are the files containing the full prompts/answers for each example, alongside whether or not the answer is a clarification question. 
+
+**NOTE:** The files with a "_2" at the end of the file name correspond to results from a test where answers with a "?" are considered clarifying questions. The files that do not have this part of the file name correspond to the results from a test where both a "?" must be found, and a token must be shared between the prompt and the answer for the response to be considered a clarifying question.
 
 ---
 
@@ -153,8 +165,10 @@ Curiosity by Design/
 │   ├── revised-ra2-iclr/         <- ICLR-revised version
 │   └── Leveraging .../           <- prior-work reproduction
 ├── Datasets/
+├── llama3.3-70B-ft-clarification-gerrit
 ├── Notebooks/
-└── Papers/
+├── Papers/
+└── wandb/
 ```
 
 ---

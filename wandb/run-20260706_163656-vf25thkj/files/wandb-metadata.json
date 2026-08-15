@@ -1,0 +1,40 @@
+{
+  "os":  "Windows-10-10.0.26200-SP0",
+  "python":  "CPython 3.9.10",
+  "startedAt":  "2026-07-06T22:36:56.659062Z",
+  "program":  "C:\\Users\\lerdm\\Documents\\Summer Research 2026\\Curiosity-by-Design\\Code\\supplementary-material\\intent_classifier.py",
+  "codePath":  "Code\\supplementary-material\\intent_classifier.py",
+  "codePathLocal":  "Code\\supplementary-material\\intent_classifier.py",
+  "git":  {
+    "remote":  "https://github.com/lerdman183/Curiosity-by-Design.git",
+    "commit":  "1f7e16b658f3d7890f36aa4005150ef777245a9e"
+  },
+  "email":  "lerdman@ualberta.ca",
+  "root":  "C:\\Users\\lerdm\\Documents\\Summer Research 2026\\Curiosity-by-Design",
+  "host":  "SuperPooper",
+  "executable":  "C:\\Users\\lerdm\\Documents\\Summer Research 2026\\Curiosity-by-Design\\venv\\Scripts\\python.exe",
+  "cpu_count":  14,
+  "cpu_count_logical":  20,
+  "gpu":  "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "510483828736",
+      "used":  "234702135296"
+    }
+  },
+  "memory":  {
+    "total":  "16776019968"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce RTX 4050 Laptop GPU",
+      "memoryTotal":  "6439305216",
+      "cudaCores":  2560,
+      "architecture":  "Ada",
+      "uuid":  "GPU-ffd5d261-ecb7-74f3-4160-491887118544"
+    }
+  ],
+  "cudaVersion":  "12.5",
+  "writerId":  "rgjtv72gzz0j7zcnn9dqa4hrylp68pzr"
+}
